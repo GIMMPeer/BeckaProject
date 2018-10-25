@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: 5744d29c1897e15458c57d3c66cf4cf7
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Cushion
+    100002: Drawer_Bottom
+    100004: Drawer_Middle
+    100006: Drawer_Top
+    100008: //RootNode
+    100010: Metal_Fixtures
+    100012: Paper_Prepped
+    100014: Paper_Roll
+    100016: Pull_Out
+    100018: Step_Stool
+    100020: Table_Base
+    400000: Cushion
+    400002: Drawer_Bottom
+    400004: Drawer_Middle
+    400006: Drawer_Top
+    400008: //RootNode
+    400010: Metal_Fixtures
+    400012: Paper_Prepped
+    400014: Paper_Roll
+    400016: Pull_Out
+    400018: Step_Stool
+    400020: Table_Base
+    2100000: LightBorwnWood
+    2100002: WhiteWood
+    2100004: Paper
+    2100006: Metal
+    2100008: NoSlip
+    2100010: Cushion
+    2300000: Cushion
+    2300002: Drawer_Bottom
+    2300004: Drawer_Middle
+    2300006: Drawer_Top
+    2300008: Metal_Fixtures
+    2300010: Paper_Prepped
+    2300012: Paper_Roll
+    2300014: Pull_Out
+    2300016: Step_Stool
+    2300018: Table_Base
+    3300000: Cushion
+    3300002: Drawer_Bottom
+    3300004: Drawer_Middle
+    3300006: Drawer_Top
+    3300008: Metal_Fixtures
+    3300010: Paper_Prepped
+    3300012: Paper_Roll
+    3300014: Pull_Out
+    3300016: Step_Stool
+    3300018: Table_Base
+    4300000: Drawer_Bottom
+    4300002: Drawer_Middle
+    4300004: Paper_Roll
+    4300006: Pull_Out
+    4300008: Step_Stool
+    4300010: Metal_Fixtures
+    4300012: Paper_Prepped
+    4300014: Drawer_Top
+    4300016: Table_Base
+    4300018: Cushion
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Cushion
+    second: {fileID: 2100000, guid: ae6103be8e3d58d49a467e07eb579f66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightBorwnWood
+    second: {fileID: 2100000, guid: 5ca3aac364823ab40a03a588d9a7ba9b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal
+    second: {fileID: 2100000, guid: e5323aec72ff5e04d91c521c3e709866, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: NoSlip
+    second: {fileID: 2100000, guid: fed2cdf14edcb564d8149c32c9311ff8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Paper
+    second: {fileID: 2100000, guid: c8a089229f9a74848bd90ba4a9d3b0f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: WhiteWood
+    second: {fileID: 2100000, guid: 02c1365608362e6499f6114bdf4b9ef9, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

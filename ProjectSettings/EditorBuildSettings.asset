@@ -4,4 +4,7 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor.unity
+    guid: 9cd631364cb621244a7991bbf9e2459c
