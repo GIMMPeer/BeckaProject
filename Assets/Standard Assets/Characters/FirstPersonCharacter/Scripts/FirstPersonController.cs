@@ -156,10 +156,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             m_NextStep = m_StepCycle + m_StepInterval;
 
-            PlayFootStepAudio();
+            //PlayFootStepAudio();
         }
 
-
+        //DC we don't need footsteps currently
         private void PlayFootStepAudio()
         {
             if (!m_CharacterController.isGrounded)
