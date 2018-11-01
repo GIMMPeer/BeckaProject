@@ -108,6 +108,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
+            Quaternion camRotation = m_Camera.transform.rotation;
+            Vector3 eulerRotation = camRotation.eulerAngles;
+            eulerRotation.x = eulerRotation.z = 0;
+            camRotation = Quaternion.Euler(eulerRotation);
+
+            m_MoveDir = camRotation * m_MoveDir;
 
             if (m_CharacterController.isGrounded)
             {
