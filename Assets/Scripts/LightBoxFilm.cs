@@ -67,6 +67,8 @@ public class LightBoxFilm : MonoBehaviour {
             GetComponent<Rigidbody>().isKinematic = true;
 
             transform.rotation = Quaternion.identity;
+
+            GetComponent<RoomEvent>().FinishEvent();
         }
 
     }
