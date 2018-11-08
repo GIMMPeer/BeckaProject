@@ -7,9 +7,10 @@ public class BeckaRoomManager : MonoBehaviour
 {
     public static BeckaRoomManager Singleton;
 
-    public RoomEvent[] m_AllRoomEvents;
+    //TODO find a way to make tasks more easy to read, currently they are just the name of the objects the tasks are attached to
+    public RoomTask[] m_AllRoomTasks;
 
-    private int m_RoomEventIndex = 0;
+    private int m_RoomTaskIndex = 0;
 	// Use this for initialization
 	void Awake ()
     {
@@ -18,55 +19,41 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Start()
     {
-        m_AllRoomEvents[0].StartEvent();
+        m_AllRoomTasks[0].StartTask();
     }
-
 
     public void StartNextEvent()
     {
-        m_RoomEventIndex++;
+        m_RoomTaskIndex++;
 
-        Debug.Log("TaskNumber: " + m_RoomEventIndex);
-        if (AllRoomEventsCompleted())
+        Debug.Log("TaskNumber: " + m_RoomTaskIndex);
+        if (AllRoomTasksCompleted())
         {
             Debug.Log("All tasks done");
             //move to next scene
             return;
         }
 
-        RoomEvent newRoomEvent = m_AllRoomEvents[m_RoomEventIndex];
+        RoomTask newRoomTask = m_AllRoomTasks[m_RoomTaskIndex];
 
-        if (m_AllRoomEvents[m_RoomEventIndex] == null || m_AllRoomEvents.Length == 0)
+        if (m_AllRoomTasks[m_RoomTaskIndex] == null || m_AllRoomTasks.Length == 0)
         {
-            Debug.LogError("RoomEvent is null or length of room events is 0");
+            Debug.LogError("RoomTask is null or length of room events is 0");
             return;
         }
 
-        newRoomEvent.StartEvent();
+        newRoomTask.StartTask();
     }
 
     //check if sent in task is current task in sequence
-    public bool IsCurrentTask(RoomEvent roomEvent)
+    public bool IsCurrentTask(RoomTask RoomTask)
     {
-        return m_AllRoomEvents[m_RoomEventIndex].Equals(roomEvent);
+        return m_AllRoomTasks[m_RoomTaskIndex].Equals(RoomTask);
     }
 
-    private bool AllRoomEventsCompleted()
+    private bool AllRoomTasksCompleted()
     {
-        /*
-        //TODO make roomevents array get smaller each time an event is finished to improve on performance
-        foreach(RoomEvent re in m_AllRoomEvents)
-        {
-            if (re.IsComplete() == false)
-            {
-                //if any roomevent is not done then return false
-                return false;
-            }
-        }
-
-        return true; //if all rooms are not false then all room events are complete*/
-
-        if (m_RoomEventIndex >= m_AllRoomEvents.Length)
+        if (m_RoomTaskIndex >= m_AllRoomTasks.Length)
         {
             return true;
         }

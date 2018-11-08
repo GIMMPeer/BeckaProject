@@ -3,10 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-//used for navigation from events to events in scene without needing to hardcode it into each script
-
-//TODO switch name to RoomTask, as each of these has a start and a finish
-public class RoomEvent : MonoBehaviour {
+//used for navigation from events to events in scene without needing to hard code it into each script
+public class RoomTask : MonoBehaviour {
 
     public UnityEvent m_Actions; //actions to happen when event is started
 
@@ -25,7 +23,7 @@ public class RoomEvent : MonoBehaviour {
 		
 	}
 
-    public void StartEvent()
+    public void StartTask()
     {
         if (BeckaRoomManager.Singleton.IsCurrentTask(this))
         {
@@ -35,7 +33,7 @@ public class RoomEvent : MonoBehaviour {
     }
 
     //called from another script that is specific to the event happenin (ie: putting film on lightbox)
-    public void FinishEvent()
+    public void FinishTask()
     {
         //only if event is started can it be finished
         if (m_IsStarted == false)
