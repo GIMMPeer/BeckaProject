@@ -1902,7 +1902,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 0
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:
@@ -2612,15 +2612,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478642, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_LocalScale.x
-      value: 3.75
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 478642, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_LocalScale.y
-      value: 3.75
+      value: 3.2
       objectReference: {fileID: 0}
     - target: {fileID: 478642, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_LocalScale.z
-      value: 3.75
+      value: 3.2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 92000013402849364, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
@@ -6521,8 +6521,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllRoomTasks:
-  - {fileID: 1003447825}
-  - {fileID: 395391265}
+  - Name: Lightbox in Film
+    Description: Pickup flim and put it in lightbox
+    Task: {fileID: 1003447825}
+  - Name: Touching Scale
+    Description: Touch scale
+    Task: {fileID: 395391265}
 --- !u!4 &1851825106
 Transform:
   m_ObjectHideFlags: 0
@@ -6869,7 +6873,7 @@ HingeJoint:
   m_UseSpring: 1
   m_Spring:
     spring: 0
-    damper: 1
+    damper: 100
     targetPosition: 0
   m_UseMotor: 0
   m_Motor:

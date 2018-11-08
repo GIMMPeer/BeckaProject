@@ -8,7 +8,7 @@ public class BeckaRoomManager : MonoBehaviour
     public static BeckaRoomManager Singleton;
 
     //TODO find a way to make tasks more easy to read, currently they are just the name of the objects the tasks are attached to
-    public RoomTask[] m_AllRoomTasks;
+    public RoomTaskHolder[] m_AllRoomTasks;
 
     private int m_RoomTaskIndex = 0;
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Start()
     {
-        m_AllRoomTasks[0].StartTask();
+        m_AllRoomTasks[0].Task.StartTask();
     }
 
     public void StartNextEvent()
@@ -34,7 +34,7 @@ public class BeckaRoomManager : MonoBehaviour
             return;
         }
 
-        RoomTask newRoomTask = m_AllRoomTasks[m_RoomTaskIndex];
+        RoomTask newRoomTask = m_AllRoomTasks[m_RoomTaskIndex].Task;
 
         if (m_AllRoomTasks[m_RoomTaskIndex] == null || m_AllRoomTasks.Length == 0)
         {
@@ -48,7 +48,7 @@ public class BeckaRoomManager : MonoBehaviour
     //check if sent in task is current task in sequence
     public bool IsCurrentTask(RoomTask RoomTask)
     {
-        return m_AllRoomTasks[m_RoomTaskIndex].Equals(RoomTask);
+        return m_AllRoomTasks[m_RoomTaskIndex].Task.Equals(RoomTask);
     }
 
     private bool AllRoomTasksCompleted()
@@ -62,4 +62,12 @@ public class BeckaRoomManager : MonoBehaviour
             return false;
         }
     }
+}
+
+[System.Serializable]
+public class RoomTaskHolder
+{
+    public string Name;
+    public string Description;
+    public RoomTask Task;
 }
