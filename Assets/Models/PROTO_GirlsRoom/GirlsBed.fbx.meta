@@ -1,0 +1,194 @@
+fileFormatVersion: 2
+guid: 5547e73a909a14146888cb9881b1bffb
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: BezierCurve
+    100002: BezierCurve.001
+    100004: Cube
+    100006: Cube.001
+    100008: Cube.002
+    100010: Cube.003
+    100012: //RootNode
+    100014: Cube.006
+    100016: Cube.005
+    100018: Plane.001
+    100020: Plane.002
+    100022: BoxSupport
+    100024: Comforter
+    100026: Frame
+    100028: Mattress
+    100030: Pillow
+    400000: BezierCurve
+    400002: BezierCurve.001
+    400004: Cube
+    400006: Cube.001
+    400008: Cube.002
+    400010: Cube.003
+    400012: //RootNode
+    400014: Cube.006
+    400016: Cube.005
+    400018: Plane.001
+    400020: Plane.002
+    400022: BoxSupport
+    400024: Comforter
+    400026: Frame
+    400028: Mattress
+    400030: Pillow
+    2100000: No Name
+    2100002: LOPO_Pillow
+    2100004: Mattress
+    2100006: Pillow
+    2100008: MattressBox
+    2100010: BedFrame
+    2100012: Comforter
+    2300000: BezierCurve
+    2300002: BezierCurve.001
+    2300004: Cube
+    2300006: Cube.001
+    2300008: Cube.002
+    2300010: Cube.003
+    2300012: Cube.006
+    2300014: Cube.005
+    2300016: Plane.001
+    2300018: Plane.002
+    2300020: BoxSupport
+    2300022: Comforter
+    2300024: Frame
+    2300026: Mattress
+    2300028: Pillow
+    3300000: BezierCurve
+    3300002: BezierCurve.001
+    3300004: Cube
+    3300006: Cube.001
+    3300008: Cube.002
+    3300010: Cube.003
+    3300012: Cube.006
+    3300014: Cube.005
+    3300016: Plane.001
+    3300018: Plane.002
+    3300020: BoxSupport
+    3300022: Comforter
+    3300024: Frame
+    3300026: Mattress
+    3300028: Pillow
+    4300000: Cube.002
+    4300002: Cube.003
+    4300004: Cube.001
+    4300006: Cube
+    4300008: BezierCurve.001
+    4300010: BezierCurve
+    4300012: Cube.006
+    4300014: Plane.001
+    4300016: Cube.005
+    4300018: Plane.002
+    4300020: Comforter
+    4300022: Pillow
+    4300024: BoxSupport
+    4300026: Mattress
+    4300028: Frame
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BedFrame
+    second: {fileID: 2100000, guid: b9cb3497127e80545ada16165ac6cc05, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Comforter
+    second: {fileID: 2100000, guid: 45c10f76408ea654f90c11dc00b5218c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mattress
+    second: {fileID: 2100000, guid: 1786916512e3cc641b199b04b22b9c20, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: MattressBox
+    second: {fileID: 2100000, guid: 72224c49205bbda4abb23d051c7d8344, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Pillow
+    second: {fileID: 2100000, guid: 1b673f786a649b94eafd3dc100302bc4, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
