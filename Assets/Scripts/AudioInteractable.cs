@@ -9,8 +9,6 @@ public class AudioInteractable : MonoBehaviour {
 
     public GameObject m_DistortionSpherePrefab;
 
-    public Vector3 m_OffsetPosition;
-
     private GameObject m_CurrentDistortionSphere;
 
     private float m_AnimationStartTime = 0.0f;
@@ -42,26 +40,22 @@ public class AudioInteractable : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger) || OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
         {
-            Debug.Log("Staying with: " + other.name);
             //if hand is touching object
-            if (other.GetComponent<NewtonVR.NVRHand>() && m_CurrentDistortionSphere == null && !GetComponent<AudioSource>().isPlaying)
+            if (other.transform.parent.GetComponent<NewtonVR.NVRHand>() && m_CurrentDistortionSphere == null && !GetComponent<AudioSource>().isPlaying)
             {
-                PlayAudioSystem();
+                PlayAudioSystem(other.transform.position);
             }
         }
- 
     }
 
-    public void PlayAudioSystem()
+    public void PlayAudioSystem(Vector3 audioPosition)
     {
         GetComponent<AudioSource>().Play();
         m_CurrentDistortionSphere = Instantiate(m_DistortionSpherePrefab);
 
-
-        m_CurrentDistortionSphere.transform.position = transform.position + m_OffsetPosition;
+        m_CurrentDistortionSphere.transform.position = audioPosition;
 
         m_CurrentDistortionSphere.GetComponent<Animator>().Play("SphereExpand");
         m_AnimationStartTime = Time.time;
