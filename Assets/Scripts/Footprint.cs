@@ -26,7 +26,6 @@ public class Footprint : MonoBehaviour {
 	void Update ()
     {
         float alphaTime = Map(Time.time, m_StartingTime, m_TimeOfDeath, 0, 1.0f);
-        Debug.Log("Alpha: " + alphaTime);
 
         GetComponent<MeshRenderer>().material.SetColor("_Color", new Color(1, 1, 1, m_BrightnessCurve.Evaluate(alphaTime)));
 

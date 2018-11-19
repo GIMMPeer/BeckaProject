@@ -5,6 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Testing/Doctor's Office/M-Doctor.unity
     guid: 9cd631364cb621244a7991bbf9e2459c
+  - enabled: 1
+    path: Assets/Scenes/Testing/GirlRoom/M_GirlsRoom.unity
+    guid: b57c8d654da2e3a4a804ff56abf86b88
+  - enabled: 1
+    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor_Main.unity
+    guid: 817a47005fc47e243961a41675ed1fe7
+  m_configObjects: {}

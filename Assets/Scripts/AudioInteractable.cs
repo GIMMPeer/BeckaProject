@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
 public class AudioInteractable : MonoBehaviour {
@@ -9,10 +10,14 @@ public class AudioInteractable : MonoBehaviour {
 
     public GameObject m_DistortionSpherePrefab;
 
+    public UnityEvent m_OnAudioComplete;
+
     private GameObject m_CurrentDistortionSphere;
 
     private float m_AnimationStartTime = 0.0f;
     private bool m_SphereIsAnimating;
+
+    private bool m_IsInteracted = false; //true when player interacts with audio, false when audio has been completed
 	// Use this for initialization
 	void Start ()
     {
@@ -32,33 +37,37 @@ public class AudioInteractable : MonoBehaviour {
             }
         }
 
+        if (m_IsInteracted)
+        {
+            //if audio is no longer playing
+            if (!GetComponent<AudioSource>().isPlaying)
+            {
+                m_IsInteracted = false;
+                m_OnAudioComplete.Invoke();
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.J))
         {
             GetComponent<AudioSource>().Stop();
         }
 	}
 
-    private void OnTriggerStay(Collider other)
+    public void PlayAudioSystem()
     {
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger) || OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
+        if (m_CurrentDistortionSphere != null || GetComponent<AudioSource>().isPlaying)
         {
-            //if hand is touching object
-            if (other.transform.parent.GetComponent<NewtonVR.NVRHand>() && m_CurrentDistortionSphere == null && !GetComponent<AudioSource>().isPlaying)
-            {
-                PlayAudioSystem(other.transform.position);
-            }
+            return;
         }
-    }
 
-    public void PlayAudioSystem(Vector3 audioPosition)
-    {
         GetComponent<AudioSource>().Play();
         m_CurrentDistortionSphere = Instantiate(m_DistortionSpherePrefab);
 
-        m_CurrentDistortionSphere.transform.position = audioPosition;
+        m_CurrentDistortionSphere.transform.position = transform.position; //TODO distortion sphere should spawn at player hand
 
         m_CurrentDistortionSphere.GetComponent<Animator>().Play("SphereExpand");
         m_AnimationStartTime = Time.time;
         m_SphereIsAnimating = true;
+        m_IsInteracted = true;
     }
 }

@@ -1,14 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //singleton in each room to manage and string together each event that needs to happen
 public class BeckaRoomManager : MonoBehaviour
 {
     public static BeckaRoomManager Singleton;
 
-    //TODO find a way to make tasks more easy to read, currently they are just the name of the objects the tasks are attached to
     public RoomTaskHolder[] m_AllRoomTasks;
+
+    public UnityEvent m_AllTasksCompleted;
 
     private int m_RoomTaskIndex = 0;
 	// Use this for initialization
@@ -31,6 +33,8 @@ public class BeckaRoomManager : MonoBehaviour
         {
             Debug.Log("All tasks done");
             //move to next scene
+            m_AllTasksCompleted.Invoke();
+
             return;
         }
 

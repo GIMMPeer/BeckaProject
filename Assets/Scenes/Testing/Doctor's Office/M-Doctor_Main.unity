@@ -1245,7 +1245,7 @@ BoxCollider:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 395391256}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.245522, y: 2.5667977, z: 7.5950427}
@@ -1279,6 +1279,22 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 864d9e58366834a4d811530b88c83bed, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
+  m_OnAudioComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 395391265}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!82 &395391264
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1385,7 +1401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions:
+  m_StartActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1999758278}
@@ -1441,17 +1457,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 395391263}
         m_MethodName: PlayAudioSystem
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 395391265}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2739,7 +2744,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478642, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11457864, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: SteamVREnabled
@@ -3489,7 +3494,7 @@ Transform:
   - {fileID: 1660365481}
   - {fileID: 102053791}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &957978277
 AudioSource:
@@ -3758,7 +3763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions:
+  m_StartActions:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1999758278}
@@ -6125,6 +6130,11 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 3d965042c2ede8c4581bc91527efc16d, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
+  m_OnAudioComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &1660365484
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6136,20 +6146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Actions:
+  m_StartActions:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1999758278}
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1660365485
@@ -7244,6 +7243,22 @@ MonoBehaviour:
   - Name: Touching Scale
     Description: Touch scale
     Task: {fileID: 395391265}
+  m_AllTasksCompleted:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2142312038}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!4 &1851825106
 Transform:
   m_ObjectHideFlags: 0
@@ -7251,7 +7266,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1851825104}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.25477, y: -1.8197918, z: 23.67158}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8266,6 +8281,64 @@ Transform:
   m_Father: {fileID: 102053791}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: -98.711006}
+--- !u!1 &2142312037
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2142312039}
+  - component: {fileID: 2142312038}
+  - component: {fileID: 2142312040}
+  m_Layer: 0
+  m_Name: SceneTransfer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2142312038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142312037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneName: M_GirlsRoom
+--- !u!4 &2142312039
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142312037}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 9.931282, y: 1.1287098, z: 1.6049323}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142312040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142312037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActions:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &2143941596
 GameObject:
   m_ObjectHideFlags: 0

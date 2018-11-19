@@ -6,7 +6,7 @@ using UnityEngine.Events;
 //used for navigation from events to events in scene without needing to hard code it into each script
 public class RoomTask : MonoBehaviour {
 
-    public UnityEvent m_Actions; //actions to happen when event is started
+    public UnityEvent m_StartActions; //actions to happen when event is started
 
     private bool m_IsStarted = false;
     private bool m_IsFinished = false;
@@ -28,7 +28,7 @@ public class RoomTask : MonoBehaviour {
         if (BeckaRoomManager.Singleton.IsCurrentTask(this))
         {
             m_IsStarted = true;
-            m_Actions.Invoke();
+            m_StartActions.Invoke();
         }
     }
 
