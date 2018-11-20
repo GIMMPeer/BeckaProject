@@ -17,4 +17,9 @@ public class SceneTransfer : MonoBehaviour {
     {
         SceneManager.LoadScene(m_SceneName);
     }
+
+    public void GoToSceneByName(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 }

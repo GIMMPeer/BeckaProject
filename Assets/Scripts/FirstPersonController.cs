@@ -13,6 +13,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
         [SerializeField] private float m_RunSpeed;
+        [SerializeField] private float m_TurnSpeed = 20;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
         [SerializeField] private float m_StickToGroundForce;
@@ -114,6 +115,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             camRotation = Quaternion.Euler(eulerRotation);
 
             m_MoveDir = camRotation * m_MoveDir;
+
+
+            //get right touch controller input for rotating
+            /*Vector2 secondaryThumbstickInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+            Debug.Log("Thumbstick Val: " + secondaryThumbstickInput);
+            m_YRotation += secondaryThumbstickInput.x * Time.deltaTime;
+            transform.localRotation = Quaternion.Euler(new Vector3(0, m_YRotation, 0));*/
 
             if (m_CharacterController.isGrounded)
             {
@@ -242,7 +250,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            m_MouseLook.LookRotation (transform, m_Camera.transform);
+            //m_MouseLook.LookRotation (transform, m_Camera.transform);
+            Vector2 secondaryThumbstickInput = OVRInput.Get(OVRInput.Axis2D.SecondaryThumbstick);
+            m_MouseLook.OculusTouchLookRotation(secondaryThumbstickInput, transform, m_Camera.transform);
         }
 
 
