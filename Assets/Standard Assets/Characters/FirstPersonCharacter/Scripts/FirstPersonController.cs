@@ -108,7 +108,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-            Quaternion camRotation = m_Camera.transform.rotation;
+            Quaternion camRotation = m_Camera.transform.localRotation;
             Vector3 eulerRotation = camRotation.eulerAngles;
             eulerRotation.x = eulerRotation.z = 0;
             camRotation = Quaternion.Euler(eulerRotation);
