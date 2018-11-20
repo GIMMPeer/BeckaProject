@@ -1,26 +1,14 @@
 fileFormatVersion: 2
-guid: 7a19ae3640cfcee4285e2795f740afca
+guid: b9db75ef3dde7b64a834dc4b14d18cdb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: HiPoly
-    100002: LowPoly
-    100004: //RootNode
-    400000: HiPoly
-    400002: LowPoly
-    400004: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: No Name
-    2100002: hIpo
-    2100004: None
-    2300000: HiPoly
-    2300002: LowPoly
-    2300004: //RootNode
-    3300000: HiPoly
-    3300002: LowPoly
-    3300004: //RootNode
-    4300000: LowPoly
-    4300002: HiPoly
-    4300004: LowPoly_Cylinder.002
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: MechaPencil
   externalObjects: {}
   materials:
     importMaterials: 1
