@@ -10,6 +10,8 @@ public class AudioInteractable : MonoBehaviour {
 
     public GameObject m_DistortionSpherePrefab;
 
+    public bool m_UseDistortionSphere = true;
+
     public UnityEvent m_OnAudioComplete;
 
     private GameObject m_CurrentDistortionSphere;
@@ -61,13 +63,17 @@ public class AudioInteractable : MonoBehaviour {
         }
 
         GetComponent<AudioSource>().Play();
-        m_CurrentDistortionSphere = Instantiate(m_DistortionSpherePrefab);
-
-        m_CurrentDistortionSphere.transform.position = transform.position; //TODO distortion sphere should spawn at player hand
-
-        m_CurrentDistortionSphere.GetComponent<Animator>().Play("SphereExpand");
-        m_AnimationStartTime = Time.time;
-        m_SphereIsAnimating = true;
         m_IsInteracted = true;
+
+        if (m_UseDistortionSphere)
+        {
+            m_CurrentDistortionSphere = Instantiate(m_DistortionSpherePrefab);
+
+            m_CurrentDistortionSphere.transform.position = transform.position; //TODO distortion sphere should spawn at player hand
+
+            m_CurrentDistortionSphere.GetComponent<Animator>().Play("SphereExpand");
+            m_AnimationStartTime = Time.time;
+            m_SphereIsAnimating = true;
+        }
     }
 }

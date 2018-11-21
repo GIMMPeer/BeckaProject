@@ -1279,6 +1279,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 864d9e58366834a4d811530b88c83bed, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
+  m_UseDistortionSphere: 1
   m_OnAudioComplete:
     m_PersistentCalls:
       m_Calls:
@@ -2789,6 +2790,7 @@ MonoBehaviour:
   m_IsWalking: 0
   m_WalkSpeed: 1
   m_RunSpeed: 2
+  m_TurnSpeed: 20
   m_RunstepLenghten: 0.06
   m_JumpSpeed: 4
   m_StickToGroundForce: 0
@@ -6130,6 +6132,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 3d965042c2ede8c4581bc91527efc16d, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
+  m_UseDistortionSphere: 1
   m_OnAudioComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -8297,7 +8300,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2142312038
 MonoBehaviour:
   m_ObjectHideFlags: 0

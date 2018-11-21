@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing/Doctor's Office/M-Doctor_Main.unity
     guid: 817a47005fc47e243961a41675ed1fe7
+  - enabled: 1
+    path: Assets/Scenes/Testing/Maze/D-Maze.unity
+    guid: df5d56e18e051ac47916c3935fcb819c
+  - enabled: 1
+    path: Assets/Scenes/Testing/Grocery Store/D-GroceryStore.unity
+    guid: b8084a1fe0c8871449e45d4f9e70cf29
   m_configObjects: {}
