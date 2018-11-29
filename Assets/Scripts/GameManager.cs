@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager m_Singleton;
 
-    //TODO don't have maze room, just have normal rooms and keep track of previous rooms for simplicity
+    //TODO don't have maze rooms, just have normal rooms and keep track of previous rooms for simplicity
     public enum Room
     {
         DoctorOffice,
@@ -32,8 +32,6 @@ public class GameManager : MonoBehaviour {
     private Room m_CurrentRoom;
     private NewtonVR.NVRPlayer m_Player;
 
-    public int TestCounter = 0;
-
     //start is not called on loading into scene
 
     private void OnEnable()
@@ -56,9 +54,6 @@ public class GameManager : MonoBehaviour {
         }
 
         m_Player = FindObjectOfType<NewtonVR.NVRPlayer>();
-
-        Debug.Log("Current Room: " + m_CurrentRoom + "Test Index: " + TestCounter);
-
         if (SceneManager.GetActiveScene().name == m_MazeSceneName)
         {
             //player is in maze
@@ -83,8 +78,6 @@ public class GameManager : MonoBehaviour {
     public void SetRoom(Room room)
     {
         m_CurrentRoom = room;
-        Debug.Log("Set Current Room to " + m_CurrentRoom);
-        TestCounter++;
     }
 
     private void SetupPersistance()

@@ -394,6 +394,17 @@ MonoBehaviour:
   OnBeginInteraction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 31980104}
+        m_MethodName: ResetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018824738}
         m_MethodName: GoToSceneByName
         m_Mode: 5
@@ -754,6 +765,17 @@ MonoBehaviour:
   OnBeginInteraction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 264980475}
+        m_MethodName: ResetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018824738}
         m_MethodName: GoToSceneByName
         m_Mode: 5
@@ -802,7 +824,6 @@ MonoBehaviour:
   m_MazeSceneName: D-Maze
   m_IsPersistant: 0
   m_CurrentRoom: 2
-  TestCounter: 0
 --- !u!4 &292044642
 Transform:
   m_ObjectHideFlags: 0
@@ -1667,6 +1688,17 @@ MonoBehaviour:
   OnBeginInteraction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1256741245}
+        m_MethodName: ResetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018824738}
         m_MethodName: GoToSceneByName
         m_Mode: 5
@@ -2232,6 +2264,17 @@ MonoBehaviour:
   OnBeginInteraction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1405836180}
+        m_MethodName: ResetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018824738}
         m_MethodName: GoToSceneByName
         m_Mode: 5
@@ -2390,6 +2433,17 @@ MonoBehaviour:
   OnBeginInteraction:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 1421081437}
+        m_MethodName: ResetInteractable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1018824738}
         m_MethodName: GoToSceneByName
         m_Mode: 5

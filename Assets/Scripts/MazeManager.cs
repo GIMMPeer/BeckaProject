@@ -23,20 +23,29 @@ public class MazeManager : MonoBehaviour {
         {
             case GameManager.Room.GroceryStoreMaze:
                 spawnTransform =  m_SpawnLocations[1];
-                Debug.Log("Grcoery Store Maze Triggered");
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.TeenRoom;
                 break;
+
             case GameManager.Room.GirlMaze:
                 spawnTransform = m_SpawnLocations[0];
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GroceryStore;
                 break;
+
             case GameManager.Room.TeenRoomMaze:
                 spawnTransform = m_SpawnLocations[2];
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DepressionRoom;
                 break;
+
             case GameManager.Room.DepressionRoomMaze:
                 spawnTransform = m_SpawnLocations[3];
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DoctorOffice;
                 break;
+
             case GameManager.Room.DoctorOfficeMaze:
                 spawnTransform = m_SpawnLocations[4];
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.Bathroom;
                 break;
+
             default:
                 spawnTransform = m_SpawnLocations[0];
                 Debug.LogError("No Spawn Location Found for: " + room);
