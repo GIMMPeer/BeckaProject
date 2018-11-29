@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//persistent class that holds previous room locations and player's inventory
 public class GameManager : MonoBehaviour {
 
     public static GameManager m_Singleton;
@@ -30,6 +31,7 @@ public class GameManager : MonoBehaviour {
 
     [SerializeField]
     private Room m_CurrentRoom;
+
     private NewtonVR.NVRPlayer m_Player;
 
     //start is not called on loading into scene
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
+    //On loaded sets up persistence and spawns player in maze
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         SetupPersistance();
@@ -102,6 +105,7 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
+    //goes to maze manager and spawns player in maze based on room
     private void SpawnPlayerInMaze()
     {
         Transform t = MazeManager.m_Singleton.GetSpawnLocation(m_CurrentRoom);

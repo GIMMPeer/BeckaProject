@@ -11,18 +11,6 @@ public class RoomTask : MonoBehaviour {
     private bool m_IsStarted = false;
     private bool m_IsFinished = false;
 
-	// Use this for initialization
-	void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
-
     public void StartTask()
     {
         if (BeckaRoomManager.Singleton.IsCurrentTask(this))
@@ -32,7 +20,7 @@ public class RoomTask : MonoBehaviour {
         }
     }
 
-    //called from another script that is specific to the event happenin (ie: putting film on lightbox)
+    //called from another script that is specific to the event happening (ie: putting film on lightbox)
     public void FinishTask()
     {
         //only if event is started can it be finished
@@ -44,7 +32,7 @@ public class RoomTask : MonoBehaviour {
         m_IsFinished = true;
         m_IsStarted = false;
 
-        BeckaRoomManager.Singleton.StartNextEvent();
+        BeckaRoomManager.Singleton.StartNextTask();
     }
 
     public bool IsComplete()

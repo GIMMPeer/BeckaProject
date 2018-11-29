@@ -16,10 +16,10 @@ public class Footprint : MonoBehaviour {
         m_StartingTime = Time.time;
         m_TimeOfDeath = Time.time + m_TimeToLive;
 
-        m_BrightnessCurve.AddKey(0f, 0f);
+        /*m_BrightnessCurve.AddKey(0f, 0f);
         m_BrightnessCurve.AddKey(.1f, 1.0f);
         m_BrightnessCurve.AddKey(.7f, 1.0f);
-        m_BrightnessCurve.AddKey(1f, 0f);
+        m_BrightnessCurve.AddKey(1f, 0f);*/
     }
 	
 	// Update is called once per frame
@@ -31,9 +31,7 @@ public class Footprint : MonoBehaviour {
 
         if (Time.time - m_TimeOfDeath > 0)
         {
-            //if time is past time of death
-            //kill destory footprint
-
+            //if time is past time of death destory footprint object
             Destroy(gameObject);
         }
 	}

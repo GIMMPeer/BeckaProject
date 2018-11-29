@@ -16,6 +16,7 @@ public class MazeManager : MonoBehaviour {
     }
 
     //rework this to be less strict in array indexes, maybe use class/struct that holds Gamemanager.room and transform destination
+    //uses array of locations and room to return transform of correct location for player to spawn
     public Transform GetSpawnLocation (GameManager.Room room)
     {
         Transform spawnTransform;

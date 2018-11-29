@@ -23,10 +23,9 @@ public class FootprintController : MonoBehaviour {
     {
 		if (m_IsPlayingFootsteps)
         {
-            Debug.Log("Starting Footsteps");
             if (Time.time - (m_StartingTime + m_StepInterval) >= 0)
             {
-                //interval is complete
+                //full series of foot cycles is complete
                 if (m_FootstepIndex >= m_FootprintLocations.Length)
                 {
                     m_IsPlayingFootsteps = false;
@@ -54,6 +53,7 @@ public class FootprintController : MonoBehaviour {
         m_FootstepIndex++;
     }
 
+    //start new footstep series at first transform position
     public void StartFootsteps()
     {
         m_IsPlayingFootsteps = true;
