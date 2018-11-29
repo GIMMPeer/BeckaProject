@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager m_Singleton;
 
+    //TODO don't have maze room, just have normal rooms and keep track of previous rooms for simplicity
     public enum Room
     {
         DoctorOffice,
@@ -18,7 +19,6 @@ public class GameManager : MonoBehaviour {
         TeenRoomMaze,
         DepressionRoom,
         DepressionRoomMaze,
-        DoctorOfficeReturn,
         DoctorOfficeMaze,
         Bathroom
     }

@@ -15,6 +15,7 @@ public class MazeManager : MonoBehaviour {
         m_Singleton = this;
     }
 
+    //rework this to be less strict in array indexes, maybe use class/struct that holds Gamemanager.room and transform destination
     public Transform GetSpawnLocation (GameManager.Room room)
     {
         Transform spawnTransform;
@@ -27,8 +28,18 @@ public class MazeManager : MonoBehaviour {
             case GameManager.Room.GirlMaze:
                 spawnTransform = m_SpawnLocations[0];
                 break;
+            case GameManager.Room.TeenRoomMaze:
+                spawnTransform = m_SpawnLocations[2];
+                break;
+            case GameManager.Room.DepressionRoomMaze:
+                spawnTransform = m_SpawnLocations[3];
+                break;
+            case GameManager.Room.DoctorOfficeMaze:
+                spawnTransform = m_SpawnLocations[4];
+                break;
             default:
                 spawnTransform = m_SpawnLocations[0];
+                Debug.LogError("No Spawn Location Found for: " + room);
                 break;
         }
 
