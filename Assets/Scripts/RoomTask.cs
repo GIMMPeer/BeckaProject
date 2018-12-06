@@ -7,18 +7,28 @@ using UnityEngine.Events;
 public class RoomTask : MonoBehaviour {
 
     public UnityEvent m_StartActions; //actions to happen when event is started
+    public float m_DelayTime = 0.0f;
 
     private bool m_IsStarted = false;
     private bool m_IsFinished = false;
+
 
     public void StartTask()
     {
         if (BeckaRoomManager.Singleton.IsCurrentTask(this))
         {
-            m_IsStarted = true;
-            m_StartActions.Invoke();
+            StartCoroutine(DelayCall());
         }
     }
+
+    private IEnumerator DelayCall()
+    {
+        yield return new WaitForSeconds(m_DelayTime);
+
+        m_IsStarted = true;
+        m_StartActions.Invoke();
+    }
+
 
     //called from another script that is specific to the event happening (ie: putting film on lightbox)
     public void FinishTask()
