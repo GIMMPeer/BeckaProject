@@ -14,15 +14,15 @@ public class FreezeRotationLate : MonoBehaviour {
     {
         m_StartingRotation = transform.rotation;
     }
-    // Update is called once per frame
+
     void LateUpdate ()
     {
-        Vector3 setRotation = transform.rotation.eulerAngles;
+        Vector3 setRotation = transform.eulerAngles;
 
-        if (m_FreezeXRotation) setRotation.x = m_StartingRotation.eulerAngles.x;
-        if (m_FreezeYRotation) setRotation.y = m_StartingRotation.eulerAngles.y;
-        if (m_FreezeZRotation) setRotation.z = m_StartingRotation.eulerAngles.z;
+        if (m_FreezeXRotation) { setRotation.x = m_StartingRotation.eulerAngles.x; }
+        if (m_FreezeYRotation) { setRotation.y = m_StartingRotation.eulerAngles.y; }
+        if (m_FreezeZRotation) { setRotation.z = m_StartingRotation.eulerAngles.z; }
 
-        transform.rotation = Quaternion.Euler(setRotation);
+        transform.eulerAngles = setRotation;
 	}
 }
