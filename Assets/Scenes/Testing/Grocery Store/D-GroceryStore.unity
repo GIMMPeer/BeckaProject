@@ -477,7 +477,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &779038182
 GameObject:
@@ -601,7 +601,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 478642, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11457864, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: SteamVREnabled
@@ -918,7 +918,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 794e9271aeaf7ff46864fff752854d0a, type: 3}
   - {fileID: 2800000, guid: 03654f9f796df2547bde1225742dddb8, type: 3}
   - {fileID: 2800000, guid: 6b939a66cd3519246beaccffd7df7925, type: 3}
-  m_WordPrefab: {fileID: 1497089384705428, guid: d4175876058c9be428a51752ec8bc9b2,
+  m_WordPrefab: {fileID: 1933138874801670, guid: d4175876058c9be428a51752ec8bc9b2,
     type: 2}
   m_TotalWordCount: 20
 --- !u!1001 &1021718969
