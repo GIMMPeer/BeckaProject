@@ -93,14 +93,14 @@ public class VRPainter : MonoBehaviour {
         {
             GameObject brushObj = Instantiate(m_BrushEntity);
 
+            /*
             float lerpVal = Mathf.PingPong(m_ColorTickVal, 1);
             Color paintColor = m_Gradient.Evaluate(lerpVal);
+            */
 
-            brushObj.GetComponent<SpriteRenderer>().color = paintColor;
+            brushObj.GetComponent<SpriteRenderer>().color = Color.black;
 
             m_ColorTickVal += 0.01f;
-
-            Debug.Log(lerpVal);
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition; //The position of the brush (in the UVMap)
