@@ -13,10 +13,13 @@ public class VRPainter : MonoBehaviour {
     public RenderTexture m_CanvasTexture; // Render Texture that looks at our Base Texture and the painted brushes
     public Material m_BaseMaterial; // The material of our base texture (Were we will save the painted texture)
 
+    public Gradient m_Gradient;
     private bool saving = false;
     private int brushCounter;
 
     private const int MAX_BRUSH_COUNT = 100;
+
+    private float m_ColorTickVal = 0;
     // Use this for initialization
     void Start ()
     {
@@ -89,7 +92,15 @@ public class VRPainter : MonoBehaviour {
         if (HitTestUVPosition(ref uvWorldPosition))
         {
             GameObject brushObj = Instantiate(m_BrushEntity);
-            brushObj.GetComponent<SpriteRenderer>().color = Color.red;
+
+            float lerpVal = Mathf.PingPong(m_ColorTickVal, 1);
+            Color paintColor = m_Gradient.Evaluate(lerpVal);
+
+            brushObj.GetComponent<SpriteRenderer>().color = paintColor;
+
+            m_ColorTickVal += 0.01f;
+
+            Debug.Log(lerpVal);
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition; //The position of the brush (in the UVMap)
