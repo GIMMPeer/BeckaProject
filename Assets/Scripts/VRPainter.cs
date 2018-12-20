@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VRPainter : MonoBehaviour {
 
-    public Camera m_ViewingCamera;
+    public Transform m_BrushTransform;
     public Camera m_CanvasCamera;
 
     public GameObject m_BrushEntity;
@@ -26,7 +26,7 @@ public class VRPainter : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {        
-        if (Input.GetMouseButton(0))
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
             Draw();
         }
@@ -34,26 +34,32 @@ public class VRPainter : MonoBehaviour {
 
     bool HitTestUVPosition(ref Vector3 uvWorldPosition)
     {
-        /*RaycastHit hit;
-        Ray cursorRay = new Ray(m_ViewingCamera.transform.position, m_ViewingCamera.transform.forward);
-        if (Physics.Raycast(cursorRay, out hit, 200))
+        int layerMask = 1 << LayerMask.NameToLayer("Drawable");
+        RaycastHit hit;
+        Ray cursorRay = new Ray(m_BrushTransform.position, m_BrushTransform.forward);
+        if (Physics.Raycast(cursorRay, out hit, 200, layerMask))
         {
             if (hit.collider.gameObject.tag != "Drawable")
             {
                 return false;
             }
 
+            Debug.Log(hit.collider.gameObject.name);
+
+
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
-            uvWorldPosition.x = pixelUV.x;
-            uvWorldPosition.y = pixelUV.y;
+            uvWorldPosition.x = pixelUV.x - m_CanvasCamera.orthographicSize;//To center the UV on X
+            uvWorldPosition.y = pixelUV.y - m_CanvasCamera.orthographicSize;//To center the UV on Y
             uvWorldPosition.z = 0.0f;
             return true;
         }
         else
         {
             return false;
-        }*/
+        }
 
+        //for non-VR testing from screen
+        /*
         RaycastHit hit;
         Vector3 cursorPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f);
         Ray cursorRay = Camera.main.ScreenPointToRay(cursorPos);
@@ -71,7 +77,7 @@ public class VRPainter : MonoBehaviour {
         else
         {
             return false;
-        }
+        }*/
     }
 
     //The main action, instantiates a brush or decal entity at the clicked position on the UV map
