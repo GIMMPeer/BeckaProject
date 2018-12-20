@@ -4,4 +4,32 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 0
+    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor.unity
+    guid: 9cd631364cb621244a7991bbf9e2459c
+  - enabled: 1
+    path: Assets/Scenes/Testing/GirlRoom/M_GirlsRoom.unity
+    guid: b57c8d654da2e3a4a804ff56abf86b88
+  - enabled: 1
+    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor_Main.unity
+    guid: 817a47005fc47e243961a41675ed1fe7
+  - enabled: 1
+    path: Assets/Scenes/Testing/Maze/D-Maze.unity
+    guid: df5d56e18e051ac47916c3935fcb819c
+  - enabled: 1
+    path: Assets/Scenes/Testing/Grocery Store/D-GroceryStore.unity
+    guid: b8084a1fe0c8871449e45d4f9e70cf29
+  - enabled: 1
+    path: Assets/Scenes/Testing/Teen Room/D-TeenRoom.unity
+    guid: dae45f34adce38e4696af348b97dd040
+  - enabled: 1
+    path: Assets/Scenes/Testing/Depression Room/D-DepressionRoom.unity
+    guid: 36cb6b64e329fbf469ed59ef3b6a46f9
+  - enabled: 1
+    path: Assets/Scenes/Testing/Doctor's Office/D-DoctorOfficeReturn.unity
+    guid: b6bad07366198f0459a972f82395502f
+  - enabled: 1
+    path: Assets/Scenes/Testing/Bathroom/D-Bathroom.unity
+    guid: 14b7bb4daef4980479007d3eb638a9ca
+  m_configObjects: {}
