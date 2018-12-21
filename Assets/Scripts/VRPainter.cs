@@ -2,70 +2,72 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+/*
+ * Each VRPainter needs
+ *   1 Dynamic Canvas (m_CanvasCamera, Quad, Brush Container)
+ *   1 RenderTexture
+ *   2 Materials (BaseMaterial, ObjectMaterial)
+*/
 public class VRPainter : MonoBehaviour {
 
-    public Camera m_ViewingCamera;
-    public Camera m_CanvasCamera;
+    [Header("Shaders")]
+    public Shader m_StandardShader;
+    public Shader m_PaintableShader;
 
+    [Space(5)]
+
+    [Header("Brush Object Settings")]
+    public Transform m_BrushTransform;
     public GameObject m_BrushEntity;
-    public Transform m_BrushContainer;
+    public Gradient m_Gradient;
 
+    [Space(5)]
+
+    [Header("Object Specfic Settings")]
+    public Transform m_BrushContainer;
+    public Camera m_CanvasCamera;
     public RenderTexture m_CanvasTexture; // Render Texture that looks at our Base Texture and the painted brushes
     public Material m_BaseMaterial; // The material of our base texture (Were we will save the painted texture)
 
     private bool saving = false;
     private int brushCounter;
 
+    private float m_ColorTickVal;
+
     private const int MAX_BRUSH_COUNT = 100;
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
 	
 	// Update is called once per frame
 	void Update ()
-    {        
-        if (Input.GetMouseButton(0))
+    {   
+        //left index trigger held down
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
             Draw();
         }
 	}
 
-    bool HitTestUVPosition(ref Vector3 uvWorldPosition)
+    //checks to see if you hit a drawable object, then if so sets UV worldPosition
+    bool HitTestUVPosition(ref Vector3 uvWorldPosition, ref Material hitMaterial)
     {
-        /*RaycastHit hit;
-        Ray cursorRay = new Ray(m_ViewingCamera.transform.position, m_ViewingCamera.transform.forward);
-        if (Physics.Raycast(cursorRay, out hit, 200))
+        //only look for layer that is "drawable"
+        int layerMask = 1 << LayerMask.NameToLayer("Drawable");
+
+        RaycastHit hit;
+        Ray cursorRay = new Ray(m_BrushTransform.position, m_BrushTransform.forward);
+        if (Physics.Raycast(cursorRay, out hit, 200, layerMask))
         {
-            if (hit.collider.gameObject.tag != "Drawable")
+            //used to ensure we only paint on our mesh, not on anyone elses
+            if (hit.collider.gameObject.name != gameObject.name)
             {
                 return false;
             }
 
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
-            uvWorldPosition.x = pixelUV.x;
-            uvWorldPosition.y = pixelUV.y;
-            uvWorldPosition.z = 0.0f;
-            return true;
-        }
-        else
-        {
-            return false;
-        }*/
-
-        RaycastHit hit;
-        Vector3 cursorPos = new Vector3(Input.mousePosition.x, Input.mousePosition.y, 0.0f);
-        Ray cursorRay = Camera.main.ScreenPointToRay(cursorPos);
-        if (Physics.Raycast(cursorRay, out hit, 200))
-        {
-            MeshCollider meshCollider = hit.collider as MeshCollider;
-            if (meshCollider == null || meshCollider.sharedMesh == null)
-                return false;
-            Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
             uvWorldPosition.x = pixelUV.x - m_CanvasCamera.orthographicSize;//To center the UV on X
             uvWorldPosition.y = pixelUV.y - m_CanvasCamera.orthographicSize;//To center the UV on Y
             uvWorldPosition.z = 0.0f;
+
+            hitMaterial = hit.collider.gameObject.GetComponent<MeshRenderer>().material;
             return true;
         }
         else
@@ -80,13 +82,33 @@ public class VRPainter : MonoBehaviour {
         if (saving)
             return;
         Vector3 uvWorldPosition = Vector3.zero;
-        if (HitTestUVPosition(ref uvWorldPosition))
+        Material hitMaterial = null;
+
+        if (HitTestUVPosition(ref uvWorldPosition, ref hitMaterial))
         {
+            //create brush object at found uvWorldPosition
             GameObject brushObj = Instantiate(m_BrushEntity);
-            brushObj.GetComponent<SpriteRenderer>().color = Color.red;
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
-            brushObj.transform.localPosition = uvWorldPosition; //The position of the brush (in the UVMap)
+            brushObj.transform.localPosition = uvWorldPosition;
+
+            bool isColorable = IsShaderColorable(hitMaterial); //check if shader used on material is a splat map shader, or a simple colored over shader
+
+            if (isColorable)
+            {
+                float lerpVal = Mathf.PingPong(m_ColorTickVal, 1);
+                Color paintColor = m_Gradient.Evaluate(lerpVal);
+
+                brushObj.GetComponent<SpriteRenderer>().color = paintColor;
+
+                m_ColorTickVal += 0.01f;
+            }
+
+            else
+            {
+                brushObj.GetComponent<SpriteRenderer>().color = Color.black;
+            }
+
         }
         brushCounter++; //Add to the max brushes
         if (brushCounter >= MAX_BRUSH_COUNT)
@@ -96,16 +118,39 @@ public class VRPainter : MonoBehaviour {
         }
     }
 
+    bool IsShaderColorable(Material material)
+    {
+        Shader shader = material.shader;
+
+        if (shader.name == m_StandardShader.name)
+        {
+            return true;
+        }
+
+        else if (shader.name == m_PaintableShader.name)
+        {
+            return false;
+        }
+
+        else
+        {
+            Debug.Log("Material does not have paintable shader");
+            return false;
+        }
+    } 
+
     //Sets the base material with a our canvas texture, then removes all our brushes
     void SaveTexture()
     {
         brushCounter = 0;
-        RenderTexture.active = m_CanvasTexture;
+
+        RenderTexture.active = m_CanvasTexture; //sets active render texture so tex.ReadPixels can read from that
         Texture2D tex = new Texture2D(m_CanvasTexture.width, m_CanvasTexture.height, TextureFormat.RGB24, false);
-        tex.ReadPixels(new Rect(0, 0, m_CanvasTexture.width, m_CanvasTexture.height), 0, 0);
+        tex.ReadPixels(new Rect(0, 0, m_CanvasTexture.width, m_CanvasTexture.height), 0, 0); //reads pixels from render 
         tex.Apply();
         RenderTexture.active = null;
         m_BaseMaterial.mainTexture = tex; //Put the painted texture as the base
+
         foreach (Transform child in m_BrushContainer.transform)
         {//Clear brushes
             Destroy(child.gameObject);
@@ -118,4 +163,5 @@ public class VRPainter : MonoBehaviour {
     {
         saving = false;
     }
+
 }
