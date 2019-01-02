@@ -40,6 +40,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
+        private float m_WalkScalar;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
@@ -229,7 +230,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            speed = m_IsWalking ? (m_WalkSpeed * m_WalkScalar) : m_RunSpeed; //Dea change to add scalar to walk speed
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -270,6 +271,12 @@ namespace UnityStandardAssets.Characters.FirstPerson
                 return;
             }
             body.AddForceAtPosition(m_CharacterController.velocity*0.1f, hit.point, ForceMode.Impulse);
+        }
+
+        //Dean override
+        public void SetWalkScalar(float walkScalar)
+        {
+            m_WalkScalar = walkScalar;
         }
     }
 }
