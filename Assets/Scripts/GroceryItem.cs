@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GroceryItem : MonoBehaviour
 {
-    public enum ItemType {Love, Sphere, Can}
+    public enum ItemType { Love, Sphere, Can }
 
     [SerializeField]
     private ItemType m_ItemType; //keeps this proctected from being set by other classes, only set in editor

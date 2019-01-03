@@ -11,17 +11,20 @@ using UnityEngine;
 
 public class Basket : MonoBehaviour
 {
-    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_PlayerController;
+    //public UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_PlayerController;
 
     public int m_NumItem1;
     public int m_NumItem2;
     public int m_NumItem3;
-
+    
     private List<GroceryItem> m_BasketItems;
-    // Use this for initialization
 
-    private void Start()
+    public List<GroceryItem> testingItems;
+
+    //Used as Awake and not Start ONLY AS TESTING -GG
+    private void Awake()
     {
+
         m_BasketItems = new List<GroceryItem>();
     }
 
@@ -56,13 +59,13 @@ public class Basket : MonoBehaviour
 
     private void UpdatePlayerSpeed()
     {
-        int maxItems = m_NumItem1 + m_NumItem2 + m_NumItem3;
+        int maxItems = m_BasketItems.Count;
         int numNonPaintedItems = GetNumItemsNotPainted();
 
         float walkScalar = (float)numNonPaintedItems / (float)maxItems; //get percentage of items non painted
         walkScalar = 1.0f - walkScalar; //inverse percentage to make more non painted items cause a slower walk speed
 
-        m_PlayerController.SetWalkScalar(walkScalar);
+        //m_PlayerController.SetWalkScalar(walkScalar);
     }
 
     //goes through current basket items and gets number of items not painted over
@@ -77,6 +80,20 @@ public class Basket : MonoBehaviour
             }
         }
         return count;
+    }
+
+    public List<GroceryItem> GetItemsFromBasket()
+    {
+        //testing
+        for(var i = 0; i < testingItems.Count; i++)
+        {
+            m_BasketItems.Add(testingItems[i]);
+        }
+        
+        
+
+
+        return m_BasketItems;
     }
 
 }
