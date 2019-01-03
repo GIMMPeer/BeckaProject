@@ -25,14 +25,14 @@ public class VRPaintable : MonoBehaviour
     }
 
     //merge texture from render texture to main texture
-    public void SaveTexture()
+    public void SaveTexture(Material baseMaterial)
     { 
         RenderTexture.active = m_RenderTexture; //sets active render texture so tex.ReadPixels can read from that
         Texture2D tex = new Texture2D(m_RenderTexture.width, m_RenderTexture.height, TextureFormat.RGB24, false);
         tex.ReadPixels(new Rect(0, 0, m_RenderTexture.width, m_RenderTexture.height), 0, 0); //reads pixels from render 
         tex.Apply();
         RenderTexture.active = null;
-        GetComponent<MeshRenderer>().material.mainTexture = tex; //Put the painted texture as the base
+        baseMaterial.mainTexture = tex; //Put the painted texture as the base
     }
 
     public RenderTexture GetRenderTexture()
@@ -54,5 +54,10 @@ public class VRPaintable : MonoBehaviour
     {
         m_MainTexture = texture;
         GetComponent<MeshRenderer>().material.mainTexture = m_MainTexture;
+    }
+
+    private void OnDestroy()
+    {
+        m_RenderTexture.Release();
     }
 }

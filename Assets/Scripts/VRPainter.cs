@@ -161,7 +161,7 @@ public class VRPainter : MonoBehaviour {
         m_PaintingTargetFound = false;
         //m_CanvasCamera.targetTexture = null;
         //m_BaseMaterial.mainTexture = null;
-        m_PaintingTarget.SetObjectMainTexture(m_PaintingTarget.GetMainTexture()); //TODO have function in VRPaintable set main texture to render texture
+        m_PaintingTarget.SetObjectMainTexture(m_PaintingTarget.GetMainTexture()); //Main
 
         saving = true;
         StartCoroutine(SaveTexture(true, 0.1f));
@@ -193,13 +193,16 @@ public class VRPainter : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         brushCounter = 0;
-
+        /*
         RenderTexture.active = m_PaintableRenderTexture; //sets active render texture so tex.ReadPixels can read from that
         Texture2D tex = new Texture2D(m_PaintableRenderTexture.width, m_PaintableRenderTexture.height, TextureFormat.RGB24, false);
         tex.ReadPixels(new Rect(0, 0, m_PaintableRenderTexture.width, m_PaintableRenderTexture.height), 0, 0); //reads pixels from render 
         tex.Apply();
         RenderTexture.active = null;
         m_BaseMaterial.mainTexture = tex; //Put the painted texture as the base
+        */
+
+        m_PaintingTarget.SaveTexture(m_BaseMaterial);
 
         foreach (Transform child in m_BrushContainer.transform)
         {//Clear brushes
@@ -211,6 +214,7 @@ public class VRPainter : MonoBehaviour {
         if (endingDrawing)
         {
             m_PaintableRenderTexture = null;
+            m_PaintingTarget = null; 
         }
     }
 
