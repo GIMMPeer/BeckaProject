@@ -2,17 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-/*
- * Each VRPainter needs
- *   1 Dynamic Canvas (m_CanvasCamera, Quad, Brush Container)
- *   1 RenderTexture
- *   2 Materials (BaseMaterial, ObjectMaterial)
-*/
 public class VRPainter : MonoBehaviour {
-
-    [Header("Shaders")]
-    public Shader m_StandardShader;
-    public Shader m_PaintableShader;
 
     [Space(5)]
 
@@ -27,8 +17,6 @@ public class VRPainter : MonoBehaviour {
     public Transform m_BrushContainer;
     public Camera m_CanvasCamera;
     public Material m_BaseMaterial;
-    //public RenderTexture m_CanvasTexture; // Render Texture that looks at our Base Texture and the painted brushes
-    //public Material m_BaseMaterial; // The material of our base texture (Were we will save the painted texture)
 
     private bool saving = false;
     private int brushCounter;
@@ -60,7 +48,6 @@ public class VRPainter : MonoBehaviour {
     //checks to see if you hit a drawable object, then if so sets UV worldPosition
     bool HitTestUVPosition(ref Vector3 uvWorldPosition, ref GameObject hitObject)
     {
-
         //only look for layer that is "drawable"
         int layerMask = 1 << LayerMask.NameToLayer("Drawable");
 
@@ -107,9 +94,7 @@ public class VRPainter : MonoBehaviour {
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition;
 
-            bool isColorable = IsShaderColorable(hitObject.GetComponent<MeshRenderer>().material); //check if shader used on material is a splat map shader, or a simple colored over shader
-
-            if (isColorable)
+            if (m_PaintingTarget.IsColorable())
             {
                 float lerpVal = Mathf.PingPong(m_ColorTickVal, 1);
                 Color paintColor = m_Gradient.Evaluate(lerpVal);
@@ -138,7 +123,7 @@ public class VRPainter : MonoBehaviour {
         if (brushCounter >= MAX_BRUSH_COUNT && m_PaintingTarget != null)
         { //If we reach the max brushes available, flatten the texture and clear the brushes
             saving = true;
-            StartCoroutine(SaveTexture(false, 0.1f));
+            Invoke("SaveTexture", 0.1f);
         }
     }
 
@@ -152,17 +137,7 @@ public class VRPainter : MonoBehaviour {
         m_CanvasCamera.targetTexture = m_PaintableRenderTexture;
         m_BaseMaterial.mainTexture = m_PaintingTarget.GetMainTexture();
 
-        bool isColorable = IsShaderColorable(m_PaintingTarget.gameObject.GetComponent<MeshRenderer>().material); //check if shader used on material is a splat map shader, or a simple colored over shader
-
-        //if objects is normal paintable color main texture, if it is a reveal paint splat map
-        if (isColorable)
-        {
-            m_PaintingTarget.SetObjectMainTexture(m_PaintableRenderTexture);
-        }
-        else
-        {
-            m_PaintingTarget.SetObjectSplatTexture(m_PaintableRenderTexture);
-        }
+        m_PaintingTarget.SetObjectTexture(m_PaintableRenderTexture);
     }
 
     //sets up scene objects with painting target
@@ -170,47 +145,15 @@ public class VRPainter : MonoBehaviour {
     {
         m_PaintingTargetFound = false;
 
-        bool isColorable = IsShaderColorable(m_PaintingTarget.gameObject.GetComponent<MeshRenderer>().material); //check if shader used on material is a splat map shader, or a simple colored over shader
-
-        //if objects is normal paintable color main texture, if it is a reveal paint splat map
-        if (isColorable)
-        {
-            m_PaintingTarget.SetObjectMainTexture(m_PaintingTarget.GetMainTexture());
-        }
-        else
-        {
-            m_PaintingTarget.SetObjectSplatTexture(m_PaintingTarget.GetMainTexture());
-        }
+        m_PaintingTarget.SetObjectTexture(m_PaintingTarget.GetMainTexture());
 
         saving = true;
-        StartCoroutine(SaveTexture(true, 0.1f));
-    }
-
-    bool IsShaderColorable(Material material)
-    {
-        Shader shader = material.shader;
-
-        if (shader.name == m_StandardShader.name)
-        {
-            return true;
-        }
-
-        else if (shader.name == m_PaintableShader.name)
-        {
-            return false;
-        }
-
-        else
-        {
-            Debug.Log("Material does not have paintable shader");
-            return false;
-        }
+        Invoke("SaveTexture", 0.1f);
     } 
 
     //Sets the base material with a our canvas texture, then removes all our brushes
-    IEnumerator SaveTexture(bool endingDrawing, float waitTime)
+    void SaveTexture()
     {
-        yield return new WaitForSeconds(waitTime);
         brushCounter = 0;
 
         m_PaintingTarget.SaveTexture(m_BaseMaterial);
@@ -219,14 +162,8 @@ public class VRPainter : MonoBehaviour {
         {//Clear brushes
             Destroy(child.gameObject);
         }
-        //StartCoroutine ("SaveTextureToFile"); //Do you want to save the texture? This is your method!
-        Invoke("ShowCursor", 0.1f);
 
-        if (endingDrawing) //TODO this may be entirely unnecessary because these globals are reset anyways OnDrawStart
-        {
-            m_PaintableRenderTexture = null;
-            m_PaintingTarget = null; 
-        }
+        Invoke("ShowCursor", 0.1f);
     }
 
     void ShowCursor()

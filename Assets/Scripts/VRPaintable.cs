@@ -4,25 +4,20 @@ using UnityEngine;
 
 public class VRPaintable : MonoBehaviour
 {
-    public Texture m_MainTexture; //texture can be texture for splat map
+    [Header("Shaders")]
+    public Shader m_StandardShader;
+    public Shader m_PaintableShader;
 
+    private Texture m_MainTexture; //texture can be texture for splat map
     private RenderTexture m_RenderTexture;
-	// Use this for initialization
+    private bool m_IsColorable;
+
 	void Start ()
     {
         m_RenderTexture = new RenderTexture(256, 256, 0, RenderTextureFormat.ARGB32); //create individual instance of render texture
-	}
-	
-	// Update is called once per frame
-	void Update ()
-    {
-		
-	}
 
-    public void Draw()
-    {
-
-    }
+        m_IsColorable = IsShaderColorable(GetComponent<MeshRenderer>().material);
+	}
 
     //merge texture from render texture to main texture (all on base material, not object material)
     public void SaveTexture(Material baseMaterial)
@@ -45,25 +40,65 @@ public class VRPaintable : MonoBehaviour
         return m_MainTexture;
     }
 
+    public bool IsColorable()
+    {
+        return m_IsColorable;
+    }
+
     public void SetRenderTexture(RenderTexture renderTexture)
     {
         m_RenderTexture = renderTexture;
     }
 
-    public void SetObjectMainTexture(Texture texture)
+    //called from VRPainter and will set either splatmap or main texture based on object shader
+    public void SetObjectTexture(Texture texture)
+    {
+        if (m_IsColorable)
+        {
+            SetMainTexture(texture);
+        }
+        else
+        {
+            SetSplatTexture(texture);
+        }
+    }
+
+    private void SetMainTexture(Texture texture)
     {
         m_MainTexture = texture;
         GetComponent<MeshRenderer>().material.mainTexture = m_MainTexture;
     }
 
-    public void SetObjectSplatTexture(Texture texture)
+    private void SetSplatTexture(Texture texture)
     {
         m_MainTexture = texture;
         GetComponent<MeshRenderer>().material.SetTexture("_SplatMap", m_MainTexture);
+    }
+
+    private bool IsShaderColorable(Material material)
+    {
+        Shader shader = material.shader;
+
+        if (shader.name == m_StandardShader.name)
+        {
+            return true;
+        }
+
+        else if (shader.name == m_PaintableShader.name)
+        {
+            return false;
+        }
+
+        else
+        {
+            Debug.Log("Material does not have paintable shader");
+            return false;
+        }
     }
 
     private void OnDestroy()
     {
         m_RenderTexture.Release();
     }
+
 }
