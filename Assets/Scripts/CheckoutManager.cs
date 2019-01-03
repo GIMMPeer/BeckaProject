@@ -4,124 +4,117 @@ using UnityEngine;
 
 public class CheckoutManager : MonoBehaviour {
 
+    //Sorry, GG
 
     public Basket m_Basket;
+    [Space]
+    public int m_IceCreamAmount;
+    public int m_MilkAmount;
+    public int m_EggsAmount;
+    public int m_PastaAmount;
+    public int m_SauceAmount;
+    public int m_FruitAmount;
+    public int m_LipGlossAmount;
+    public int m_MascaraAmount;
 
-    public int m_NeededLoveAmount;
-    public int m_NeededCanAmount;
-    public int m_NeededSphereAmount;
+    
+
+    private int itemsFulfilled;
 
 
-
-    private List<string> m_AllItemTypes;
-    private List<string> m_NeededItemTypes;
-
-    private int itemsRemoved = 0;
-
-    //Need to have functionality to use multiple items. Not just one of each
 
     void Start () {
 
-        m_AllItemTypes = new List<string>();
-        m_NeededItemTypes = new List<string>();
+        itemsFulfilled = 0;
 
-        string[] list = System.Enum.GetNames(typeof(GroceryItem.ItemType));
-        for(var i = 0; i < list.Length; i++)
-        {
-            m_AllItemTypes.Add(list[i]);
-        }
-        m_NeededItemTypes = m_AllItemTypes;
-
-        //testing
+        //testing, meant to be called when basket touches scannerBox.
         CheckBasket();
     }
 
+
     public void CheckBasket()
     {
-        int amtOfLove = 0;
-        int amtOfCan = 0;
-        int amtOfSphere = 0;
-
-        foreach (GroceryItem item in m_Basket.GetItemsFromBasket())
+        int m_IceCreamAmountCurrent = 0;
+        int m_MilkAmountCurrent = 0;
+        int m_EggsAmountCurrent = 0;
+        int m_PastaAmountCurrent = 0;
+        int m_SauceAmountCurrent = 0;
+        int m_FruitAmountCurrent = 0;
+        int m_LipGlossAmountCurrent = 0;
+        int m_MascaraAmountCurrent = 0;
+    
+        foreach (GroceryItem i in m_Basket.GetItemsFromBasket())
         {
-            GroceryItem.ItemType curItemType = item.GetItemType();
-
-            Debug.Log("Current Item Type: " + curItemType);
-
-            switch (curItemType)
+            switch (i.GetItemType())
             {
-                case GroceryItem.ItemType.Can:
-                    if(amtOfCan < m_NeededCanAmount)
+                case GroceryItem.ItemType.IceCream:
+                    m_IceCreamAmountCurrent++;
+                    if (m_IceCreamAmountCurrent >= m_IceCreamAmount)
                     {
-                        Debug.Log("Adding Can");
-                        amtOfCan++;
+                        itemsFulfilled++;
                     }
                     break;
-                case GroceryItem.ItemType.Love:
-                    if(amtOfLove < m_NeededLoveAmount)
+                case GroceryItem.ItemType.Milk:
+                    m_MilkAmountCurrent++;
+                    if (m_MilkAmountCurrent >= m_MilkAmount)
                     {
-                        Debug.Log("Adding Love");
-                        amtOfLove++;
+                        itemsFulfilled++;
                     }
                     break;
-                case GroceryItem.ItemType.Sphere:
-                    if(amtOfSphere < m_NeededSphereAmount)
+                case GroceryItem.ItemType.Eggs:
+                    m_EggsAmountCurrent++;
+                    if (m_EggsAmountCurrent >= m_EggsAmount)
                     {
-                        Debug.Log("Adding Spheres");
-                        amtOfSphere++;
+                        itemsFulfilled++;
                     }
                     break;
-            }         
-        }
-
-        int totalAmt = amtOfCan + amtOfLove + amtOfSphere;
-        int totalNeeded = m_NeededCanAmount + m_NeededLoveAmount + m_NeededSphereAmount;
-        Debug.Log("Needed Items fulfilled: " + totalAmt + "/" + totalNeeded);
-
-        if (amtOfCan == m_NeededCanAmount 
-            && amtOfLove == m_NeededLoveAmount 
-            && amtOfSphere == m_NeededSphereAmount)
-        {
-            Debug.Log("Nice, you win");
-        }
-        
-
-
-
-
-
-
-        //RIP below 
-
-
-        /*
-         * 
-        foreach (GroceryItem item in m_Basket.GetItemsFromBasket())
-        {
-            GroceryItem.ItemType curItemType = item.GetItemType();
-            
-            Debug.Log("Current Item Type: " + curItemType);
-
-            for (int i = 0; i < m_NeededItemTypes.Count; i++)
-            {
-                Debug.Log("Itterating through Needed Items: " + m_NeededItemTypes[i]);
-                if (curItemType.ToString() == m_NeededItemTypes[i])
-                {
-                    Debug.Log("Current Item = Current Needed Item");
-                    m_NeededItemTypes.Remove(curItemType.ToString());
-                    itemsRemoved++;
-                }
+                case GroceryItem.ItemType.Fruit:
+                    m_FruitAmountCurrent++;
+                    if (m_FruitAmountCurrent >= m_FruitAmount)
+                    {
+                        itemsFulfilled++;
+                    }
+                    break;
+                case GroceryItem.ItemType.LipGloss:
+                    m_LipGlossAmountCurrent++;
+                    if (m_LipGlossAmountCurrent >= m_LipGlossAmount)
+                    {
+                        itemsFulfilled++;
+                    }
+                    break;
+                case GroceryItem.ItemType.Mascara:
+                    m_MascaraAmountCurrent++;
+                    if (m_MascaraAmountCurrent >= m_MascaraAmount)
+                    {
+                        itemsFulfilled++;
+                    }
+                    break;
+                case GroceryItem.ItemType.Pasta:
+                    m_PastaAmountCurrent++;
+                    if (m_PastaAmountCurrent >= m_PastaAmount)
+                    {
+                        itemsFulfilled++;
+                    }
+                    break;
+                case GroceryItem.ItemType.Sauce:
+                    m_SauceAmountCurrent++;
+                    if (m_SauceAmountCurrent >= m_SauceAmount)
+                    {
+                        itemsFulfilled++;
+                    }
+                    break;
             }
         }
 
-        Debug.Log("Needed Items fulfilled: " + itemsRemoved + "/" + m_AllItemTypes.Count);
+        int totalNeeded = System.Enum.GetNames(typeof(GroceryItem.ItemType)).Length;
 
-        if(itemsRemoved == m_AllItemTypes.Count)
+        Debug.Log("Needed Items fulfilled: " + itemsFulfilled + "/" + totalNeeded);
+
+
+        if(itemsFulfilled >= totalNeeded)
         {
-            //Basket is on checkout counter, basket is full of necessary items, ready to progress
-            Debug.Log("Nice Job! Finished!");
+            Debug.Log("You win!");
+            //User has put all required items into basket 
         }
-        
-         */
     }
 }

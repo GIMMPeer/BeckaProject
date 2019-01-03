@@ -24,7 +24,6 @@ public class Basket : MonoBehaviour
     //Used as Awake and not Start ONLY AS TESTING -GG
     private void Awake()
     {
-
         m_BasketItems = new List<GroceryItem>();
     }
 
@@ -84,14 +83,11 @@ public class Basket : MonoBehaviour
 
     public List<GroceryItem> GetItemsFromBasket()
     {
-        //testing
+        //testing --> Adding Items into basket manually, no vr for testing
         for(var i = 0; i < testingItems.Count; i++)
         {
             m_BasketItems.Add(testingItems[i]);
-        }
-        
-        
-
+        }//<--
 
         return m_BasketItems;
     }
