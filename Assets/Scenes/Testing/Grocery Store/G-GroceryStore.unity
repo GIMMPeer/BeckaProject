@@ -1690,6 +1690,7 @@ GameObject:
   - component: {fileID: 1309952837}
   - component: {fileID: 1309952838}
   - component: {fileID: 1309952831}
+  - component: {fileID: 1309952840}
   m_Layer: 0
   m_Name: shopping_basket
   m_TagString: Untagged
@@ -1831,10 +1832,24 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1309952840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1309952829}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a125ef5d4f6674785376819cbe5649, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 50
+  wiggleLength: 1
+  animLength: 1
 --- !u!1 &1320161648
 GameObject:
   m_ObjectHideFlags: 0

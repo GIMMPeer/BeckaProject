@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WiggleWiggle : MonoBehaviour {
     
-    public float speed; //cycles?
+    public float speed; 
     public float wiggleLength;
     public float animLength;
 
@@ -15,11 +15,11 @@ public class WiggleWiggle : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.G)) //KEYCODE ONLY USED FOR TESTING
         {
             m_OriginalRot = this.transform.rotation;
-            StartCoroutine(GoLeft());
+            StartCoroutine(StartWiggle());
         }
     } 
     
-    IEnumerator GoLeft()
+    IEnumerator StartWiggle()
     {
         float timePassed = Time.time;
         while (Time.time - timePassed < animLength)
@@ -29,6 +29,7 @@ public class WiggleWiggle : MonoBehaviour {
 
             yield return null;
         }
+
         transform.rotation = m_OriginalRot;
     }
 }
