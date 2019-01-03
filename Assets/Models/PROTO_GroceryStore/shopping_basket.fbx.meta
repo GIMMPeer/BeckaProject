@@ -1,43 +1,48 @@
 fileFormatVersion: 2
-guid: bb409ee2a58c1354aabab0994efdc25d
+guid: 66aca2a5daf10f6479e87d39488ef853
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: body
-    100002: Cube
-    100004: Cube.014
-    100006: Cube.023
-    100008: handle2
-    100010: panels
-    100012: //RootNode
-    400000: body
-    400002: Cube
-    400004: Cube.014
-    400006: Cube.023
-    400008: handle2
-    400010: panels
-    400012: //RootNode
+    100000: Cube
+    100002: Cube.014
+    100004: Cube.023
+    100006: handle2.001
+    100008: //RootNode
+    400000: Cube
+    400002: Cube.014
+    400004: Cube.023
+    400006: handle2.001
+    400008: //RootNode
     2100000: No Name
     2100002: Material
-    2300000: body
-    2300002: Cube
-    2300004: Cube.014
-    2300006: Cube.023
-    2300008: handle2
-    2300010: panels
-    3300000: body
-    3300002: Cube
-    3300004: Cube.014
-    3300006: Cube.023
-    3300008: handle2
-    3300010: panels
-    4300000: panels
-    4300002: body
-    4300004: Cube.023
-    4300006: Cube.014
-    4300008: handle2
-    4300010: Cube
-  externalObjects: {}
+    2100004: SolidBasket
+    2100006: BasketWire
+    2300000: Cube
+    2300002: Cube.014
+    2300004: Cube.023
+    2300006: handle2.001
+    2300008: //RootNode
+    3300000: Cube
+    3300002: Cube.014
+    3300004: Cube.023
+    3300006: handle2.001
+    3300008: //RootNode
+    4300000: handle2.001
+    4300002: Cube.023
+    4300004: Cube.014
+    4300006: Cube
+    4300008: Basket
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BasketWire
+    second: {fileID: 2100000, guid: 54f6fcad1fc82e441bbc584d0ab0dd1a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SolidBasket
+    second: {fileID: 2100000, guid: c2a58f5dd6c6c0344b0ad9f0fe4e639c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
