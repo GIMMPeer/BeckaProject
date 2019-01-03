@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class VRPaintable : MonoBehaviour
 {
-    public Texture m_MainTexture;
+    public Texture m_MainTexture; //texture can be texture for splat map
 
     private RenderTexture m_RenderTexture;
 	// Use this for initialization
@@ -24,7 +24,7 @@ public class VRPaintable : MonoBehaviour
 
     }
 
-    //merge texture from render texture to main texture
+    //merge texture from render texture to main texture (all on base material, not object material)
     public void SaveTexture(Material baseMaterial)
     { 
         RenderTexture.active = m_RenderTexture; //sets active render texture so tex.ReadPixels can read from that
@@ -54,6 +54,12 @@ public class VRPaintable : MonoBehaviour
     {
         m_MainTexture = texture;
         GetComponent<MeshRenderer>().material.mainTexture = m_MainTexture;
+    }
+
+    public void SetObjectSplatTexture(Texture texture)
+    {
+        m_MainTexture = texture;
+        GetComponent<MeshRenderer>().material.SetTexture("_SplatMap", m_MainTexture);
     }
 
     private void OnDestroy()

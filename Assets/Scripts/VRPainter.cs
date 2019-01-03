@@ -152,16 +152,35 @@ public class VRPainter : MonoBehaviour {
         m_CanvasCamera.targetTexture = m_PaintableRenderTexture;
         m_BaseMaterial.mainTexture = m_PaintingTarget.GetMainTexture();
 
-        m_PaintingTarget.SetObjectMainTexture(m_PaintableRenderTexture); //TODO have function in VRPaintable set main texture to render texture
+        bool isColorable = IsShaderColorable(m_PaintingTarget.gameObject.GetComponent<MeshRenderer>().material); //check if shader used on material is a splat map shader, or a simple colored over shader
+
+        //if objects is normal paintable color main texture, if it is a reveal paint splat map
+        if (isColorable)
+        {
+            m_PaintingTarget.SetObjectMainTexture(m_PaintableRenderTexture);
+        }
+        else
+        {
+            m_PaintingTarget.SetObjectSplatTexture(m_PaintableRenderTexture);
+        }
     }
 
     //sets up scene objects with painting target
     void OnDrawingEnd()
     {
         m_PaintingTargetFound = false;
-        //m_CanvasCamera.targetTexture = null;
-        //m_BaseMaterial.mainTexture = null;
-        m_PaintingTarget.SetObjectMainTexture(m_PaintingTarget.GetMainTexture()); //Main
+
+        bool isColorable = IsShaderColorable(m_PaintingTarget.gameObject.GetComponent<MeshRenderer>().material); //check if shader used on material is a splat map shader, or a simple colored over shader
+
+        //if objects is normal paintable color main texture, if it is a reveal paint splat map
+        if (isColorable)
+        {
+            m_PaintingTarget.SetObjectMainTexture(m_PaintingTarget.GetMainTexture());
+        }
+        else
+        {
+            m_PaintingTarget.SetObjectSplatTexture(m_PaintingTarget.GetMainTexture());
+        }
 
         saving = true;
         StartCoroutine(SaveTexture(true, 0.1f));
@@ -193,14 +212,6 @@ public class VRPainter : MonoBehaviour {
     {
         yield return new WaitForSeconds(waitTime);
         brushCounter = 0;
-        /*
-        RenderTexture.active = m_PaintableRenderTexture; //sets active render texture so tex.ReadPixels can read from that
-        Texture2D tex = new Texture2D(m_PaintableRenderTexture.width, m_PaintableRenderTexture.height, TextureFormat.RGB24, false);
-        tex.ReadPixels(new Rect(0, 0, m_PaintableRenderTexture.width, m_PaintableRenderTexture.height), 0, 0); //reads pixels from render 
-        tex.Apply();
-        RenderTexture.active = null;
-        m_BaseMaterial.mainTexture = tex; //Put the painted texture as the base
-        */
 
         m_PaintingTarget.SaveTexture(m_BaseMaterial);
 
@@ -211,7 +222,7 @@ public class VRPainter : MonoBehaviour {
         //StartCoroutine ("SaveTextureToFile"); //Do you want to save the texture? This is your method!
         Invoke("ShowCursor", 0.1f);
 
-        if (endingDrawing)
+        if (endingDrawing) //TODO this may be entirely unnecessary because these globals are reset anyways OnDrawStart
         {
             m_PaintableRenderTexture = null;
             m_PaintingTarget = null; 
