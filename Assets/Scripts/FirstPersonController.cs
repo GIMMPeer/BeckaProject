@@ -40,7 +40,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private Vector3 m_OriginalCameraPosition;
         private float m_StepCycle;
         private float m_NextStep;
-        private float m_WalkScalar = 1;
+       
+        //resolved merge on a ducking iPAD
+        private float m_WalkScalar = 1.0f;
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
