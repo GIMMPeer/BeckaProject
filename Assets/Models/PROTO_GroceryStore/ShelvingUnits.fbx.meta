@@ -6,10 +6,22 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: None
+    2100002: ShelvingUnit_Brackets
+    2100004: ShelvingUnit_Base
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube.006_Cube.007
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShelvingUnit_Base
+    second: {fileID: 2100000, guid: 35b49f869e503234a8ba4609d717fe53, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ShelvingUnit_Brackets
+    second: {fileID: 2100000, guid: 4f92cb7fa2fc06540bf085b7353c2a5e, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
