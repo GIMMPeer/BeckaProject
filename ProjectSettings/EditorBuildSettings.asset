@@ -41,4 +41,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Testing/Grocery Store/GroceryFinal.unity
     guid: d000ecb5e93de7e4189127f45d0df5e7
+  - enabled: 1
+    path: Assets/Scenes/Testing/Teen Room/M_TeenRoom.unity
+    guid: f33335729559079429ef3c05bb08d4ac
   m_configObjects: {}

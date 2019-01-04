@@ -96,7 +96,7 @@ public class TransitionRoomManager : MonoBehaviour
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GroceryStore;
                 break;
             case GameManager.Room.TeenRoom:
-                SceneTransfer.m_Singleton.m_SceneName = "D-TeenRoom";
+                SceneTransfer.m_Singleton.m_SceneName = "M_TeenRoom";
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.TeenRoom;
                 break;
             case GameManager.Room.DepressionRoom:
