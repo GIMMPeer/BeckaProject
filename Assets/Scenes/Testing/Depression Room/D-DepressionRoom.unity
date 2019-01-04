@@ -1111,8 +1111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: D-Maze
-  m_DestinationRoom: 8
+  m_SceneName: D-TransitionRoom
+  m_DestinationRoom: 6
 --- !u!4 &1728446989
 Transform:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a61f8db4ab714197ab89145031a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MazeSceneName: D-Maze
   m_IsPersistant: 0
   m_CurrentRoom: 0
 --- !u!4 &1947748634

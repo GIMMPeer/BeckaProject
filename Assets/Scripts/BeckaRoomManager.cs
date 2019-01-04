@@ -39,7 +39,10 @@ public class BeckaRoomManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
+            //Debug.Log("Pressing X");
             GameManager.m_Singleton.SetRoomPaintedStatus(true, GameManager.m_Singleton.GetCurrentRoom());
+
+            //Debug.Log(GameManager.m_Singleton.GetRoomStatus(GameManager.m_Singleton.GetCurrentRoom()));
         }
     }
 

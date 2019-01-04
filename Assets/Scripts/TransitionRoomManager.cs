@@ -78,4 +78,35 @@ public class TransitionRoomManager : MonoBehaviour
         }
 
     }
+
+    public void SetDestinationRoom(GameManager.Room room)
+    {
+        switch(room)
+        {
+            case GameManager.Room.DoctorOffice:
+                SceneTransfer.m_Singleton.m_SceneName = "M-Doctor_Main";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DoctorOffice;
+                break;
+            case GameManager.Room.GirlsRoom:
+                SceneTransfer.m_Singleton.m_SceneName = "D-GirlsRoom";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GirlsRoom;
+                break;
+            case GameManager.Room.GroceryStore:
+                SceneTransfer.m_Singleton.m_SceneName = "GroceryFinal";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GroceryStore;
+                break;
+            case GameManager.Room.TeenRoom:
+                SceneTransfer.m_Singleton.m_SceneName = "D-TeenRoom";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.TeenRoom;
+                break;
+            case GameManager.Room.DepressionRoom:
+                SceneTransfer.m_Singleton.m_SceneName = "D-DepressionRoom";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DepressionRoom;
+                break;
+            case GameManager.Room.Bathroom:
+                SceneTransfer.m_Singleton.m_SceneName = "D-Bathroom";
+                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.Bathroom;
+                break;
+        }
+    }
 }

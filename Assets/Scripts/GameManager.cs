@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 //persistent class that holds previous room locations and player's inventory
+
+//TODO make generic Room class that contains important information like scene names and enums
 public class GameManager : MonoBehaviour {
 
     public static GameManager m_Singleton;
