@@ -70,6 +70,7 @@ public class GameManager : MonoBehaviour {
         {
             //player is in transition room
             //SpawnPlayerInMaze();
+            TransitionRoomManager.m_Singleton.ResetAllPaintings();
             TransitionRoomManager.m_Singleton.LoadCompletedPaintings();
         }
     }

@@ -95,6 +95,7 @@ public class BeckaRoomManager : MonoBehaviour
     {
         foreach (PaintingTask task in m_AllPaintingTasks)
         {
+            Debug.Log("Task State: " + task.IsTaskComplete());
             //if any one task is not complete all of them are not complete
             if (!task.IsTaskComplete())
             {

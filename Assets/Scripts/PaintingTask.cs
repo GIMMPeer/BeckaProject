@@ -7,12 +7,6 @@ using UnityEngine;
 public class PaintingTask : MonoBehaviour
 {
     private bool m_IsComplete = false;
-
-    // Use this for initialization
-    void Start ()
-    {
-        m_IsComplete = true; //temporary for testing
-	}
 	
 	// Update is called once per frame
 	void Update ()
@@ -23,5 +17,18 @@ public class PaintingTask : MonoBehaviour
     public bool IsTaskComplete()
     {
         return m_IsComplete;
+    }
+
+    //called when child collider is hit
+    public void UpdatePaintingStatus(GameObject colliderObj)
+    {
+        Destroy(colliderObj);
+
+        Debug.Log("Child count: " + transform.childCount);
+        if (transform.childCount <= 1) //destorying child doesn't update child count immedietely
+        {
+            Debug.Log("Painting Complete");
+            m_IsComplete = true;
+        }
     }
 }

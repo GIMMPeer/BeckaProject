@@ -29,6 +29,11 @@ public class TransitionRoomManager : MonoBehaviour
     {
         m_Singleton = this;
 
+        ResetAllPaintings();
+    }
+
+    public void ResetAllPaintings()
+    {
         //start all painting on wall to be blank
         m_DoctorOfficePainting.mainTexture = null;
         m_GirlsRoomPainting.mainTexture = null;

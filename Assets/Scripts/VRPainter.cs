@@ -10,6 +10,7 @@ public class VRPainter : MonoBehaviour {
     public Transform m_BrushTransform;
     public GameObject m_BrushEntity;
     public Gradient m_Gradient;
+    public float m_BrushSize = 1f;
 
     [Space(5)]
 
@@ -53,7 +54,7 @@ public class VRPainter : MonoBehaviour {
 
         RaycastHit hit;
         Ray cursorRay = new Ray(m_BrushTransform.position, m_BrushTransform.forward);
-        if (Physics.Raycast(cursorRay, out hit, 200, layerMask))
+        if (Physics.Raycast(cursorRay, out hit, 0.2f, layerMask))
         {
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
             uvWorldPosition.x = pixelUV.x - m_CanvasCamera.orthographicSize;//To center the UV on X
@@ -93,6 +94,7 @@ public class VRPainter : MonoBehaviour {
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition;
+            brushObj.transform.localScale *= m_BrushSize;
 
             if (m_PaintingTarget.IsColorable())
             {

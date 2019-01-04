@@ -376,7 +376,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_CurrentRoom: 0
+  m_CurrentRoom: 6
 --- !u!4 &52908387
 Transform:
   m_ObjectHideFlags: 0
@@ -994,6 +994,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 7
     m_NumAlphaKeys: 2
+  m_BrushSize: 1
   m_BrushContainer: {fileID: 2096008035}
   m_CanvasCamera: {fileID: 841623105}
   m_BaseMaterial: {fileID: 2100000, guid: 9d82781d0d9f57d4d8a05e84f6bb8706, type: 2}
