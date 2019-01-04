@@ -29,7 +29,7 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Start()
     {
-        if (m_AllPaintingTasks.Length > 0)
+        if (m_AllRoomTasks.Length > 0)
         {
             m_AllRoomTasks[0].Task.StartTask();
         }

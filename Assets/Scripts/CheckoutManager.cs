@@ -114,7 +114,9 @@ public class CheckoutManager : MonoBehaviour {
         if(itemsFulfilled >= totalNeeded)
         {
             Debug.Log("You win!");
-            //User has put all required items into basket 
+            //User has put all required items into basket
+
+            GetComponent<RoomTask>().FinishTask();
         }
     }
 }

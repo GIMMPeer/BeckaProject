@@ -40,8 +40,6 @@ public class TransitionRoomManager : MonoBehaviour
 
     public void LoadCompletedPaintings()
     {
-        Debug.Log("Load Completed Paintings");
-
         bool doctorStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.DoctorOffice);
         bool girlsStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.GirlsRoom);
         bool groceryStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.GroceryStore);
