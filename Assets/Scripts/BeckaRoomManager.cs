@@ -12,6 +12,9 @@ public class BeckaRoomManager : MonoBehaviour
     //holds all tasks required to complete room
     public RoomTaskHolder[] m_AllRoomTasks;
 
+    //holds all tasks required to complete room
+    public PaintingTask[] m_AllPaintingTasks;
+
     //event triggered when all tasks completed
     public UnityEvent m_AllTasksCompleted;
 
@@ -26,7 +29,21 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Start()
     {
-        m_AllRoomTasks[0].Task.StartTask();
+        if (m_AllRoomTasks.Length > 0)
+        {
+            m_AllRoomTasks[0].Task.StartTask();
+        }
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            //Debug.Log("Pressing X");
+            GameManager.m_Singleton.SetRoomPaintedStatus(true, GameManager.m_Singleton.GetCurrentRoom());
+
+            //Debug.Log(GameManager.m_Singleton.GetRoomStatus(GameManager.m_Singleton.GetCurrentRoom()));
+        }
     }
 
     public void StartNextTask()
@@ -37,6 +54,13 @@ public class BeckaRoomManager : MonoBehaviour
         {
             Debug.Log("All tasks done");
             //move to next scene
+
+            if (AreAllPaintingTasksCompleted())
+            {
+                //set that all paintings in room have been completed
+                GameManager.m_Singleton.SetRoomPaintedStatus(true, GameManager.m_Singleton.GetCurrentRoom());
+            }
+
             m_AllTasksCompleted.Invoke();
             return;
         }
@@ -68,6 +92,21 @@ public class BeckaRoomManager : MonoBehaviour
         {
             return false;
         }
+    }
+
+    private bool AreAllPaintingTasksCompleted()
+    {
+        foreach (PaintingTask task in m_AllPaintingTasks)
+        {
+            Debug.Log("Task State: " + task.IsTaskComplete());
+            //if any one task is not complete all of them are not complete
+            if (!task.IsTaskComplete())
+            {
+                return false;
+            }
+        }
+
+        return true;
     }
 }
 

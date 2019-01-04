@@ -10,6 +10,7 @@ ModelImporter:
     100008: Bone.002_end
     100010: Plane
     100012: //RootNode
+    100014: Bone.002_end_end
     400000: Armature
     400002: Bone
     400004: Bone.001
@@ -17,11 +18,30 @@ ModelImporter:
     400008: Bone.002_end
     400010: Plane
     400012: //RootNode
+    400014: Bone.002_end_end
     2100000: No Name
+    2100002: Chrome
+    2100004: Hanger
+    2100006: Shirt
     4300000: Plane
     9500000: //RootNode
     13700000: Plane
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Chrome
+    second: {fileID: 2100000, guid: 29d2b5cfd83efcf4cbaf8658f659a00f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Hanger
+    second: {fileID: 2100000, guid: e66d45a1ce4d2514889b075d85a8d86a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shirt
+    second: {fileID: 2100000, guid: 8b37eefd77d661f44aca6c11377ab1ae, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

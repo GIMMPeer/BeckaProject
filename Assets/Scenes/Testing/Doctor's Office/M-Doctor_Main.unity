@@ -1161,7 +1161,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a61f8db4ab714197ab89145031a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MazeSceneName: D-Maze
   m_IsPersistant: 0
   m_CurrentRoom: 0
 --- !u!4 &371975357
@@ -7464,6 +7463,7 @@ MonoBehaviour:
   - Name: Touching Scale
     Description: Touch scale
     Task: {fileID: 395391265}
+  m_AllPaintingTasks: []
   m_AllTasksCompleted:
     m_PersistentCalls:
       m_Calls:
@@ -8542,8 +8542,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: M_GirlsRoom
-  m_DestinationRoom: 0
+  m_SceneName: D-GirlsRoom
+  m_DestinationRoom: 1
 --- !u!4 &2142312039
 Transform:
   m_ObjectHideFlags: 0

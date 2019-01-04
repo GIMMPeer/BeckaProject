@@ -6,10 +6,23 @@ ModelImporter:
     100000: //RootNode
     400000: //RootNode
     2100000: Material
+    2100002: Basket
+    2100004: Steel
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube
-  externalObjects: {}
+    4300002: Cube.002
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Basket
+    second: {fileID: 2100000, guid: cf1a737e73fae304794b15a922d0d8cd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Steel
+    second: {fileID: 2100000, guid: e3751cf75d7279849b2478bc631e6d7c, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
