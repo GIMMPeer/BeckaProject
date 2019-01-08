@@ -23,6 +23,14 @@ public class TransitionRoomManager : MonoBehaviour
     public Texture2D m_TeenRoomPaintingTex;
     public Texture2D m_DepressionRoomPaintingTex;
     public Texture2D m_BathroomPaintingTex;
+
+    [Header("Room Scene Names")]
+    public string m_DoctorOfficeSceneName;
+    public string m_GirlsRoomSceneName;
+    public string m_GroceryStoreSceneName;
+    public string m_TeenRoomSceneName;
+    public string m_DepressionSceneName;
+    public string m_BathroomSceneName;
     // Use this for initialization
 
     private void Awake()
@@ -81,32 +89,51 @@ public class TransitionRoomManager : MonoBehaviour
 
     public void SetDestinationRoom(GameManager.Room room)
     {
-        switch(room)
+        switch (room)
         {
             case GameManager.Room.DoctorOffice:
-                SceneTransfer.m_Singleton.m_SceneName = "M-Doctor_Main";
+                SceneTransfer.m_Singleton.m_SceneName = m_DoctorOfficeSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DoctorOffice;
                 break;
             case GameManager.Room.GirlsRoom:
-                SceneTransfer.m_Singleton.m_SceneName = "D-GirlsRoom";
+                SceneTransfer.m_Singleton.m_SceneName = m_GirlsRoomSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GirlsRoom;
                 break;
             case GameManager.Room.GroceryStore:
-                SceneTransfer.m_Singleton.m_SceneName = "GroceryFinal";
+                SceneTransfer.m_Singleton.m_SceneName = m_GroceryStoreSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GroceryStore;
                 break;
             case GameManager.Room.TeenRoom:
-                SceneTransfer.m_Singleton.m_SceneName = "M_TeenRoom";
+                SceneTransfer.m_Singleton.m_SceneName = m_TeenRoomSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.TeenRoom;
                 break;
             case GameManager.Room.DepressionRoom:
-                SceneTransfer.m_Singleton.m_SceneName = "D-DepressionRoom";
+                SceneTransfer.m_Singleton.m_SceneName = m_DepressionSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DepressionRoom;
                 break;
             case GameManager.Room.Bathroom:
-                SceneTransfer.m_Singleton.m_SceneName = "D-Bathroom";
+                SceneTransfer.m_Singleton.m_SceneName = m_BathroomSceneName;
                 SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.Bathroom;
                 break;
         }
+    }
+
+    //looks at completed rooms and returns next room in sequence
+    private GameManager.Room FindNextDestinationRoom()
+    {
+        //loop through all 6 rooms
+        for (int i = 0; i < 6; i++)
+        {
+            GameManager.Room room = (GameManager.Room)i;
+            bool roomStatus = GameManager.m_Singleton.GetRoomStatus(room);
+
+            if (!roomStatus)
+            {
+                return room;
+            }
+
+        }
+
+        return GameManager.Room.TransitionRoom;
     }
 }

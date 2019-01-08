@@ -129,3 +129,13 @@ public class GameManager : MonoBehaviour {
     }
 
 }
+
+
+public class RoomContainer
+{
+    public string m_SceneName;
+    public GameManager.Room m_DestinationRoom;
+    public GameManager.Room m_NextRoom;
+
+    public bool m_IsComplete;
+}

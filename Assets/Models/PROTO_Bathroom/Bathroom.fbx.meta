@@ -10,6 +10,11 @@ ModelImporter:
     2100004: Bath_Ceiling
     2100006: Bath_Floor
     2100008: Bath_Wall
+    2100010: Bath_Knob.001
+    2100012: Bath_Door.001
+    2100014: Bath_Ceiling.001
+    2100016: Bath_Floor.001
+    2100018: Bath_Wall.001
     2300000: //RootNode
     3300000: //RootNode
     4300000: Cube

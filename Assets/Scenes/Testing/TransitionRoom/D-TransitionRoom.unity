@@ -248,6 +248,12 @@ MonoBehaviour:
     type: 3}
   m_BathroomPaintingTex: {fileID: 2800000, guid: 7982f5054d2bb9c41b901855edc2b359,
     type: 3}
+  m_DoctorOfficeSceneName: M-Doctor_Main
+  m_GirlsRoomSceneName: D-GirlsRoom
+  m_GroceryStoreSceneName: GroceryFinal
+  m_TeenRoomSceneName: M_TeenRoom
+  m_DepressionSceneName: D-DepressionRoom
+  m_BathroomSceneName: D-Bathroom
 --- !u!4 &2935794
 Transform:
   m_ObjectHideFlags: 0
