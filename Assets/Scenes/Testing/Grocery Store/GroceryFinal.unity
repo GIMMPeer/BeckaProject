@@ -2493,6 +2493,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_ItemType: 7
   m_IsPaintedOver: 1
+--- !u!1 &251931378 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 101112, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 254599249}
+--- !u!114 &251931379
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 251931378}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9da6197443fbd146ba56e7e356171c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OtherHandLocker: {fileID: 431107681}
+  m_PositionOffset: {x: 0, y: -0.55, z: 0}
+  m_RotationOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &254599249
 Prefab:
   m_ObjectHideFlags: 0
@@ -2501,6 +2520,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 11419036, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.size
       value: 1
       objectReference: {fileID: 0}
@@ -2599,6 +2622,26 @@ Prefab:
     - target: {fileID: 104806, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_Layer
       value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 251931379}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnStartGrabbing
+      objectReference: {fileID: 0}
+    - target: {fileID: 11464396, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: OnBeginInteraction.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 92000013402849364, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
@@ -4675,6 +4718,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9da6197443fbd146ba56e7e356171c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_OtherHandLocker: {fileID: 251931379}
   m_PositionOffset: {x: 0, y: -0.55, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1001 &438025286
