@@ -1133,7 +1133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec3e226c15b7e64ba6fb2e947c8bcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BrushTransform: {fileID: 337657851}
+  m_LBrushTransform: {fileID: 337657851}
+  m_RBrushTransform: {fileID: 337657852}
   m_BrushEntity: {fileID: 1752579909894158, guid: a6da98d587c91bb4391a64a4a29ccc45,
     type: 2}
   m_Gradient:
@@ -1172,6 +1173,11 @@ MonoBehaviour:
 --- !u!4 &337657851 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 449252, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 337657843}
+--- !u!4 &337657852 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403292, guid: b0047dd65ff208349bf3a5aaaeae24d0,
     type: 2}
   m_PrefabInternal: {fileID: 337657843}
 --- !u!1 &379187628
