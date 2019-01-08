@@ -7,133 +7,92 @@ public class TransitionRoomManager : MonoBehaviour
 {
     public static TransitionRoomManager m_Singleton;
 
-    //TODO make these into arrays or make a large scale class that always has these 6 items 
-    [Header("Painting Materials")]
-    public Material m_DoctorOfficePainting;
-    public Material m_GirlsRoomPainting;
-    public Material m_GroceryStorePainting;
-    public Material m_TeenRoomPainting;
-    public Material m_DepressionRoomPainting;
-    public Material m_BathroomPainting;
+    public DestinationRoomButton m_DocOfficeBtn;
+    public DestinationRoomButton m_GirlRoomBtn;
+    public DestinationRoomButton m_GroceryStoreBtn;
+    public DestinationRoomButton m_TeenRoomBtn;
+    public DestinationRoomButton m_DepressionRoomBtn;
+    public DestinationRoomButton m_DocOfficeRevisitBtn;
+    public DestinationRoomButton m_BathroomBtn;
 
-    [Header("Painting Textures")]
-    public Texture2D m_DoctorOfficePaintingTex;
-    public Texture2D m_GirlsRoomPaintingTex;
-    public Texture2D m_GroceryStorePaintingTex;
-    public Texture2D m_TeenRoomPaintingTex;
-    public Texture2D m_DepressionRoomPaintingTex;
-    public Texture2D m_BathroomPaintingTex;
-
-    [Header("Room Scene Names")]
-    public string m_DoctorOfficeSceneName;
-    public string m_GirlsRoomSceneName;
-    public string m_GroceryStoreSceneName;
-    public string m_TeenRoomSceneName;
-    public string m_DepressionSceneName;
-    public string m_BathroomSceneName;
-    // Use this for initialization
+    private RoomContainer[] m_AllRooms;
 
     private void Awake()
     {
         m_Singleton = this;
 
+        Invoke("LateStart", 0.5f);
+    }
+
+    private void LateStart()
+    {
+        m_AllRooms = GameManager.m_Singleton.GetAllRoomContainers();
+
         ResetAllPaintings();
+
+        LoadRoomInfo();
     }
 
     public void ResetAllPaintings()
     {
-        //start all painting on wall to be blank
-        m_DoctorOfficePainting.mainTexture = null;
-        m_GirlsRoomPainting.mainTexture = null;
-        m_GroceryStorePainting.mainTexture = null;
-        m_TeenRoomPainting.mainTexture = null;
-        m_DepressionRoomPainting.mainTexture = null;
-        m_BathroomPainting.mainTexture = null;
+        foreach (RoomContainer container in m_AllRooms)
+        {
+            container.m_CanvasMaterial.mainTexture = null;
+        }
     }
 
-    public void LoadCompletedPaintings()
+    //loads textures and destination buttton data from gamemanager into transition room objects
+    public void LoadRoomInfo()
     {
-        bool doctorStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.DoctorOffice);
-        bool girlsStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.GirlsRoom);
-        bool groceryStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.GroceryStore);
-        bool teenStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.TeenRoom);
-        bool depressionStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.DepressionRoom);
-        bool bathroomStatus = GameManager.m_Singleton.GetRoomStatus(GameManager.Room.Bathroom);
+        foreach (RoomContainer container in m_AllRooms)
+        {
+            //if room has not been painted, and we are not looking at the transition room
+            if (container.m_IsComplete && container.m_NextRoom != GameManager.Room.TransitionRoom)
+            {
+                Debug.Log("Name: " + container.m_Name + " Completeness: " + container.m_NextRoom);
 
-        if (doctorStatus)
-        {
-            m_DoctorOfficePainting.mainTexture = m_DoctorOfficePaintingTex;
-        }
-        if (girlsStatus)
-        {
-            m_GirlsRoomPainting.mainTexture = m_GirlsRoomPaintingTex;
-        }
-        if (groceryStatus)
-        {
-            m_GroceryStorePainting.mainTexture = m_GroceryStorePaintingTex;
-        }
-        if (teenStatus)
-        {
-            m_TeenRoomPainting.mainTexture = m_TeenRoomPaintingTex;
-        }
-        if (depressionStatus)
-        {
-            m_DepressionRoomPainting.mainTexture = m_DepressionRoomPaintingTex;
-        }
-        if (bathroomStatus)
-        {
-            m_BathroomPainting.mainTexture = m_BathroomPaintingTex;
-        }
+                container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
 
+                DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
+                button.SetupButton(container.m_NextSceneName, container.m_NextRoom); //feeds the scene name info and room enum to buttons
+
+                button.gameObject.SetActive(true);
+            }
+        }
     }
 
-    public void SetDestinationRoom(GameManager.Room room)
-    {
-        switch (room)
+    private DestinationRoomButton GetDestinationButton(GameManager.Room room)
+    { 
+        DestinationRoomButton btn = null;
+        switch(room)
         {
             case GameManager.Room.DoctorOffice:
-                SceneTransfer.m_Singleton.m_SceneName = m_DoctorOfficeSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DoctorOffice;
+                btn = m_DocOfficeBtn;
                 break;
             case GameManager.Room.GirlsRoom:
-                SceneTransfer.m_Singleton.m_SceneName = m_GirlsRoomSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GirlsRoom;
+                btn = m_GirlRoomBtn;
                 break;
             case GameManager.Room.GroceryStore:
-                SceneTransfer.m_Singleton.m_SceneName = m_GroceryStoreSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.GroceryStore;
+                btn = m_GroceryStoreBtn;
                 break;
             case GameManager.Room.TeenRoom:
-                SceneTransfer.m_Singleton.m_SceneName = m_TeenRoomSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.TeenRoom;
+                btn = m_TeenRoomBtn;
                 break;
             case GameManager.Room.DepressionRoom:
-                SceneTransfer.m_Singleton.m_SceneName = m_DepressionSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.DepressionRoom;
+                btn = m_DepressionRoomBtn;
+                break;
+            case GameManager.Room.DoctorOfficeRevisit:
+                btn = m_DocOfficeRevisitBtn;
                 break;
             case GameManager.Room.Bathroom:
-                SceneTransfer.m_Singleton.m_SceneName = m_BathroomSceneName;
-                SceneTransfer.m_Singleton.m_DestinationRoom = GameManager.Room.Bathroom;
+                btn = m_BathroomBtn;
+                break;
+            default:
+                Debug.Log(room);
+                Debug.LogError("Enum sent into Get Destination Button doesn't have a case");
                 break;
         }
-    }
 
-    //looks at completed rooms and returns next room in sequence
-    private GameManager.Room FindNextDestinationRoom()
-    {
-        //loop through all 6 rooms
-        for (int i = 0; i < 6; i++)
-        {
-            GameManager.Room room = (GameManager.Room)i;
-            bool roomStatus = GameManager.m_Singleton.GetRoomStatus(room);
-
-            if (!roomStatus)
-            {
-                return room;
-            }
-
-        }
-
-        return GameManager.Room.TransitionRoom;
+        return btn;
     }
 }
