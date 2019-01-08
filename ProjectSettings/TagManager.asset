@@ -17,9 +17,9 @@ TagManager:
   - 
   - 
   - Drawable
-  - 
-  - 
-  - 
+  - Player
+  - Interactable
+  - Obstacles
   - 
   - 
   - 
