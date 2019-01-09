@@ -48,7 +48,7 @@ public class TransitionRoomManager : MonoBehaviour
         {
             //if room has not been painted, and we are not looking at the transition room
             //sets painting to be filled and buttons to be active per room
-            if (container.m_NextRoom != GameManager.Room.TransitionRoom)
+            if (container.m_NextRoom == GameManager.Room.TransitionRoom)
             {
                 Debug.LogError("Transition room should never be used as m_NextRoom for container");
                 return;
