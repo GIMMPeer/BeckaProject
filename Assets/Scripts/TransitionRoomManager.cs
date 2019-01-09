@@ -47,10 +47,15 @@ public class TransitionRoomManager : MonoBehaviour
         foreach (RoomContainer container in m_AllRooms)
         {
             //if room has not been painted, and we are not looking at the transition room
-            if (container.m_IsComplete && container.m_NextRoom != GameManager.Room.TransitionRoom)
+            //sets painting to be filled and buttons to be active per room
+            if (container.m_NextRoom != GameManager.Room.TransitionRoom)
             {
-                Debug.Log("Name: " + container.m_Name + " Completeness: " + container.m_NextRoom);
+                Debug.LogError("Transition room should never be used as m_NextRoom for container");
+                return;
+            }
 
+            if (container.m_IsComplete)
+            {
                 container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
 
                 DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
