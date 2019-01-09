@@ -34,6 +34,7 @@ public class AudioInteractable : MonoBehaviour {
             if (Time.time - m_AnimationStartTime >= 3f)
             {
                 Destroy(m_CurrentDistortionSphere);
+                Debug.Log(m_CurrentDistortionSphere);
                 m_CurrentDistortionSphere = null;
                 m_SphereIsAnimating = false;
             }
