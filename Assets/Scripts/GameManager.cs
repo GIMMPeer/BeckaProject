@@ -8,10 +8,7 @@ using UnityEngine.SceneManagement;
 //TODO make generic Room class that contains important information like scene names and enums
 public class GameManager : MonoBehaviour {
 
-    public static GameManager m_Singleton;
-
-    //TODO don't have maze rooms, just have normal rooms and keep track of previous rooms for simplicity
-    //Room enum MUST BE IN ORDER OF COMPLETION
+    //change name of room to roomnames
     public enum Room
     {
         DoctorOffice,
@@ -20,23 +17,21 @@ public class GameManager : MonoBehaviour {
         TeenRoom,
         DepressionRoom,
         Bathroom,
+        DoctorOfficeRevisit,
         TransitionRoom
     }
+
+    public static GameManager m_Singleton;
 
     [HideInInspector]
     public bool m_IsPersistant = false;
 
-    [SerializeField]
-    private Room m_CurrentRoom;
+    public RoomContainer[] m_AllRooms;
 
-    private Room m_PreviousRoom;
-
-    private bool[] m_RoomsPainted; //array that holds each room status in order as a bool (DoctorOffice = 0, TransitionRoom = 6)
-
-    private NewtonVR.NVRPlayer m_Player;
+    private RoomContainer m_CurrentRoomContainer;
+    private RoomContainer m_NextRoomContainer;
 
     //start is not called on loading into scene
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -47,14 +42,19 @@ public class GameManager : MonoBehaviour {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void Awake()
+    public void SetRoomPaintedStatus(bool status)
     {
-        m_RoomsPainted = new bool[7]; //7 rooms total
+        m_CurrentRoomContainer.m_IsComplete = true;
+    }
 
-        for (int i = 0; i < m_RoomsPainted.Length; i++) //initialize all rooms status to false when starting game
-        {
-            m_RoomsPainted[i] = false;
-        }
+    public RoomContainer GetCurrentRoomContainer()
+    {
+        return m_CurrentRoomContainer;
+    }
+
+    public RoomContainer[] GetAllRoomContainers()
+    {
+        return m_AllRooms;
     }
 
     //On loaded sets up persistence and spawns player in maze
@@ -67,35 +67,10 @@ public class GameManager : MonoBehaviour {
             return;
         }
 
-        m_Player = FindObjectOfType<NewtonVR.NVRPlayer>();
-        if (m_CurrentRoom == Room.TransitionRoom)
-        {
-            //player is in transition room
-            //SpawnPlayerInMaze();
-            TransitionRoomManager.m_Singleton.ResetAllPaintings();
-            TransitionRoomManager.m_Singleton.LoadCompletedPaintings();
-        }
-    }
+        if (m_NextRoomContainer == null) return;
 
-    public Room GetCurrentRoom()
-    {
-        return m_CurrentRoom;
-    }
-
-    public void SetCurrentRoom(Room room)
-    {
-        m_PreviousRoom = m_CurrentRoom;
-        m_CurrentRoom = room;
-    }
-
-    public void SetRoomPaintedStatus(bool status, Room room)
-    {
-        m_RoomsPainted[(int)room] = status;
-    }
-
-    public bool GetRoomStatus(Room room)
-    {
-        return m_RoomsPainted[(int)room];
+        m_CurrentRoomContainer = m_NextRoomContainer; //when we load into new scene next room is now current room
+        Debug.Log("Current Room: " + m_CurrentRoomContainer.m_Name); 
     }
 
     private void SetupPersistance()
@@ -120,12 +95,32 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
-    //goes to maze manager and spawns player in maze based on room
-    private void SpawnPlayerInMaze()
+    public void SetNextRoom(Room room)
     {
-        Transform t = MazeManager.m_Singleton.GetSpawnLocation(m_CurrentRoom);
-        m_Player.transform.position = t.position;
-        m_Player.transform.rotation = t.rotation;
+        foreach (RoomContainer container in m_AllRooms)
+        {
+            if (room == container.m_Room)
+            {
+                m_NextRoomContainer = container;
+                Debug.Log("Next Room: " + m_NextRoomContainer.m_Name);
+            }
+        }
     }
 
+}
+
+//switch all properities to private, as nothing should be able to be changed
+[System.Serializable]
+public class RoomContainer
+{
+    public string m_Name;
+    public string m_SceneName;
+    public string m_NextSceneName;
+    public GameManager.Room m_Room;
+    public GameManager.Room m_NextRoom;
+
+    public Texture2D m_PaintingTexture;
+    public Material m_CanvasMaterial; //transition room canvas material, associated with each room
+
+    public bool m_IsComplete = false; //room is complete if all painting have been painted
 }

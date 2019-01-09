@@ -39,10 +39,10 @@ public class BeckaRoomManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.X))
         {
-            //Debug.Log("Pressing X");
-            GameManager.m_Singleton.SetRoomPaintedStatus(true, GameManager.m_Singleton.GetCurrentRoom());
+            GameManager.m_Singleton.SetRoomPaintedStatus(true);
+            RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
+            GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
 
-            //Debug.Log(GameManager.m_Singleton.GetRoomStatus(GameManager.m_Singleton.GetCurrentRoom()));
         }
     }
 
@@ -58,7 +58,9 @@ public class BeckaRoomManager : MonoBehaviour
             if (AreAllPaintingTasksCompleted())
             {
                 //set that all paintings in room have been completed
-                GameManager.m_Singleton.SetRoomPaintedStatus(true, GameManager.m_Singleton.GetCurrentRoom());
+                GameManager.m_Singleton.SetRoomPaintedStatus(true);
+                RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
+                GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
             }
 
             m_AllTasksCompleted.Invoke();
@@ -107,6 +109,15 @@ public class BeckaRoomManager : MonoBehaviour
         }
 
         return true;
+    }
+
+    //TODO make end room take into account painting status
+    //Currently not called
+    private void EndRoom()
+    {
+        GameManager.m_Singleton.SetRoomPaintedStatus(true);
+        RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
+        GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
     }
 }
 
