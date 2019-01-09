@@ -378,17 +378,17 @@ MonoBehaviour:
     m_NextRoom: 2
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 2f485f09b9491d64996eafe409820cd7, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Grocery Store
     m_SceneName: GroceryFinal
-    m_NextSceneName: M_TeenRoom
+    m_NextSceneName: D-TeenRoom
     m_Room: 2
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 08d0bc4835591fb449ff933f2f968699, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 335d7cea6e00a6d4292e92edab27e4ec, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Teen's Room
-    m_SceneName: M_TeenRoom
+    m_SceneName: D-TeenRoom
     m_NextSceneName: D-DepressionRoom
     m_Room: 3
     m_NextRoom: 4
@@ -1164,7 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: e3440b7bbf5837a499bfe85023848d26, type: 2}
+  profile: {fileID: 11400000, guid: ad49058427ba7db4cb4fb5bb681b74ab, type: 2}
 --- !u!114 &337657850
 MonoBehaviour:
   m_ObjectHideFlags: 0
