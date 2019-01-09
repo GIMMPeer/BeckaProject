@@ -308,7 +308,7 @@ MonoBehaviour:
     m_NextRoom: 4
     m_PaintingTexture: {fileID: 2800000, guid: e091b48a42f717d42831fb8ef54ed5ef, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Depression Room
     m_SceneName: D-DepressionRoom
     m_NextSceneName: M-Doctor_Main
@@ -316,7 +316,7 @@ MonoBehaviour:
     m_NextRoom: 6
     m_PaintingTexture: {fileID: 2800000, guid: d4d0d4e018c47b940b92a622be1bf5a2, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 00f90f14160b7a047b7c2458f607b73b, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Doctor's Office Revisited
     m_SceneName: M-Doctor_Main
     m_NextSceneName: D-Bathroom
@@ -324,7 +324,7 @@ MonoBehaviour:
     m_NextRoom: 5
     m_PaintingTexture: {fileID: 2800000, guid: c1bd55542f7576346be0c5b5c20dcdd0, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Bathroom
     m_SceneName: D-Bathroom
     m_NextSceneName: D-Transition
