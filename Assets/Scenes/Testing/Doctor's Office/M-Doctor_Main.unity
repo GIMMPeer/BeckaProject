@@ -7467,8 +7467,8 @@ MonoBehaviour:
   m_AllTasksCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2142312038}
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 2142312040}
+        m_MethodName: StartTransition
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
