@@ -849,7 +849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_CurrentRoom: 1
+  m_AllRooms: []
 --- !u!4 &287974738
 Transform:
   m_ObjectHideFlags: 0
@@ -1108,6 +1108,8 @@ GameObject:
   m_Component:
   - component: {fileID: 496182204}
   - component: {fileID: 496182203}
+  - component: {fileID: 496182205}
+  - component: {fileID: 496182206}
   m_Layer: 0
   m_Name: SceneTransfer
   m_TagString: Untagged
@@ -1127,7 +1129,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: D-TransitionRoom
-  m_DestinationRoom: 6
 --- !u!4 &496182204
 Transform:
   m_ObjectHideFlags: 0
@@ -1141,6 +1142,90 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &496182205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496182202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a3d55713256242892b37123aab6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnBloomComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 496182206}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_PP: {fileID: 11400000, guid: 997312a130e1c9d49b8d5ca6c8f286ef, type: 2}
+  m_LightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Duration: 5
+  m_IntensityGoal: 6.07
+  m_ThresholdGoal: 0.96
+  m_InverseBloom: 0
+--- !u!114 &496182206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 496182202}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 496182205}
+        m_MethodName: StartTransition
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_DelayTime: 0
 --- !u!1 &505975194
 GameObject:
   m_ObjectHideFlags: 0
@@ -1410,7 +1495,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcf187beb900f3c409bbee4cd28e93ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_AllRoomTasks: []
+  m_AllRoomTasks:
+  - Name: Lerp from Brightness
+    Description: 
+    Task: {fileID: 496182206}
   m_AllPaintingTasks: []
   m_AllTasksCompleted:
     m_PersistentCalls:

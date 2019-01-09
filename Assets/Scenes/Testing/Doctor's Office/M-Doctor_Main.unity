@@ -1162,7 +1162,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_CurrentRoom: 0
+  m_AllRooms: []
 --- !u!4 &371975357
 Transform:
   m_ObjectHideFlags: 0
@@ -8524,6 +8524,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142312039}
   - component: {fileID: 2142312038}
+  - component: {fileID: 2142312040}
   m_Layer: 0
   m_Name: SceneTransfer
   m_TagString: Untagged
@@ -8543,7 +8544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: D-GirlsRoom
-  m_DestinationRoom: 1
 --- !u!4 &2142312039
 Transform:
   m_ObjectHideFlags: 0
@@ -8557,6 +8557,62 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2142312040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2142312037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab5a3d55713256242892b37123aab6d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_OnBloomComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2142312038}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_PP: {fileID: 11400000, guid: e3440b7bbf5837a499bfe85023848d26, type: 2}
+  m_LightCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  m_Duration: 5
+  m_IntensityGoal: 100
+  m_ThresholdGoal: 0
+  m_InverseBloom: 0
 --- !u!1 &2143941596
 GameObject:
   m_ObjectHideFlags: 0
