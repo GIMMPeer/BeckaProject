@@ -31,6 +31,11 @@ public class GameManager : MonoBehaviour {
     private RoomContainer m_CurrentRoomContainer;
     private RoomContainer m_NextRoomContainer;
 
+    private void Start()
+    {
+        m_CurrentRoomContainer = m_AllRooms[0];
+    }
+
     //start is not called on loading into scene
     private void OnEnable()
     {

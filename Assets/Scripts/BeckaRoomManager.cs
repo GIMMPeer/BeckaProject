@@ -58,6 +58,7 @@ public class BeckaRoomManager : MonoBehaviour
             if (AreAllPaintingTasksCompleted())
             {
                 //set that all paintings in room have been completed
+                //queue up next room in gamemanager
                 GameManager.m_Singleton.SetRoomPaintedStatus(true);
                 RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
                 GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);

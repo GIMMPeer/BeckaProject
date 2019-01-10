@@ -15,6 +15,8 @@ public class TransitionRoomManager : MonoBehaviour
     public DestinationRoomButton m_DocOfficeRevisitBtn;
     public DestinationRoomButton m_BathroomBtn;
 
+    public bool m_AutoQueueNextRoom = false;
+
     private RoomContainer[] m_AllRooms;
 
     private void Awake()
@@ -63,6 +65,14 @@ public class TransitionRoomManager : MonoBehaviour
 
                 button.gameObject.SetActive(true);
             }
+        }
+
+        if (m_AutoQueueNextRoom)
+        {
+            //confused about this a bit
+            //when loading back into tranistion scene, the current roomcontainer is actually next room to be loaded
+            //therefore to autoqueue just assign scene transfer to gamemanagers current (on deck) room container
+            SceneTransfer.m_Singleton.m_SceneName = GameManager.m_Singleton.GetCurrentRoomContainer().m_SceneName;
         }
     }
 
