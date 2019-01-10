@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+[RequireComponent(typeof(MeshCollider))]
 public class VRPaintable : MonoBehaviour
 {
     [Header("Shaders")]
