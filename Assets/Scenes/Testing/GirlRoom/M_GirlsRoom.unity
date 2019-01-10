@@ -542,6 +542,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 92000013402849364, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+    - {fileID: 114554018378664614, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &266826315 stripped
@@ -2403,9 +2404,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a61f8db4ab714197ab89145031a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_MazeSceneName: D-Maze
   m_IsPersistant: 0
-  m_CurrentRoom: 1
+  m_AllRooms: []
 --- !u!4 &976792419
 Transform:
   m_ObjectHideFlags: 0
@@ -3899,7 +3899,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: D-Maze
-  m_DestinationRoom: 2
 --- !u!1 &1706671863
 GameObject:
   m_ObjectHideFlags: 0
