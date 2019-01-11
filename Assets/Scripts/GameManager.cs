@@ -9,7 +9,7 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour {
 
     //change name of room to roomnames
-    public enum Room
+    public enum RoomNames
     {
         DoctorOffice,
         GirlsRoom,
@@ -100,7 +100,7 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
-    public void SetNextRoom(Room room)
+    public void SetNextRoom(RoomNames room)
     {
         foreach (RoomContainer container in m_AllRooms)
         {
@@ -121,8 +121,8 @@ public class RoomContainer
     public string m_Name;
     public string m_SceneName;
     public string m_NextSceneName;
-    public GameManager.Room m_Room;
-    public GameManager.Room m_NextRoom;
+    public GameManager.RoomNames m_Room;
+    public GameManager.RoomNames m_NextRoom;
 
     public Texture2D m_PaintingTexture;
     public Material m_CanvasMaterial; //transition room canvas material, associated with each room

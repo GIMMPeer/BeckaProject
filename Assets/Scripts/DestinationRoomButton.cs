@@ -6,9 +6,9 @@ using UnityEngine;
 public class DestinationRoomButton : MonoBehaviour {
 
     public string m_SceneName;
-    public GameManager.Room m_Room;
+    public GameManager.RoomNames m_Room;
 
-    public void SetupButton(string sceneName, GameManager.Room room)
+    public void SetupButton(string sceneName, GameManager.RoomNames room)
     {
         m_SceneName = sceneName;
         m_Room = room;

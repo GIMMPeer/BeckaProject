@@ -50,7 +50,7 @@ public class TransitionRoomManager : MonoBehaviour
         {
             //if room has not been painted, and we are not looking at the transition room
             //sets painting to be filled and buttons to be active per room
-            if (container.m_NextRoom == GameManager.Room.TransitionRoom)
+            if (container.m_NextRoom == GameManager.RoomNames.TransitionRoom)
             {
                 Debug.LogError("Transition room should never be used as m_NextRoom for container");
                 return;
@@ -76,30 +76,30 @@ public class TransitionRoomManager : MonoBehaviour
         }
     }
 
-    private DestinationRoomButton GetDestinationButton(GameManager.Room room)
+    private DestinationRoomButton GetDestinationButton(GameManager.RoomNames room)
     { 
         DestinationRoomButton btn = null;
         switch(room)
         {
-            case GameManager.Room.DoctorOffice:
+            case GameManager.RoomNames.DoctorOffice:
                 btn = m_DocOfficeBtn;
                 break;
-            case GameManager.Room.GirlsRoom:
+            case GameManager.RoomNames.GirlsRoom:
                 btn = m_GirlRoomBtn;
                 break;
-            case GameManager.Room.GroceryStore:
+            case GameManager.RoomNames.GroceryStore:
                 btn = m_GroceryStoreBtn;
                 break;
-            case GameManager.Room.TeenRoom:
+            case GameManager.RoomNames.TeenRoom:
                 btn = m_TeenRoomBtn;
                 break;
-            case GameManager.Room.DepressionRoom:
+            case GameManager.RoomNames.DepressionRoom:
                 btn = m_DepressionRoomBtn;
                 break;
-            case GameManager.Room.DoctorOfficeRevisit:
+            case GameManager.RoomNames.DoctorOfficeRevisit:
                 btn = m_DocOfficeRevisitBtn;
                 break;
-            case GameManager.Room.Bathroom:
+            case GameManager.RoomNames.Bathroom:
                 btn = m_BathroomBtn;
                 break;
             default:
