@@ -2,22 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//gets input from NVR interactable to set room destination
 public class DestinationRoomButton : MonoBehaviour {
 
-    public GameManager.Room m_DestinationRoom;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public string m_SceneName;
+    public GameManager.RoomNames m_Room;
+
+    public void SetupButton(string sceneName, GameManager.RoomNames room)
+    {
+        m_SceneName = sceneName;
+        m_Room = room;
+    }
 
     public void SetDestination()
     {
         Debug.Log("Destination Setting");
-        TransitionRoomManager.m_Singleton.SetDestinationRoom(m_DestinationRoom);
+
+        GameManager.m_Singleton.SetNextRoom(m_Room); //sets next room to teleport to
+
+        SceneTransfer.m_Singleton.m_SceneName = m_SceneName;
     }
 }

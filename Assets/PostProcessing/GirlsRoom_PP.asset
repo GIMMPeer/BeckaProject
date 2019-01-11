@@ -25,9 +25,9 @@ MonoBehaviour:
         motionVectorsResolution: 24
         motionVectorsAmplitude: 64
   fog:
-    m_Enabled: 0
+    m_Enabled: 1
     m_Settings:
-      excludeSkybox: 1
+      excludeSkybox: 0
   antialiasing:
     m_Enabled: 1
     m_Settings:
@@ -42,8 +42,8 @@ MonoBehaviour:
   ambientOcclusion:
     m_Enabled: 1
     m_Settings:
-      intensity: 0.05
-      radius: 1.11
+      intensity: 0.18
+      radius: 4.73
       sampleCount: 10
       downsampling: 1
       forceForwardCompatibility: 0
@@ -100,8 +100,8 @@ MonoBehaviour:
     m_Enabled: 1
     m_Settings:
       bloom:
-        intensity: 6.07
-        threshold: 0.96
+        intensity: 10
+        threshold: 0
         softKnee: 0.744
         radius: 7
         antiFlicker: 1
@@ -121,11 +121,11 @@ MonoBehaviour:
         neutralWhiteClip: 10
       basic:
         postExposure: 0
-        temperature: 19.2
+        temperature: 22
         tint: 0
         hueShift: 0
-        saturation: 1.165
-        contrast: 1
+        saturation: 1.16
+        contrast: 1.1
       channelMixer:
         red: {x: 1, y: 0, z: 0}
         green: {x: 0, y: 1, z: 0}
@@ -158,8 +158,8 @@ MonoBehaviour:
             - serializedVersion: 3
               time: 1
               value: 1
-              inSlope: 0.4073449
-              outSlope: 0.4073449
+              inSlope: -0
+              outSlope: -0
               tangentMode: 0
               weightedMode: 0
               inWeight: 0

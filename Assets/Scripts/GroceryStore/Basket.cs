@@ -40,6 +40,8 @@ public class Basket : MonoBehaviour
         if (item && !m_BasketItems.Contains(item))
         {
             //add item to basket list
+            item.gameObject.transform.parent = transform;
+            item.gameObject.layer = gameObject.layer;
             m_BasketItems.Add(item);
         }
     }
@@ -52,6 +54,8 @@ public class Basket : MonoBehaviour
         if (item && m_BasketItems.Contains(item))
         {
             //remove item from basket list
+            item.gameObject.transform.parent = null;
+            item.gameObject.layer = 0;
             m_BasketItems.Remove(item);
         }
     }

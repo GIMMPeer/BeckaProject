@@ -7,7 +7,10 @@ public class VRPainter : MonoBehaviour {
     [Space(5)]
 
     [Header("Brush Object Settings")]
-    public Transform m_BrushTransform;
+    public Transform m_LBrushTransform;
+    public Transform m_RBrushTransform;
+    public GameObject m_LPaintBrushPrefab;
+    public GameObject m_RPaintBrushPrefab;
     public GameObject m_BrushEntity;
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
@@ -26,18 +29,79 @@ public class VRPainter : MonoBehaviour {
 
     private const int MAX_BRUSH_COUNT = 100;
 
+    private GameObject m_LInstantiatedPaintBrush;
+    private GameObject m_RInstantiatedPaintBrush;
     private VRPaintable m_PaintingTarget;
     private RenderTexture m_PaintableRenderTexture;
     private bool m_PaintingTargetFound = false;
 	
 	// Update is called once per frame
 	void Update ()
-    {   
+    {
+        /*
         //left index trigger held down
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
-            Draw();
+            Draw(m_PaintBrushTip);
         }
+
+        else if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
+        {
+            Draw(m_RBrushTransform);
+        }
+        //if drawing is stopped
+        else if (m_PaintingTargetFound)
+        {
+            OnDrawingEnd();
+        }
+
+    */
+
+        if (!IsInRangeOfPaintable()) return;
+
+        //create paintbrush infront of hand so it it grabbed
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        {
+            //TODO clean this up a bit
+            Debug.Log("Get Down");
+            m_LInstantiatedPaintBrush = Instantiate(m_LPaintBrushPrefab);
+            m_LInstantiatedPaintBrush.transform.position = m_LBrushTransform.position + m_LBrushTransform.forward * 0.05f;
+            m_LInstantiatedPaintBrush.transform.rotation = m_LBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
+            m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_LInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+        }
+
+        else if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger))
+        {
+            Draw(m_LInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
+        }
+
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
+        {
+            Destroy(m_LInstantiatedPaintBrush);
+            m_LInstantiatedPaintBrush = null;
+        }
+
+        else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
+        {
+            //TODO clean this up a bit
+            Debug.Log("Get Down");
+            m_RInstantiatedPaintBrush = Instantiate(m_RPaintBrushPrefab);
+            m_RInstantiatedPaintBrush.transform.position = m_RBrushTransform.position + m_RBrushTransform.forward * 0.05f;
+            m_RInstantiatedPaintBrush.transform.rotation = m_RBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
+            m_RBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_RInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+        }
+
+        else if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))
+        {
+            Draw(m_RInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
+        }
+
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
+        {
+            Destroy(m_RInstantiatedPaintBrush);
+            m_RInstantiatedPaintBrush = null;
+        }
+        
         //if drawing is stopped
         else if (m_PaintingTargetFound)
         {
@@ -46,14 +110,33 @@ public class VRPainter : MonoBehaviour {
 
     }
 
+    //this function is called every frame and is probably very expensive
+    //looks at all paintables in scene and checks distance
+    bool IsInRangeOfPaintable()
+    {
+        VRPaintable[] paintables = FindObjectsOfType<VRPaintable>();
+        foreach(VRPaintable paintable in paintables)
+        {
+            float distance = Vector3.Distance(paintable.gameObject.transform.position, transform.position);
+
+            if (distance <= 2.0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
     //checks to see if you hit a drawable object, then if so sets UV worldPosition
-    bool HitTestUVPosition(ref Vector3 uvWorldPosition, ref GameObject hitObject)
+    bool HitTestUVPosition(Transform brushTransform, ref Vector3 uvWorldPosition, ref GameObject hitObject)
     {
         //only look for layer that is "drawable"
         int layerMask = 1 << LayerMask.NameToLayer("Drawable");
 
         RaycastHit hit;
-        Ray cursorRay = new Ray(m_BrushTransform.position, m_BrushTransform.forward);
+        Ray cursorRay = new Ray(brushTransform.position, brushTransform.forward);
         if (Physics.Raycast(cursorRay, out hit, 0.2f, layerMask))
         {
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
@@ -73,14 +156,14 @@ public class VRPainter : MonoBehaviour {
     }
 
     //The main action, instantiates a brush or decal entity at the clicked position on the UV map
-    void Draw()
+    void Draw(Transform brushTransform)
     {
         if (saving)
             return;
         Vector3 uvWorldPosition = Vector3.zero;
         GameObject hitObject = null;
 
-        if (HitTestUVPosition(ref uvWorldPosition, ref hitObject))
+        if (HitTestUVPosition(brushTransform, ref uvWorldPosition, ref hitObject))
         {
             //if not target previously i.e: start with new drawable
             if (m_PaintingTargetFound == false)
@@ -94,7 +177,7 @@ public class VRPainter : MonoBehaviour {
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition;
-            brushObj.transform.localScale *= m_BrushSize;
+            brushObj.transform.localScale *= m_BrushSize; //Change brush size based on canvas size - GG
 
             if (m_PaintingTarget.IsColorable())
             {

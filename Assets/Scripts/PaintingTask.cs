@@ -24,7 +24,6 @@ public class PaintingTask : MonoBehaviour
     {
         Destroy(colliderObj);
 
-        Debug.Log("Child count: " + transform.childCount);
         if (transform.childCount <= 1) //destorying child doesn't update child count immedietely
         {
             Debug.Log("Painting Complete");
