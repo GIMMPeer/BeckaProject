@@ -9,6 +9,7 @@ public class VRPainter : MonoBehaviour {
     [Header("Brush Object Settings")]
     public Transform m_LBrushTransform;
     public Transform m_RBrushTransform;
+    public GameObject m_PaintBrushPrefab;
     public GameObject m_BrushEntity;
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
@@ -27,6 +28,7 @@ public class VRPainter : MonoBehaviour {
 
     private const int MAX_BRUSH_COUNT = 100;
 
+    private GameObject m_InstantiatedPaintBrush;
     private VRPaintable m_PaintingTarget;
     private RenderTexture m_PaintableRenderTexture;
     private bool m_PaintingTargetFound = false;
@@ -34,10 +36,11 @@ public class VRPainter : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        /*
         //left index trigger held down
         if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
         {
-            Draw(m_LBrushTransform);
+            Draw(m_PaintBrushTip);
         }
 
         else if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
@@ -50,7 +53,57 @@ public class VRPainter : MonoBehaviour {
             OnDrawingEnd();
         }
 
+    */
+
+        if (!IsInRangeOfPaintable()) return;
+
+        //create paintbrush infront of hand so it it grabbed
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        {
+            //TODO clean this up a bit
+            Debug.Log("Get Down");
+            m_InstantiatedPaintBrush = Instantiate(m_PaintBrushPrefab);
+            m_InstantiatedPaintBrush.transform.position = m_LBrushTransform.position + m_LBrushTransform.forward * 0.08f;
+            m_InstantiatedPaintBrush.transform.rotation = m_LBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
+            m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+        }
+
+        else if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger))
+        {
+            Draw(m_InstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
+        }
+
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
+        {
+            Destroy(m_InstantiatedPaintBrush);
+            m_InstantiatedPaintBrush = null;
+        }
+        //if drawing is stopped
+        else if (m_PaintingTargetFound)
+        {
+            OnDrawingEnd();
+        }
+
     }
+
+    //this function is called every frame and is probably very expensive
+    //looks at all paintables in scene and checks distance
+    bool IsInRangeOfPaintable()
+    {
+        VRPaintable[] paintables = FindObjectsOfType<VRPaintable>();
+        foreach(VRPaintable paintable in paintables)
+        {
+            float distance = Vector3.Distance(paintable.gameObject.transform.position, transform.position);
+
+            if (distance <= 2.0)
+            {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
 
     //checks to see if you hit a drawable object, then if so sets UV worldPosition
     bool HitTestUVPosition(Transform brushTransform, ref Vector3 uvWorldPosition, ref GameObject hitObject)

@@ -3288,6 +3288,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_LBrushTransform: {fileID: 1103856910}
   m_RBrushTransform: {fileID: 1103856909}
+  m_PaintBrushPrefab: {fileID: 1407182546521110, guid: c9736f64530ba744f8c774257900971f,
+    type: 2}
   m_BrushEntity: {fileID: 1752579909894158, guid: a6da98d587c91bb4391a64a4a29ccc45,
     type: 2}
   m_Gradient:

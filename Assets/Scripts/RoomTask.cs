@@ -29,8 +29,6 @@ public class RoomTask : MonoBehaviour {
         m_IsStarted = true;
         m_StartActions.Invoke();
 
-        Debug.Log("Starting Task");
-
     }
 
 

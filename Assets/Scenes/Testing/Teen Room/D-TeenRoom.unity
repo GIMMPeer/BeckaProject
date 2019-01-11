@@ -534,6 +534,12 @@ Prefab:
       propertyPath: m_CanvasCamera
       value: 
       objectReference: {fileID: 651884516}
+    - target: {fileID: 114669962616379200, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+        type: 2}
+      propertyPath: m_PaintBrushPrefab
+      value: 
+      objectReference: {fileID: 1407182546521110, guid: c9736f64530ba744f8c774257900971f,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_IsPrefabAsset: 0
