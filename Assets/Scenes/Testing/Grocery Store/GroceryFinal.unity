@@ -2461,6 +2461,18 @@ Prefab:
       value: 
       objectReference: {fileID: 1407182546521110, guid: c9736f64530ba744f8c774257900971f,
         type: 2}
+    - target: {fileID: 114669962616379200, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+        type: 2}
+      propertyPath: m_LPaintBrushPrefab
+      value: 
+      objectReference: {fileID: 1407182546521110, guid: c9736f64530ba744f8c774257900971f,
+        type: 2}
+    - target: {fileID: 114669962616379200, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+        type: 2}
+      propertyPath: m_RPaintBrushPrefab
+      value: 
+      objectReference: {fileID: 1006685669229194, guid: c70ed7736d840454f9cace54649fc447,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_IsPrefabAsset: 0

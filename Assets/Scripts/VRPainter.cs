@@ -9,7 +9,8 @@ public class VRPainter : MonoBehaviour {
     [Header("Brush Object Settings")]
     public Transform m_LBrushTransform;
     public Transform m_RBrushTransform;
-    public GameObject m_PaintBrushPrefab;
+    public GameObject m_LPaintBrushPrefab;
+    public GameObject m_RPaintBrushPrefab;
     public GameObject m_BrushEntity;
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
@@ -28,7 +29,8 @@ public class VRPainter : MonoBehaviour {
 
     private const int MAX_BRUSH_COUNT = 100;
 
-    private GameObject m_InstantiatedPaintBrush;
+    private GameObject m_LInstantiatedPaintBrush;
+    private GameObject m_RInstantiatedPaintBrush;
     private VRPaintable m_PaintingTarget;
     private RenderTexture m_PaintableRenderTexture;
     private bool m_PaintingTargetFound = false;
@@ -62,22 +64,44 @@ public class VRPainter : MonoBehaviour {
         {
             //TODO clean this up a bit
             Debug.Log("Get Down");
-            m_InstantiatedPaintBrush = Instantiate(m_PaintBrushPrefab);
-            m_InstantiatedPaintBrush.transform.position = m_LBrushTransform.position + m_LBrushTransform.forward * 0.08f;
-            m_InstantiatedPaintBrush.transform.rotation = m_LBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
-            m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+            m_LInstantiatedPaintBrush = Instantiate(m_LPaintBrushPrefab);
+            m_LInstantiatedPaintBrush.transform.position = m_LBrushTransform.position + m_LBrushTransform.forward * 0.05f;
+            m_LInstantiatedPaintBrush.transform.rotation = m_LBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
+            m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_LInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
         }
 
         else if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger))
         {
-            Draw(m_InstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
+            Draw(m_LInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
         }
 
         else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
         {
-            Destroy(m_InstantiatedPaintBrush);
-            m_InstantiatedPaintBrush = null;
+            Destroy(m_LInstantiatedPaintBrush);
+            m_LInstantiatedPaintBrush = null;
         }
+
+        else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
+        {
+            //TODO clean this up a bit
+            Debug.Log("Get Down");
+            m_RInstantiatedPaintBrush = Instantiate(m_RPaintBrushPrefab);
+            m_RInstantiatedPaintBrush.transform.position = m_RBrushTransform.position + m_RBrushTransform.forward * 0.05f;
+            m_RInstantiatedPaintBrush.transform.rotation = m_RBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
+            m_RBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_RInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+        }
+
+        else if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))
+        {
+            Draw(m_RInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
+        }
+
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
+        {
+            Destroy(m_RInstantiatedPaintBrush);
+            m_RInstantiatedPaintBrush = null;
+        }
+        
         //if drawing is stopped
         else if (m_PaintingTargetFound)
         {
