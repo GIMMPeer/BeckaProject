@@ -411,7 +411,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 15f768136bc39fb4588cf122e5b26667, type: 3}
   m_WordPrefab: {fileID: 1933138874801670, guid: d4175876058c9be428a51752ec8bc9b2,
     type: 2}
-  m_TextDistanceMultiplier: 2
+  m_TextDistanceMultiplier: 4
   m_TotalWordCount: 20
 --- !u!4 &394163363
 Transform:

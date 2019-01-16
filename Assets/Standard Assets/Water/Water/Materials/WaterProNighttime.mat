@@ -47,20 +47,20 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - _ReflDistort: 0
+    - _ReflDistort: 1.5
     - _RefrDistort: 0
-    - _WaveScale: 0.063
+    - _WaveScale: 0.0599
     m_Colors:
-    - WaveSpeed: {r: 0, g: 0, b: 0, a: 0}
+    - WaveSpeed: {r: 10, g: 1, b: 2, a: 6}
     - _BumpMap_ST: {r: 1, g: 1, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Fresnel_ST: {r: 1, g: 1, b: 0, a: 0}
-    - _HorizonColor: {r: 0.14901961, g: 0.28235295, b: 0.38039216, a: 0.25882354}
+    - _HorizonColor: {r: 0.14901961, g: 0.28235295, b: 0.38039216, a: 0.7137255}
     - _MainTex_ST: {r: 1, g: 1, b: 0, a: 0}
     - _ReflectionTex_ST: {r: 1, g: 1, b: 0, a: 0}
     - _ReflectiveColorCube_ST: {r: 1, g: 1, b: 0, a: 0}
     - _ReflectiveColor_ST: {r: 1, g: 1, b: 0, a: 0}
-    - _RefrColor: {r: 1, g: 1, b: 1, a: 0.3372549}
+    - _RefrColor: {r: 1, g: 1, b: 1, a: 0.8862745}
     - _RefractionTex_ST: {r: 1, g: 1, b: 0, a: 0}
 --- !u!1002 &2100001
 EditorExtensionImpl:
