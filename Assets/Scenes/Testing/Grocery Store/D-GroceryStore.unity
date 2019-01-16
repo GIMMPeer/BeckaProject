@@ -865,11 +865,6 @@ CanvasRenderer:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 397679753}
   m_CullTransparentMesh: 0
---- !u!4 &534455550 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 449252, guid: b0047dd65ff208349bf3a5aaaeae24d0,
-    type: 2}
-  m_PrefabInternal: {fileID: 857694958}
 --- !u!1 &561547954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1246,7 +1241,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: D-TransitionRoom
-  m_DestinationRoom: 6
 --- !u!4 &646103917
 Transform:
   m_ObjectHideFlags: 0
@@ -1676,6 +1670,7 @@ Prefab:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 92000013402849364, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+    - {fileID: 114554018378664614, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &857694959 stripped
@@ -1927,7 +1922,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bec3e226c15b7e64ba6fb2e947c8bcdd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_BrushTransform: {fileID: 534455550}
+  m_LBrushTransform: {fileID: 0}
+  m_RBrushTransform: {fileID: 0}
+  m_LPaintBrushPrefab: {fileID: 0}
+  m_RPaintBrushPrefab: {fileID: 0}
   m_BrushEntity: {fileID: 1752579909894158, guid: a6da98d587c91bb4391a64a4a29ccc45,
     type: 2}
   m_Gradient:
@@ -1959,6 +1957,7 @@ MonoBehaviour:
     m_Mode: 0
     m_NumColorKeys: 6
     m_NumAlphaKeys: 2
+  m_BrushSize: 1
   m_BrushContainer: {fileID: 2095738022}
   m_CanvasCamera: {fileID: 947435381}
   m_BaseMaterial: {fileID: 2100000, guid: 9d82781d0d9f57d4d8a05e84f6bb8706, type: 2}
@@ -2007,7 +2006,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &934030635
 GameObject:
@@ -2157,6 +2156,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 6b939a66cd3519246beaccffd7df7925, type: 3}
   m_WordPrefab: {fileID: 1933138874801670, guid: d4175876058c9be428a51752ec8bc9b2,
     type: 2}
+  m_TextDistanceMultiplier: 0
   m_TotalWordCount: 20
 --- !u!1 &947435378
 GameObject:
@@ -4135,7 +4135,7 @@ RectTransform:
   m_Children:
   - {fileID: 397679754}
   m_Father: {fileID: 1639107315}
-  m_RootOrder: 6
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -4549,10 +4549,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20b1988fe0aedd94485af34efdb85fe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_PlayerController: {fileID: 857694961}
   m_NumItem1: 1
   m_NumItem2: 2
   m_NumItem3: 1
+  testingItems: []
 --- !u!1 &1872265675
 GameObject:
   m_ObjectHideFlags: 0
@@ -4665,7 +4665,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1906386035
 MonoBehaviour:
@@ -4679,7 +4679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_CurrentRoom: 0
+  m_AllRooms: []
 --- !u!1 &1972276698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: d0ac6ca9aab83d848a4004af9127dd35,
