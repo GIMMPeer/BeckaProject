@@ -1195,7 +1195,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_AllRooms: []
+  m_AllRooms:
+  - m_Name: 
+    m_SceneName: 
+    m_NextSceneName: 
+    m_Room: 0
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 0}
+    m_CanvasMaterial: {fileID: 0}
+    m_IsComplete: 0
+  - m_Name: 
+    m_SceneName: 
+    m_NextSceneName: 
+    m_Room: 0
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 0}
+    m_CanvasMaterial: {fileID: 0}
+    m_IsComplete: 0
+  - m_Name: 
+    m_SceneName: 
+    m_NextSceneName: 
+    m_Room: 0
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 0}
+    m_CanvasMaterial: {fileID: 0}
+    m_IsComplete: 0
+  - m_Name: 
+    m_SceneName: 
+    m_NextSceneName: 
+    m_Room: 0
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 0}
+    m_CanvasMaterial: {fileID: 0}
+    m_IsComplete: 0
+  - m_Name: 
+    m_SceneName: 
+    m_NextSceneName: 
+    m_Room: 0
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 0}
+    m_CanvasMaterial: {fileID: 0}
+    m_IsComplete: 0
 --- !u!4 &1410596463
 Transform:
   m_ObjectHideFlags: 0
