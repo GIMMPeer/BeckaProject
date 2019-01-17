@@ -2514,6 +2514,24 @@ MonoBehaviour:
   m_OtherHandLocker: {fileID: 254599252}
   m_PositionOffset: {x: 0, y: -0.51, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!1 &254599254 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000010304442640, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 254599249}
+--- !u!114 &254599255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 254599254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 2
+  fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
 --- !u!1 &258192385 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1757579376080118, guid: 50c79eb2dd03f7a4d9eb717651bb5859,

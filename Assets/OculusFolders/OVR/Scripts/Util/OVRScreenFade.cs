@@ -47,7 +47,7 @@ public class OVRScreenFade : MonoBehaviour
 	void Awake()
 	{
 		// create the fade material
-		fadeMaterial = new Material(Shader.Find("Oculus/Unlit Transparent Color"));
+		fadeMaterial = new Material(Shader.Find("Unlit/Transparent Colored"));
 	}
 
 	/// <summary>

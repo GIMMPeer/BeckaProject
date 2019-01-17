@@ -1539,8 +1539,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 0
       value: 0
-      inSlope: 2
-      outSlope: 2
+      inSlope: 0
+      outSlope: 0
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1548,8 +1548,8 @@ MonoBehaviour:
     - serializedVersion: 3
       time: 1
       value: 1
-      inSlope: 0
-      outSlope: 0
+      inSlope: 2
+      outSlope: 2
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
@@ -1558,9 +1558,9 @@ MonoBehaviour:
     m_PostInfinity: 2
     m_RotationOrder: 4
   m_Duration: 5
-  m_IntensityGoal: 0.03
+  m_IntensityGoal: 10
   m_ThresholdGoal: 0
-  m_InverseBloom: 0
+  m_InverseBloom: 1
 --- !u!114 &496182206
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3327,6 +3327,19 @@ MonoBehaviour:
   m_BrushContainer: {fileID: 254649855}
   m_CanvasCamera: {fileID: 1045954561}
   m_BaseMaterial: {fileID: 2100000, guid: 9d82781d0d9f57d4d8a05e84f6bb8706, type: 2}
+--- !u!114 &1103856922
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1103856904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df8e1d778abf442e4bec449c360e9e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fadeTime: 4
+  fadeColor: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &1120787253
 Prefab:
   m_ObjectHideFlags: 0
