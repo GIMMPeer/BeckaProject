@@ -15,7 +15,7 @@ public class VRPainter : MonoBehaviour {
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
 
-    [Space(5)]
+    [Space(5)] 
 
     [Header("Object Specfic Settings")]
     public Transform m_BrushContainer;
@@ -38,25 +38,7 @@ public class VRPainter : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        /*
-        //left index trigger held down
-        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger))
-        {
-            Draw(m_PaintBrushTip);
-        }
-
-        else if (OVRInput.Get(OVRInput.Button.SecondaryIndexTrigger))
-        {
-            Draw(m_RBrushTransform);
-        }
-        //if drawing is stopped
-        else if (m_PaintingTargetFound)
-        {
-            OnDrawingEnd();
-        }
-
-    */
-
+        //Searches all paintable objects in scene, compares distance, and returns true if within 2m.
         if (!IsInRangeOfPaintable()) return;
 
         //create paintbrush infront of hand so it it grabbed
