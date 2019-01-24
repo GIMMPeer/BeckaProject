@@ -111,15 +111,6 @@ public class BeckaRoomManager : MonoBehaviour
 
         return true;
     }
-
-    //TODO make end room take into account painting status
-    //Currently not called
-    private void EndRoom()
-    {
-        GameManager.m_Singleton.SetRoomPaintedStatus(true);
-        RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
-        GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
-    }
 }
 
 //for editor so each task can have a name, description, and task object attached to it
