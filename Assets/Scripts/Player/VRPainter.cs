@@ -42,7 +42,7 @@ public class VRPainter : MonoBehaviour {
         if (!IsInRangeOfPaintable()) return;
 
         //create paintbrush infront of hand so it it grabbed
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //the instant the primary trigger is hit
         {
             //TODO clean this up a bit
             Debug.Log("Get Down");
@@ -52,18 +52,18 @@ public class VRPainter : MonoBehaviour {
             m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_LInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
         }
 
-        else if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger))
+        else if (OVRInput.Get(OVRInput.Button.PrimaryHandTrigger)) //Runs as long as the primary trigger is held
         {
             Draw(m_LInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
         }
 
-        else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger))
+        else if (OVRInput.GetUp(OVRInput.Button.PrimaryHandTrigger)) //the instant the primary trigger is released
         {
             Destroy(m_LInstantiatedPaintBrush);
             m_LInstantiatedPaintBrush = null;
         }
 
-        else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
+        else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //The instant the secondary trigger is hit
         {
             //TODO clean this up a bit
             Debug.Log("Get Down");
@@ -73,12 +73,12 @@ public class VRPainter : MonoBehaviour {
             m_RBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_RInstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
         }
 
-        else if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger))
+        else if (OVRInput.Get(OVRInput.Button.SecondaryHandTrigger)) //Runs as long as the secondary trigger is held 
         {
             Draw(m_RInstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
         }
 
-        else if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger))
+        else if (OVRInput.GetUp(OVRInput.Button.SecondaryHandTrigger)) //The instant the secondary trigger is released
         {
             Destroy(m_RInstantiatedPaintBrush);
             m_RInstantiatedPaintBrush = null;
@@ -92,7 +92,7 @@ public class VRPainter : MonoBehaviour {
 
     }
 
-    //this function is called every frame and is probably very expensive
+    //this function is called every frame and is probably very expensive    //We could run this through a coroutine and have it trigger only once every 1/8 second instead of every frame.
     //looks at all paintables in scene and checks distance
     bool IsInRangeOfPaintable()
     {
@@ -101,7 +101,7 @@ public class VRPainter : MonoBehaviour {
         {
             float distance = Vector3.Distance(paintable.gameObject.transform.position, transform.position);
 
-            if (distance <= 2.0)
+            if (distance <= 3.0)
             {
                 return true;
             }
