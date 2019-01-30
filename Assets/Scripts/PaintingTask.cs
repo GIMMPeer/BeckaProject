@@ -1,15 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //checks painting status
 //will be check by game manager on exiting room to see if it is complete
 public class PaintingTask : MonoBehaviour
 {
+    public UnityEvent m_OnStartingPainting;
+
     private bool m_IsComplete = false;
-	
-	// Update is called once per frame
-	void Update ()
+
+    private int m_StartingNodeCount = 0;
+
+    private void Start()
+    {
+        m_StartingNodeCount = transform.childCount;
+    }
+
+    // Update is called once per frame
+    void Update ()
     {
 		
 	}
@@ -28,6 +38,10 @@ public class PaintingTask : MonoBehaviour
         {
             Debug.Log("Painting Complete");
             m_IsComplete = true;
+        }
+        else if (transform.childCount == m_StartingNodeCount - 1) //trigger when one painting node is gone (player has just started painting)
+        {
+            m_OnStartingPainting.Invoke();
         }
     }
 }

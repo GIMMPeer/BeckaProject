@@ -45,7 +45,6 @@ public class VRPainter : MonoBehaviour {
         if (OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger)) //the instant the primary trigger is hit
         {
             //TODO clean this up a bit
-            Debug.Log("Get Down");
             m_LInstantiatedPaintBrush = Instantiate(m_LPaintBrushPrefab);
             m_LInstantiatedPaintBrush.transform.position = m_LBrushTransform.position + m_LBrushTransform.forward * 0.05f;
             m_LInstantiatedPaintBrush.transform.rotation = m_LBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
@@ -66,7 +65,6 @@ public class VRPainter : MonoBehaviour {
         else if (OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger)) //The instant the secondary trigger is hit
         {
             //TODO clean this up a bit
-            Debug.Log("Get Down");
             m_RInstantiatedPaintBrush = Instantiate(m_RPaintBrushPrefab);
             m_RInstantiatedPaintBrush.transform.position = m_RBrushTransform.position + m_RBrushTransform.forward * 0.05f;
             m_RInstantiatedPaintBrush.transform.rotation = m_RBrushTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
@@ -99,9 +97,9 @@ public class VRPainter : MonoBehaviour {
         VRPaintable[] paintables = FindObjectsOfType<VRPaintable>();
         foreach(VRPaintable paintable in paintables)
         {
-            float distance = Vector3.Distance(paintable.gameObject.transform.position, transform.position);
+            float distance = Vector3.Distance(paintable.gameObject.transform.position, m_RBrushTransform.position);
 
-            if (distance <= 3.0)
+            if (distance <= 1.0)
             {
                 return true;
             }
