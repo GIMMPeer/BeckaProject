@@ -8309,7 +8309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: D-GirlsRoom
+  m_SceneName: D-TransitionRoom
 --- !u!4 &2142312039
 Transform:
   m_ObjectHideFlags: 0

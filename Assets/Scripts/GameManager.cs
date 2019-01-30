@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
     {
         if(m_AllRooms.Length > 0)
         {
-            m_CurrentRoomContainer = m_AllRooms[0];
+            m_CurrentRoomContainer = GetMostRecentRoom();
         }
     }
 
@@ -97,6 +97,25 @@ public class GameManager : MonoBehaviour {
         }
 
         m_Singleton = this;
+    }
+
+    RoomContainer GetMostRecentRoom()
+    {
+        foreach (RoomContainer container in m_AllRooms)
+        {
+            if (container.m_IsComplete == true)
+            {
+                continue;
+            }
+            else
+            {
+                return container;
+            }
+        }
+
+        //shouldn't ever get here
+        Debug.LogError("Get most recent room failed, all rooms complete");
+        return null;
     }
 
     public void SetNextRoom(RoomNames room)

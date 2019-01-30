@@ -23,7 +23,7 @@ public class TransitionRoomManager : MonoBehaviour
     {
         m_Singleton = this;
 
-        Invoke("LateStart", 0.5f);
+        Invoke("LateStart", 1.0f);
     }
 
     private void LateStart()
@@ -72,6 +72,7 @@ public class TransitionRoomManager : MonoBehaviour
             //confused about this a bit
             //when loading back into tranistion scene, the current roomcontainer is actually next room to be loaded
             //therefore to autoqueue just assign scene transfer to gamemanagers current (on deck) room container
+            Debug.Log("Current  Room Container: " + GameManager.m_Singleton.GetCurrentRoomContainer().m_Name);
             SceneTransfer.m_Singleton.m_SceneName = GameManager.m_Singleton.GetCurrentRoomContainer().m_SceneName;
         }
     }

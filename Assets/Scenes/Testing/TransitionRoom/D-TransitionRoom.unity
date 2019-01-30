@@ -161,7 +161,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 00f90f14160b7a047b7c2458f607b73b, type: 2}
+  - {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -284,60 +284,52 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
   m_AllRooms:
-  - m_Name: Doctor's Office
-    m_SceneName: M-Doctor_Main
-    m_NextSceneName: D-GirlsRoom
-    m_Room: 0
-    m_NextRoom: 1
-    m_PaintingTexture: {fileID: 2800000, guid: d23aef1b03f36a54ea7d035ffc1d6031, type: 3}
-    m_CanvasMaterial: {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
-    m_IsComplete: 0
-  - m_Name: Girl's Room
+  - m_Name: Girls's Room
     m_SceneName: D-GirlsRoom
-    m_NextSceneName: GroceryFinal
+    m_NextSceneName: D-TeenRoom
     m_Room: 1
-    m_NextRoom: 2
+    m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 2f485f09b9491d64996eafe409820cd7, type: 2}
     m_IsComplete: 0
+  - m_Name: Teen Room
+    m_SceneName: D-TeenRoom
+    m_NextSceneName: GroceryFinal
+    m_Room: 3
+    m_NextRoom: 2
+    m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
+    m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
+    m_IsComplete: 0
   - m_Name: Grocery Store
     m_SceneName: GroceryFinal
-    m_NextSceneName: D-TeenRoom
+    m_NextSceneName: D-DepressionRoom
     m_Room: 2
-    m_NextRoom: 3
+    m_NextRoom: 4
     m_PaintingTexture: {fileID: 2800000, guid: 08d0bc4835591fb449ff933f2f968699, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 335d7cea6e00a6d4292e92edab27e4ec, type: 2}
-    m_IsComplete: 0
-  - m_Name: Teen's Room
-    m_SceneName: D-TeenRoom
-    m_NextSceneName: D-DepressionRoom
-    m_Room: 3
-    m_NextRoom: 4
-    m_PaintingTexture: {fileID: 2800000, guid: e091b48a42f717d42831fb8ef54ed5ef, type: 3}
-    m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
     m_IsComplete: 0
   - m_Name: Depression Room
     m_SceneName: D-DepressionRoom
     m_NextSceneName: M-Doctor_Main
     m_Room: 4
-    m_NextRoom: 6
-    m_PaintingTexture: {fileID: 2800000, guid: d4d0d4e018c47b940b92a622be1bf5a2, type: 3}
+    m_NextRoom: 0
+    m_PaintingTexture: {fileID: 2800000, guid: e091b48a42f717d42831fb8ef54ed5ef, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 00f90f14160b7a047b7c2458f607b73b, type: 2}
     m_IsComplete: 0
-  - m_Name: Doctor's Office Revisited
+  - m_Name: Doctor's Office
     m_SceneName: M-Doctor_Main
     m_NextSceneName: D-Bathroom
-    m_Room: 6
+    m_Room: 0
     m_NextRoom: 5
-    m_PaintingTexture: {fileID: 2800000, guid: c1bd55542f7576346be0c5b5c20dcdd0, type: 3}
+    m_PaintingTexture: {fileID: 2800000, guid: d4d0d4e018c47b940b92a622be1bf5a2, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
     m_IsComplete: 0
   - m_Name: Bathroom
     m_SceneName: D-Bathroom
-    m_NextSceneName: D-Transition
+    m_NextSceneName: D-TransitionRoom
     m_Room: 5
     m_NextRoom: 5
-    m_PaintingTexture: {fileID: 2800000, guid: ef435f4ed850f924a9226c3de78b2efb, type: 3}
+    m_PaintingTexture: {fileID: 2800000, guid: c1bd55542f7576346be0c5b5c20dcdd0, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: aec2a940ad0cc5142bc64803640aafc9, type: 2}
     m_IsComplete: 0
 --- !u!4 &52908387
@@ -875,7 +867,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 2f485f09b9491d64996eafe409820cd7, type: 2}
+  - {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6172,7 +6164,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
+  - {fileID: 2100000, guid: 00f90f14160b7a047b7c2458f607b73b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -6340,7 +6332,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: M-Doctor_Main
+  m_SceneName: D-DepressionRoom
 --- !u!4 &963865703
 Transform:
   m_ObjectHideFlags: 0
@@ -17344,7 +17336,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
+  - {fileID: 2100000, guid: 2f485f09b9491d64996eafe409820cd7, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
