@@ -80,4 +80,9 @@ public class FootprintController : MonoBehaviour {
 
         PlaceNewFootstep(0);
     }
+
+    public void StopFootsteps()
+    {
+        m_IsPlayingFootsteps = false;
+    }
 }
