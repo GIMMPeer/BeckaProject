@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class FootprintController : MonoBehaviour {
 
@@ -8,6 +9,10 @@ public class FootprintController : MonoBehaviour {
     public Transform[] m_FootprintLocations;
 
     public float m_StepInterval = 1.0f; //steps per second
+    public bool m_Loop = false;
+    public bool m_PlayAudio = true;
+
+    public UnityEvent m_OnCompleteCycle;
 
     private float m_StartingTime;
     private bool m_IsPlayingFootsteps = false;
@@ -28,7 +33,14 @@ public class FootprintController : MonoBehaviour {
                 //full series of foot cycles is complete
                 if (m_FootstepIndex >= m_FootprintLocations.Length)
                 {
+                    if (m_Loop)
+                    {
+                        StartFootsteps(); //loop endlessly
+                        return;
+                    }
+
                     m_IsPlayingFootsteps = false;
+                    m_OnCompleteCycle.Invoke();
                     return;
                 }
 
@@ -47,6 +59,13 @@ public class FootprintController : MonoBehaviour {
         GameObject g = Instantiate(m_FootprintPrefab, m_FootprintLocations[locationIndex].position, Quaternion.identity, transform);
         g.transform.localScale = m_FootprintLocations[locationIndex].localScale;
         g.transform.localRotation = m_FootprintLocations[locationIndex].localRotation;
+
+        bool isLeftFoot = m_FootstepIndex % 2 == 0 ? true : false; //if footstep index is even, then we say it is a left footstep
+
+        if (m_PlayAudio)
+        {
+            g.GetComponent<Footprint>().SetFootAudio(isLeftFoot);
+        }
 
         m_StartingTime = Time.time;
 

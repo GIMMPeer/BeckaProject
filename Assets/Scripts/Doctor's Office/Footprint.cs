@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //footprint prefab that is spawned, faded in, faded out, then destroys itself
+[RequireComponent(typeof(AudioSource))]
 public class Footprint : MonoBehaviour {
 
     public float m_TimeToLive = 3.0f;
     public AnimationCurve m_BrightnessCurve; //animation curve for fade in/out of footprint
+
+    public AudioClip m_RightFootSound;
+    public AudioClip m_LeftFootSound;
 
     private float m_StartingTime;
     private float m_TimeOfDeath;
@@ -15,11 +19,6 @@ public class Footprint : MonoBehaviour {
     {
         m_StartingTime = Time.time;
         m_TimeOfDeath = Time.time + m_TimeToLive;
-
-        /*m_BrightnessCurve.AddKey(0f, 0f);
-        m_BrightnessCurve.AddKey(.1f, 1.0f);
-        m_BrightnessCurve.AddKey(.7f, 1.0f);
-        m_BrightnessCurve.AddKey(1f, 0f);*/
     }
 	
 	// Update is called once per frame
@@ -43,5 +42,20 @@ public class Footprint : MonoBehaviour {
         float newValue = (endMin * (1 - diff)) + (endMax * diff);
 
         return newValue;
+    }
+
+    //Sets footedness of footprint and plays audio
+    public void SetFootAudio(bool isLeftFoot)
+    {
+        if (isLeftFoot)
+        {
+            GetComponent<AudioSource>().clip = m_LeftFootSound;
+        }
+        else
+        {
+            GetComponent<AudioSource>().clip = m_RightFootSound;
+        }
+
+        GetComponent<AudioSource>().Play();
     }
 }

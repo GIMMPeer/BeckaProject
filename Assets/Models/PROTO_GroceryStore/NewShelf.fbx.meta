@@ -1,95 +1,32 @@
 fileFormatVersion: 2
-guid: 072785e877d73d2429f0e3a659fbacfb
+guid: 6c5c34f95d2021c4dbb38c9f84aaa214
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.001
-    100004: Cube.002
-    100006: Cube.003
-    100008: Cube.004
-    100010: Cylinder
-    100012: //RootNode
-    100014: Plane
-    100016: Plane.001
-    100018: Base
-    100020: Door_L
-    100022: Door_R
-    100024: Shelves
-    400000: Cube
-    400002: Cube.001
-    400004: Cube.002
-    400006: Cube.003
-    400008: Cube.004
-    400010: Cylinder
-    400012: //RootNode
-    400014: Plane
-    400016: Plane.001
-    400018: Base
-    400020: Door_L
-    400022: Door_R
-    400024: Shelves
-    2100000: Fridge_Black
-    2100002: No Name
-    2100004: Glass
-    2100006: Fridge_White
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.002
-    2300006: Cube.003
-    2300008: Cube.004
-    2300010: Cylinder
-    2300012: Plane
-    2300014: Plane.001
-    2300016: Base
-    2300018: Door_L
-    2300020: Door_R
-    2300022: Shelves
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.002
-    3300006: Cube.003
-    3300008: Cube.004
-    3300010: Cylinder
-    3300012: Plane
-    3300014: Plane.001
-    3300016: Base
-    3300018: Door_L
-    3300020: Door_R
-    3300022: Shelves
-    4300000: Cylinder
-    4300002: Plane.001
-    4300004: Plane
-    4300006: Cube.004
-    4300008: Cube.003
-    4300010: Cube.002
-    4300012: Cube.001
-    4300014: Cube
-    4300016: Door_R
-    4300018: Shelves
-    4300020: Door_L
-    4300022: Base
+    100000: //RootNode
+    400000: //RootNode
+    2100000: ShelvingUnit_Shelves
+    2100002: ShelvingUnit_Base
+    2100004: ShelvingUnit_Backboard
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fridge_Black
-    second: {fileID: 2100000, guid: 54d5a48f2b7721c44870db86fe4b61dd, type: 2}
+      name: ShelvingUnit_Backboard
+    second: {fileID: 2100000, guid: 72bec99709a79c24395de3b050bf52d6, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Fridge_White
-    second: {fileID: 2100000, guid: bd4a1927309972442aedeaa7bc6f8a97, type: 2}
+      name: ShelvingUnit_Base
+    second: {fileID: 2100000, guid: 207b8a7e572648f44b4c43a566ce19e8, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 0f0ee157e1c3e1e4189f973cc11f0cf9, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: No Name
-    second: {fileID: 2100000, guid: 82f43e1a4bb03b64eabae6fd3e017aa8, type: 2}
+      name: ShelvingUnit_Shelves
+    second: {fileID: 2100000, guid: 2ac4e4bc3dd492f49a3f5894305e64b6, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
