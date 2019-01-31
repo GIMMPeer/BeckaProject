@@ -333,11 +333,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 140386, guid: b0047dd65ff208349bf3a5aaaeae24d0,
     type: 2}
   m_PrefabInternal: {fileID: 266826314}
---- !u!1 &266826316 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000010304442640, guid: b0047dd65ff208349bf3a5aaaeae24d0,
-    type: 2}
-  m_PrefabInternal: {fileID: 266826314}
 --- !u!114 &266826317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -554,18 +549,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &266826320
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 266826316}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ff26db721962cdf4a8edcdfa9a767d2a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  profile: {fileID: 11400000, guid: aef1cd75fe033144a91bf16701c7e7d7, type: 2}
 --- !u!1001 &381898581
 Prefab:
   m_ObjectHideFlags: 0
@@ -6314,7 +6297,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
-  m_CurrentRoom: 1
+  m_AllRooms: []
 --- !u!4 &976792419
 Transform:
   m_ObjectHideFlags: 0
@@ -6328,23 +6311,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1034063994 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: 728ec5f87edee034bab71b2b6b2c2bd1,
-    type: 3}
-  m_PrefabInternal: {fileID: 1861096651}
---- !u!65 &1034063995
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1034063994}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.18301179, y: 0.13444072, z: 0.0000000043281734}
-  m_Center: {x: -0.01163487, y: 0.021832293, z: 0.0000000025345182}
 --- !u!1 &1037299898
 GameObject:
   m_ObjectHideFlags: 0
@@ -7099,7 +7065,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_SceneName: D-TransitionRoom
-  m_DestinationRoom: 6
 --- !u!1 &1706671863
 GameObject:
   m_ObjectHideFlags: 0

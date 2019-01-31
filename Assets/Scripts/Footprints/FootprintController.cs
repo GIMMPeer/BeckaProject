@@ -8,9 +8,14 @@ public class FootprintController : MonoBehaviour {
     public GameObject m_FootprintPrefab;
     public Transform[] m_FootprintLocations;
 
+    [Space]
+
     public float m_StepInterval = 1.0f; //steps per second
+    [Range(0.0f, 10.0f)]
+    public float m_StepVolume = 5f;
     public bool m_Loop = false;
     public bool m_PlayAudio = true;
+    public bool m_PlayOnStart = false;
 
     public UnityEvent m_OnCompleteCycle;
 
@@ -21,6 +26,11 @@ public class FootprintController : MonoBehaviour {
 	void Start ()
     {
         m_StartingTime = Time.time;
+
+        if (m_PlayOnStart)
+        {
+            StartFootsteps();
+        }
 	}
 	
 	// Update is called once per frame
@@ -64,7 +74,7 @@ public class FootprintController : MonoBehaviour {
 
         if (m_PlayAudio)
         {
-            g.GetComponent<Footprint>().SetFootAudio(isLeftFoot);
+            g.GetComponent<Footprint>().SetFootAudio(isLeftFoot, m_StepVolume);
         }
 
         m_StartingTime = Time.time;
@@ -79,5 +89,10 @@ public class FootprintController : MonoBehaviour {
         m_FootstepIndex = 0;
 
         PlaceNewFootstep(0);
+    }
+
+    public void StopFootsteps()
+    {
+        m_IsPlayingFootsteps = false;
     }
 }

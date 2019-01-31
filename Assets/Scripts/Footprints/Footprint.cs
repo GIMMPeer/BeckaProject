@@ -45,7 +45,7 @@ public class Footprint : MonoBehaviour {
     }
 
     //Sets footedness of footprint and plays audio
-    public void SetFootAudio(bool isLeftFoot)
+    public void SetFootAudio(bool isLeftFoot, float volume)
     {
         if (isLeftFoot)
         {
@@ -56,6 +56,7 @@ public class Footprint : MonoBehaviour {
             GetComponent<AudioSource>().clip = m_RightFootSound;
         }
 
+        GetComponent<AudioSource>().volume = volume / 10;
         GetComponent<AudioSource>().Play();
     }
 }
