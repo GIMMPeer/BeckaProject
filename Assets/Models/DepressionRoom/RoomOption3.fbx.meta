@@ -14,6 +14,7 @@ ModelImporter:
     100016: Window_2
     100018: Window_Frame_1
     100020: Window_Frame_2
+    100022: Cube
     400000: Ceiling
     400002: ClosteDoor
     400004: Door
@@ -25,6 +26,7 @@ ModelImporter:
     400016: Window_2
     400018: Window_Frame_1
     400020: Window_Frame_2
+    400022: Cube
     2100000: Window_Frame
     2100002: Window_Glass
     2100004: Knob
@@ -32,6 +34,9 @@ ModelImporter:
     2100008: Floor
     2100010: Walls
     2100012: Ceiling
+    2100014: Floor.001
+    2100016: Walls.001
+    2100018: Ceiling.001
     2300000: Ceiling
     2300002: ClosteDoor
     2300004: Door
@@ -42,6 +47,7 @@ ModelImporter:
     2300014: Window_2
     2300016: Window_Frame_1
     2300018: Window_Frame_2
+    2300020: Cube
     3300000: Ceiling
     3300002: ClosteDoor
     3300004: Door
@@ -52,6 +58,7 @@ ModelImporter:
     3300014: Window_2
     3300016: Window_Frame_1
     3300018: Window_Frame_2
+    3300020: Cube
     4300000: Window_Frame_2
     4300002: Window_2
     4300004: Window_1
@@ -62,6 +69,7 @@ ModelImporter:
     4300014: Trim
     4300016: Walls
     4300018: Ceiling
+    4300020: Cube
   externalObjects: {}
   materials:
     importMaterials: 1

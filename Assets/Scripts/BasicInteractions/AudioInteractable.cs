@@ -62,6 +62,11 @@ public class AudioInteractable : MonoBehaviour {
             return;
         }
 
+        if (GetComponent<AudioSource>().clip == null)
+        {
+            Debug.LogWarning("Audio Interactable doesn't have audio clip");
+        }
+
         GetComponent<AudioSource>().Play();
         m_IsInteracted = true;
 

@@ -33,7 +33,15 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
-        m_CurrentRoomContainer = m_AllRooms[0];
+        Invoke("SetCurRoomContainer", 0.5f);
+    }
+
+    private void SetCurRoomContainer()
+    {
+        if(m_AllRooms.Length > 0)
+        {
+            m_CurrentRoomContainer = GetMostRecentRoom();
+        }
     }
 
     //start is not called on loading into scene
@@ -41,6 +49,7 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    
 
     private void OnDisable()
     {
@@ -50,16 +59,6 @@ public class GameManager : MonoBehaviour {
     public void SetRoomPaintedStatus(bool status)
     {
         m_CurrentRoomContainer.m_IsComplete = true;
-    }
-
-    public RoomContainer GetCurrentRoomContainer()
-    {
-        return m_CurrentRoomContainer;
-    }
-
-    public RoomContainer[] GetAllRoomContainers()
-    {
-        return m_AllRooms;
     }
 
     //On loaded sets up persistence and spawns player in maze
@@ -100,6 +99,25 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
+    RoomContainer GetMostRecentRoom()
+    {
+        foreach (RoomContainer container in m_AllRooms)
+        {
+            if (container.m_IsComplete == true)
+            {
+                continue;
+            }
+            else
+            {
+                return container;
+            }
+        }
+
+        //shouldn't ever get here
+        Debug.LogError("Get most recent room failed, all rooms complete");
+        return null;
+    }
+
     public void SetNextRoom(RoomNames room)
     {
         foreach (RoomContainer container in m_AllRooms)
@@ -110,6 +128,20 @@ public class GameManager : MonoBehaviour {
                 Debug.Log("Next Room: " + m_NextRoomContainer.m_Name);
             }
         }
+    }
+
+
+
+    //Public Getters
+
+    public RoomContainer GetCurrentRoomContainer()
+    {
+        return m_CurrentRoomContainer;
+    }
+
+    public RoomContainer[] GetAllRoomContainers()
+    {
+        return m_AllRooms;
     }
 
 }

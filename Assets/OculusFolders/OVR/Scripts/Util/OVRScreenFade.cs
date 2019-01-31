@@ -47,7 +47,7 @@ public class OVRScreenFade : MonoBehaviour
 	void Awake()
 	{
 		// create the fade material
-		fadeMaterial = new Material(Shader.Find("Oculus/Unlit Transparent Color"));
+		fadeMaterial = new Material(Shader.Find("Unlit/Transparent Colored"));
 	}
 
 	/// <summary>
@@ -100,10 +100,29 @@ public class OVRScreenFade : MonoBehaviour
 		isFading = false;
 	}
 
-	/// <summary>
-	/// Renders the fade overlay when attached to a camera object
+    /// <summary>
+	/// Fades alpha from 0.0 to 1.0
 	/// </summary>
-	void OnPostRender()
+	IEnumerator FadeOut()
+    {
+        float elapsedTime = 0.0f;
+        fadeMaterial.color = fadeColor;
+        Color color = fadeColor;
+        isFading = true;
+        while (elapsedTime < fadeTime)
+        {
+            yield return fadeInstruction;
+            elapsedTime += Time.deltaTime;
+            color.a = Mathf.Clamp01(elapsedTime / fadeTime);
+            fadeMaterial.color = color;
+        }
+        isFading = false;
+    }
+
+    /// <summary>
+    /// Renders the fade overlay when attached to a camera object
+    /// </summary>
+    void OnPostRender()
 	{
 		if (isFading)
 		{

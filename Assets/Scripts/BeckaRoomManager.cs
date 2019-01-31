@@ -29,7 +29,7 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Start()
     {
-        if (m_AllRoomTasks.Length > 0)
+        if (m_AllRoomTasks.Length > 0) //As long as we have a task in the room, begin the task
         {
             m_AllRoomTasks[0].Task.StartTask();
         }
@@ -37,13 +37,13 @@ public class BeckaRoomManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.X))
+        if (Input.GetKeyDown(KeyCode.X)) //Dev Cheat. Finishes painting without user manually painting. To Be removed on release -->
         {
             GameManager.m_Singleton.SetRoomPaintedStatus(true);
             RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
             GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
 
-        }
+        } // <-- to be removed on release
     }
 
     public void StartNextTask()
@@ -110,15 +110,6 @@ public class BeckaRoomManager : MonoBehaviour
         }
 
         return true;
-    }
-
-    //TODO make end room take into account painting status
-    //Currently not called
-    private void EndRoom()
-    {
-        GameManager.m_Singleton.SetRoomPaintedStatus(true);
-        RoomContainer rc = GameManager.m_Singleton.GetCurrentRoomContainer();
-        GameManager.m_Singleton.SetNextRoom(rc.m_NextRoom);
     }
 }
 
