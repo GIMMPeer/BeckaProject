@@ -291,7 +291,7 @@ MonoBehaviour:
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 2f485f09b9491d64996eafe409820cd7, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
     m_NextSceneName: GroceryFinal
