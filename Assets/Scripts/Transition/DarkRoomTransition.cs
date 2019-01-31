@@ -6,8 +6,12 @@ public class DarkRoomTransition : MonoBehaviour {
 
     public Transform m_Player;
     public Transform m_Door;
+    public GameObject m_DarkBox;
 
     public float m_TriggerDistance = 2f;
+
+    private bool m_PlayerInsideDarkBox = false;
+   
 	
 	// Update is called once per frame
 	void Update ()
@@ -25,9 +29,22 @@ public class DarkRoomTransition : MonoBehaviour {
             {
                 if (playerViewDot <= -0.4f) //if player is not looking at door
                 {
-                    SceneTransfer.m_Singleton.GoToScene();
+                    if (m_PlayerInsideDarkBox)
+                    {
+                        SceneTransfer.m_Singleton.GoToScene();
+                    }
                 }
             }
         }
 	}
+
+    public void PlayerEnterDarkBox()
+    {
+        m_PlayerInsideDarkBox = true;
+    }
+
+    public void PlayerExitDarkBox()
+    {
+        m_PlayerInsideDarkBox = false;
+    }
 }
