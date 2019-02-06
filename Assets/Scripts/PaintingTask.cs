@@ -8,6 +8,7 @@ using UnityEngine.Events;
 public class PaintingTask : MonoBehaviour
 {
     public UnityEvent m_OnStartingPainting;
+    public UnityEvent m_OnFinishPainting;
 
     private bool m_IsComplete = false;
 
@@ -38,6 +39,7 @@ public class PaintingTask : MonoBehaviour
         {
             Debug.Log("Painting Complete");
             m_IsComplete = true;
+            m_OnFinishPainting.Invoke();
         }
         else if (transform.childCount == m_StartingNodeCount - 1) //trigger when one painting node is gone (player has just started painting)
         {
