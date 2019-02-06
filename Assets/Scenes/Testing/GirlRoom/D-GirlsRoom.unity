@@ -2070,6 +2070,10 @@ Prefab:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: 5da87c77468c3f842a83b45d14a6e195, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5da87c77468c3f842a83b45d14a6e195, type: 3}
   m_IsPrefabAsset: 0
@@ -3423,6 +3427,7 @@ MonoBehaviour:
   - {fileID: 561111732}
   - {fileID: 1252743508}
   m_StepInterval: 1.25
+  m_StepVolume: 5
   m_Loop: 1
   m_PlayAudio: 0
   m_PlayOnStart: 0
@@ -6371,6 +6376,7 @@ MonoBehaviour:
   - {fileID: 1396212355}
   - {fileID: 1810942078}
   m_StepInterval: 0.75
+  m_StepVolume: 5
   m_Loop: 0
   m_PlayAudio: 1
   m_PlayOnStart: 1

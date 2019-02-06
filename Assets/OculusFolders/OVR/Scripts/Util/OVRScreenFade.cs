@@ -139,4 +139,9 @@ public class OVRScreenFade : MonoBehaviour
 			GL.PopMatrix();
 		}
 	}
+
+    public void StartFadeOut()
+    {
+        StartCoroutine(FadeOut());
+    }
 }
