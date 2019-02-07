@@ -32,8 +32,6 @@ public class PaintbrushManager : MonoBehaviour {
     {
         if (m_InstantiatedPaintBrush)
         {
-            //if (paintbrush != released_)
-
             m_VRPainter.Draw(m_InstantiatedPaintBrush.transform.GetChild(0)); //get only child of paintbrush which is paintbrush tip
         }
 
