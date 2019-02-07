@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//TODO change name from Z to X
 public class EndlessAisle : MonoBehaviour {
 
 	public GameObject player; //set the player
@@ -41,4 +42,10 @@ public class EndlessAisle : MonoBehaviour {
 			player.transform.position = resetStartLocation; //Move the player to end
 		}
 	}
+
+    public void SetEndValue(float val)
+    {
+        endTeleTarget = val;
+        endZ = val + 0.5f;
+    }
 }

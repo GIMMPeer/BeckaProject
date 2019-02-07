@@ -14,6 +14,7 @@ public class VRPainter : MonoBehaviour {
     public GameObject m_BrushEntity;
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
+    public float m_BrushPaintDistance = 1.0f; //max distance away from paintable where paintbrush will spawn
 
     [Space(5)] 
 
@@ -99,7 +100,7 @@ public class VRPainter : MonoBehaviour {
         {
             float distance = Vector3.Distance(paintable.gameObject.transform.position, m_RBrushTransform.position);
 
-            if (distance <= 1.0)
+            if (distance <= m_BrushPaintDistance)
             {
                 return true;
             }
@@ -149,6 +150,12 @@ public class VRPainter : MonoBehaviour {
             if (m_PaintingTargetFound == false)
             {
                 m_PaintingTarget = hitObject.GetComponent<VRPaintable>();
+
+                if (m_PaintingTarget == null) //extra check to ensure no uses of null objects
+                {
+                    return;
+                }
+
                 OnDrawingStart();
             }
 
@@ -158,6 +165,8 @@ public class VRPainter : MonoBehaviour {
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition;
             brushObj.transform.localScale *= m_BrushSize; //Change brush size based on canvas size - GG
+
+            if (m_PaintingTarget == null) return;
 
             if (m_PaintingTarget.IsColorable())
             {
