@@ -6,6 +6,7 @@ public class HeadLooker : MonoBehaviour {
 
 	public GameObject player;
 	public GameObject head;
+    public Vector3 m_Offset;
 
 	// Use this for initialization
 	void Start () {
@@ -14,6 +15,7 @@ public class HeadLooker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		head.transform.LookAt(player.transform);
+        Vector3 lookPosition = player.transform.position + m_Offset;
+		head.transform.LookAt(lookPosition);
 	}
 }
