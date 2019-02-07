@@ -39821,6 +39821,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4030324784657638, guid: a06f154e307018645bec758a4dfb0c74,
     type: 2}
   m_PrefabInternal: {fileID: 1599533652}
+--- !u!4 &1604038522 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 403292, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1879233742}
 --- !u!1001 &1609172127
 Prefab:
   m_ObjectHideFlags: 0
@@ -42388,6 +42393,23 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 140386, guid: b0047dd65ff208349bf3a5aaaeae24d0,
     type: 2}
   m_PrefabInternal: {fileID: 1879233742}
+--- !u!114 &1879233750
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1879233749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a26a032d1d0225a4ca592c806a4b498d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_LBrushTransform: {fileID: 2136705543}
+  m_RBrushTransform: {fileID: 1604038522}
+  m_PaintBrushPrefab: {fileID: 1407182546521110, guid: c9736f64530ba744f8c774257900971f,
+    type: 2}
+  m_Offset: {x: 0, y: 1, z: 0}
+  m_BrushPaintDistance: 1
 --- !u!1001 &1880864819
 Prefab:
   m_ObjectHideFlags: 0
@@ -44694,6 +44716,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &2136705543 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 449252, guid: b0047dd65ff208349bf3a5aaaeae24d0,
+    type: 2}
+  m_PrefabInternal: {fileID: 1879233742}
 --- !u!1001 &2138623577
 Prefab:
   m_ObjectHideFlags: 0
