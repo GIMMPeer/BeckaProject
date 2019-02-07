@@ -18,8 +18,8 @@ public class EndlessAisle : MonoBehaviour {
 		startZ = 20;
 		startTeleTarget = 21.0f; //in world space
 		resetStartLocation.Set(0, 0, 0);
-		endZ = 16f;
-		endTeleTarget = 15.5f;
+		endZ = 16.2f;
+		endTeleTarget = 15.9f;
 	}
 	
 	// Update is called once per frame
