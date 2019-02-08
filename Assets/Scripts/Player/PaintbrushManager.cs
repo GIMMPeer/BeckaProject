@@ -117,14 +117,12 @@ public class PaintbrushManager : MonoBehaviour {
             {
                 return true;
             }
-
-            if (m_InstantiatedPaintBrush)
-            {
-                DestroyPaintBrush();
-            }
         }
 
-        
+        if (m_InstantiatedPaintBrush)
+        {
+            DestroyPaintBrush();
+        }
 
         return false;
     }

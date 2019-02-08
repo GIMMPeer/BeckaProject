@@ -26,8 +26,8 @@ public class LightboxManager : MonoBehaviour {
 
 
 
-    private Texture[] m_ObjectsDullTxt;
-    private Material[] m_ObjectsDullMat;
+    private Texture[] m_ObjectsDullTxt = null;
+    private Material[] m_ObjectsDullMat = null;
 
 
 

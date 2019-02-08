@@ -90,7 +90,7 @@ public class VRPainter : MonoBehaviour {
             
             brushObj.transform.parent = m_BrushContainer.transform; //Add the brush to our container to be wiped later
             brushObj.transform.localPosition = uvWorldPosition;
-            brushObj.transform.localScale *= m_BrushSize; //Change brush size based on canvas size - GG
+            brushObj.transform.localScale *= m_BrushSize; //Change brush size based on canvas size
 
             if (m_PaintingTarget == null) return;
 
