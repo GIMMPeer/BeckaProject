@@ -14,6 +14,6 @@ public class HeadLooker : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		head.transform.LookAt(player.transform);
+		head.transform.LookAt(player.transform.position);
 	}
 }
