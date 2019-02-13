@@ -130,6 +130,11 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void TestDebug()
+    {
+        Debug.Log("Testing Hit");
+    }
+
 
 
     //Public Getters

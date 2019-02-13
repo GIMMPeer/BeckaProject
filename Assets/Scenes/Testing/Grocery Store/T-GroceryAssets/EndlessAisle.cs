@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-//TODO change name from Z to X
 public class EndlessAisle : MonoBehaviour {
-
 	public GameObject player; //set the player
 	private Transform playerLocation; //idenitfy the player's location in game
 	private float startZ; //player start depth
@@ -15,37 +13,31 @@ public class EndlessAisle : MonoBehaviour {
 
 	void Start () {
 		//assignments
-		startZ = 20;
-		startTeleTarget = 21.0f; //in world space
+		startZ = player.transform.position.z;
+		startTeleTarget = 34.5f;
 		resetStartLocation.Set(0, 0, 0);
-		endZ = 16.2f;
-		endTeleTarget = 15.9f;
+		endZ = -20.0f;
+		endTeleTarget = -20.5f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		playerLocation = player.transform; //updating player location in realtime
 		
-		if (playerLocation.position.x < endTeleTarget) //the value we are evaluating against may need to be adjusted based on level design
+		if (playerLocation.position.z < endTeleTarget) //the value we are evaluating against may need to be adjusted based on level design
 		{
 			//we only want to reset Z depth so we adapt to player's current position for X and Y
-			resetStartLocation.x = startZ;
+			resetStartLocation.x = playerLocation.position.x;
 			resetStartLocation.y = playerLocation.position.y;
-			resetStartLocation.z = playerLocation.position.z;
+			resetStartLocation.z = startZ;
 			player.transform.position = resetStartLocation; //Move the player to start
 		} 
-		else if (playerLocation.position.x > startTeleTarget) 
+		else if (playerLocation.position.z > startTeleTarget) 
 		{
-			resetStartLocation.x = endZ;
+			resetStartLocation.x = playerLocation.position.x;
 			resetStartLocation.y = playerLocation.position.y;
-			resetStartLocation.z = playerLocation.position.z;
+			resetStartLocation.z = endZ;
 			player.transform.position = resetStartLocation; //Move the player to end
 		}
 	}
-
-    public void SetEndValue(float val)
-    {
-        endTeleTarget = val;
-        endZ = val + 0.5f;
-    }
 }
