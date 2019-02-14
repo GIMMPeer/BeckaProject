@@ -7,8 +7,6 @@ using UnityEngine.Events;
 //will be check by game manager on exiting room to see if it is complete
 public class PaintingTask : MonoBehaviour
 {
-    public ParticleSystem m_FinishSystem;
-
     public UnityEvent m_OnStartingPainting;
     public UnityEvent m_OnFinishPainting;
 
@@ -42,8 +40,6 @@ public class PaintingTask : MonoBehaviour
             Debug.Log("Painting Complete");
             m_IsComplete = true;
             m_OnFinishPainting.Invoke();
-
-            m_FinishSystem.Play();
         }
         else if (transform.childCount == m_StartingNodeCount - 1) //trigger when one painting node is gone (player has just started painting)
         {

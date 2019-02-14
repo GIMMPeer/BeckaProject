@@ -35,11 +35,15 @@ public class RoomTask : MonoBehaviour {
     //called from another script that is specific to the event happening (ie: putting film on lightbox)
     public void FinishTask()
     {
+        Debug.Log("Finishing Task: " + m_IsStarted);
+
+
         //only if event is started can it be finished
         if (m_IsStarted == false)
         {
             return;
         }
+
 
         m_IsFinished = true;
         m_IsStarted = false;
