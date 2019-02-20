@@ -21,6 +21,7 @@ limitations under the License.
 
 using UnityEngine;
 using System.Collections; // required for Coroutines
+using UnityEngine.Events;
 
 /// <summary>
 /// Fades the screen from black after a new scene is loaded.
@@ -36,6 +37,7 @@ public class OVRScreenFade : MonoBehaviour
 	/// The initial screen color.
 	/// </summary>
 	public Color fadeColor = new Color(0.01f, 0.01f, 0.01f, 1.0f);
+    public UnityEvent m_OnFadeOutComplete;
 
 	private Material fadeMaterial = null;
 	private bool isFading = false;
@@ -117,6 +119,8 @@ public class OVRScreenFade : MonoBehaviour
             fadeMaterial.color = color;
         }
         isFading = false;
+
+        m_OnFadeOutComplete.Invoke();
     }
 
     /// <summary>

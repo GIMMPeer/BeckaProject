@@ -413,8 +413,9 @@ GameObject:
   - component: {fileID: 25440672}
   - component: {fileID: 25440671}
   - component: {fileID: 25440670}
-  - component: {fileID: 25440669}
   - component: {fileID: 25440668}
+  - component: {fileID: 25440676}
+  - component: {fileID: 25440669}
   m_Layer: 8
   m_Name: Painting2
   m_TagString: Untagged
@@ -453,7 +454,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -578,6 +579,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 25440676}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &25440671
@@ -666,6 +678,23 @@ Transform:
   m_Father: {fileID: 1624182145}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 270}
+--- !u!114 &25440676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 25440667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActions:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_DelayTime: 0
 --- !u!1001 &65731932
 Prefab:
   m_ObjectHideFlags: 0
@@ -1348,8 +1377,9 @@ GameObject:
   - component: {fileID: 275865280}
   - component: {fileID: 275865279}
   - component: {fileID: 275865278}
-  - component: {fileID: 275865277}
   - component: {fileID: 275865276}
+  - component: {fileID: 275865284}
+  - component: {fileID: 275865277}
   m_Layer: 8
   m_Name: Painting3
   m_TagString: Untagged
@@ -1388,7 +1418,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1513,6 +1543,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 275865284}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &275865279
@@ -1601,6 +1642,23 @@ Transform:
   m_Father: {fileID: 1624182145}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 180, y: -73.540985, z: 180}
+--- !u!114 &275865284
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 275865275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActions:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_DelayTime: 0
 --- !u!1 &287974736
 GameObject:
   m_ObjectHideFlags: 0
@@ -3213,22 +3271,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllRoomTasks:
-  - Name: Grab Record Player
+  - Name: Paint Canvas
     Description: 
-    Task: {fileID: 624656384}
+    Task: {fileID: 1340501469}
   - Name: Paint Painting 1
     Description: 
     Task: {fileID: 1738408208}
+  - Name: Paint Painting 2
+    Description: 
+    Task: {fileID: 25440676}
+  - Name: Paint Painting 3
+    Description: 
+    Task: {fileID: 275865284}
   m_AllPaintingTasks:
   - {fileID: 1738408200}
   - {fileID: 25440670}
   - {fileID: 275865278}
-  - {fileID: 390797999}
+  - {fileID: 1340501465}
   m_AllTasksCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 496182203}
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 1103856922}
+        m_MethodName: StartFadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5997,6 +6061,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 4
   fadeColor: {r: 0, g: 0, b: 0, a: 1}
+  m_OnFadeOutComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 496182203}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &1120787253
 Prefab:
   m_ObjectHideFlags: 0
@@ -7344,10 +7424,11 @@ GameObject:
   - component: {fileID: 1340501464}
   - component: {fileID: 1340501463}
   - component: {fileID: 1340501462}
-  - component: {fileID: 1340501468}
   - component: {fileID: 1340501467}
   - component: {fileID: 1340501466}
   - component: {fileID: 1340501465}
+  - component: {fileID: 1340501469}
+  - component: {fileID: 1340501468}
   m_Layer: 8
   m_Name: Canvas
   m_TagString: Untagged
@@ -7469,6 +7550,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1340501469}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1340501466
@@ -7515,7 +7607,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -7599,6 +7691,23 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1340501469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1340501460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08f742134bccb94db2525e416ddee0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_StartActions:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_DelayTime: 0
 --- !u!4 &1364633890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4961986381810434, guid: d8bd11e244388e44aac5be5127d9c4fb,
@@ -9156,9 +9265,9 @@ GameObject:
   - component: {fileID: 1738408202}
   - component: {fileID: 1738408201}
   - component: {fileID: 1738408200}
-  - component: {fileID: 1738408207}
-  - component: {fileID: 1738408206}
   - component: {fileID: 1738408208}
+  - component: {fileID: 1738408206}
+  - component: {fileID: 1738408207}
   m_Layer: 8
   m_Name: Painting1
   m_TagString: Untagged
@@ -9198,6 +9307,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1398479718}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1738408208}
+        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9326,7 +9446,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0
   m_Pitch: 1
   Loop: 0
   Mute: 0

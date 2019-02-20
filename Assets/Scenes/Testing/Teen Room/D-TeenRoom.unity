@@ -278,24 +278,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AllRoomTasks:
-  - Name: Grab Desk
-    Description: 
-    Task: {fileID: 1739333760}
-  - Name: ED Walks To Window
-    Description: 
-    Task: {fileID: 1701319729}
   - Name: Painting 1 Complete
     Description: 
-    Task: {fileID: 1701319729}
+    Task: {fileID: 1913305622}
   - Name: Painting 2 Complete
     Description: 
-    Task: {fileID: 1701319729}
+    Task: {fileID: 1535268014}
   - Name: Painting 3 Complete
     Description: 
-    Task: {fileID: 1701319729}
+    Task: {fileID: 216461698}
   - Name: Painting 4 Complete
     Description: 
-    Task: {fileID: 1701319729}
+    Task: {fileID: 1223246227}
   m_AllPaintingTasks:
   - {fileID: 1913305614}
   - {fileID: 1535268006}
@@ -304,8 +298,8 @@ MonoBehaviour:
   m_AllTasksCompleted:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1670426961}
-        m_MethodName: GoToScene
+      - m_Target: {fileID: 266826316}
+        m_MethodName: StartFadeOut
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -703,9 +697,9 @@ GameObject:
   - component: {fileID: 216461692}
   - component: {fileID: 216461691}
   - component: {fileID: 216461690}
-  - component: {fileID: 216461697}
-  - component: {fileID: 216461696}
   - component: {fileID: 216461698}
+  - component: {fileID: 216461696}
+  - component: {fileID: 216461697}
   m_Layer: 8
   m_Name: Poster3
   m_TagString: Untagged
@@ -745,6 +739,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1943214449}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 216461698}
+        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1076,6 +1081,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 2
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  m_OnFadeOutComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1670426961}
+        m_MethodName: GoToScene
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1001 &330913111
 Prefab:
   m_ObjectHideFlags: 0
@@ -9916,9 +9937,9 @@ GameObject:
   - component: {fileID: 1223246221}
   - component: {fileID: 1223246220}
   - component: {fileID: 1223246219}
+  - component: {fileID: 1223246227}
   - component: {fileID: 1223246226}
   - component: {fileID: 1223246225}
-  - component: {fileID: 1223246227}
   m_Layer: 8
   m_Name: Poster4
   m_TagString: Untagged
@@ -9958,6 +9979,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1121693188}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1223246227}
+        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11250,9 +11282,9 @@ GameObject:
   - component: {fileID: 1535268008}
   - component: {fileID: 1535268007}
   - component: {fileID: 1535268006}
+  - component: {fileID: 1535268014}
   - component: {fileID: 1535268013}
   - component: {fileID: 1535268012}
-  - component: {fileID: 1535268014}
   m_Layer: 8
   m_Name: Poster2
   m_TagString: Untagged
@@ -11292,6 +11324,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1439572630}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1535268014}
+        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18101,9 +18144,9 @@ GameObject:
   - component: {fileID: 1913305616}
   - component: {fileID: 1913305615}
   - component: {fileID: 1913305614}
+  - component: {fileID: 1913305622}
   - component: {fileID: 1913305621}
   - component: {fileID: 1913305620}
-  - component: {fileID: 1913305622}
   m_Layer: 8
   m_Name: Poster1
   m_TagString: Untagged
@@ -18143,6 +18186,17 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1795894582}
         m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1913305622}
+        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
