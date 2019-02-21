@@ -310,14 +310,14 @@ MonoBehaviour:
     m_IsComplete: 0
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
-    m_NextSceneName: GroceryFinal
+    m_NextSceneName: GroceryStore_Rework
     m_Room: 3
     m_NextRoom: 2
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
     m_IsComplete: 0
   - m_Name: Grocery Store
-    m_SceneName: GroceryFinal
+    m_SceneName: GroceryStore_Rework
     m_NextSceneName: D-DepressionRoom
     m_Room: 2
     m_NextRoom: 4
@@ -7415,6 +7415,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fadeTime: 2
   fadeColor: {r: 0.01, g: 0.01, b: 0.01, a: 1}
+  m_OnFadeOutComplete:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!1 &1206215500
 GameObject:
   m_ObjectHideFlags: 0
