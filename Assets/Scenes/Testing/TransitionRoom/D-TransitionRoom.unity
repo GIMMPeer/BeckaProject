@@ -264,7 +264,7 @@ MonoBehaviour:
   m_Player: {fileID: 233334983}
   m_Door: {fileID: 1331985755}
   m_DarkBox: {fileID: 1250838095}
-  m_TriggerDistance: 2
+  m_TriggerDistance: 1.5
 --- !u!114 &3510365 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114035959044390946, guid: 009dbf473c655f147a95b8a7e4248c55,

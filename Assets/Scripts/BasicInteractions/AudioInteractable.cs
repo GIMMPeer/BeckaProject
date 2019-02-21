@@ -11,6 +11,7 @@ public class AudioInteractable : MonoBehaviour {
     public GameObject m_DistortionSpherePrefab;
 
     public bool m_UseDistortionSphere = true;
+    public float m_DelayTime = 0.0f;
 
     public UnityEvent m_OnAudioComplete;
 
@@ -56,6 +57,12 @@ public class AudioInteractable : MonoBehaviour {
 	}
 
     public void PlayAudioSystem()
+    {
+        Invoke("DelayedPlay", m_DelayTime);
+        Debug.Log("Invoked Delayed Play");
+    }
+
+    private void DelayedPlay()
     {
         if (m_CurrentDistortionSphere != null || GetComponent<AudioSource>().isPlaying)
         {
