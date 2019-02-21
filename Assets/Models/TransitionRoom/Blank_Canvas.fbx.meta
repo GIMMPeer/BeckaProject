@@ -1,23 +1,15 @@
 fileFormatVersion: 2
-guid: a0bc2924b934c064ab5ea6619c3673ab
+guid: daed2c00e8870a845aaf4d7dbdf207fd
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: desk
-    100002: drawer_right_4
-    100004: //RootNode
-    400000: desk
-    400002: drawer_right_4
-    400004: //RootNode
-    2100000: No Name
-    2300000: desk
-    2300002: drawer_right_4
-    2300004: //RootNode
-    3300000: desk
-    3300002: drawer_right_4
-    3300004: //RootNode
-    4300000: drawer_right_4
-    4300002: desk
+    100000: //RootNode
+    400000: //RootNode
+    2100000: Canvas
+    2100002: CanvasWood
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube
   externalObjects: {}
   materials:
     importMaterials: 1
