@@ -101722,7 +101722,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Clip: {fileID: 8300000, guid: d872d3e0cc3fefd44a0963553ac43cff, type: 3}
   m_DistortionSpherePrefab: {fileID: 0}
-  m_UseDistortionSphere: 1
+  m_UseDistortionSphere: 0
   m_DelayTime: 1
   m_OnAudioComplete:
     m_PersistentCalls:
