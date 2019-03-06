@@ -347,7 +347,7 @@ MonoBehaviour:
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 0f86c8f5c9c3c584d972583ef7487666, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 93618070add995f458941052d1b4dd64, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
     m_NextSceneName: GroceryStore_Rework
@@ -355,7 +355,7 @@ MonoBehaviour:
     m_NextRoom: 2
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Grocery Store
     m_SceneName: GroceryStore_Rework
     m_NextSceneName: M_DepressionRoom
@@ -363,7 +363,7 @@ MonoBehaviour:
     m_NextRoom: 4
     m_PaintingTexture: {fileID: 2800000, guid: 08d0bc4835591fb449ff933f2f968699, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 335d7cea6e00a6d4292e92edab27e4ec, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Depression Room
     m_SceneName: M_DepressionRoom
     m_NextSceneName: M-Doctor_Main
@@ -7259,7 +7259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: M_DepressionRoom
+  m_SceneName: D-GirlsRoom
 --- !u!4 &963865703
 Transform:
   m_ObjectHideFlags: 0
