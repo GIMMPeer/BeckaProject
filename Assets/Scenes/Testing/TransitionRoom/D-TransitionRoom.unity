@@ -347,7 +347,7 @@ MonoBehaviour:
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 0f86c8f5c9c3c584d972583ef7487666, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 93618070add995f458941052d1b4dd64, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
     m_NextSceneName: GroceryStore_Rework
@@ -355,7 +355,7 @@ MonoBehaviour:
     m_NextRoom: 2
     m_PaintingTexture: {fileID: 2800000, guid: 6bb63fe3f0eae88469e4aadfdee4a452, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 51ed961457bcd394486081b7c10b62a5, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Grocery Store
     m_SceneName: GroceryStore_Rework
     m_NextSceneName: D-DepressionRoom
@@ -363,7 +363,7 @@ MonoBehaviour:
     m_NextRoom: 4
     m_PaintingTexture: {fileID: 2800000, guid: 08d0bc4835591fb449ff933f2f968699, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 335d7cea6e00a6d4292e92edab27e4ec, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Depression Room
     m_SceneName: D-DepressionRoom
     m_NextSceneName: M-Doctor_Main
@@ -371,7 +371,7 @@ MonoBehaviour:
     m_NextRoom: 0
     m_PaintingTexture: {fileID: 2800000, guid: e091b48a42f717d42831fb8ef54ed5ef, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 00f90f14160b7a047b7c2458f607b73b, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Doctor's Office
     m_SceneName: M-Doctor_Main
     m_NextSceneName: D-Bathroom
@@ -379,7 +379,7 @@ MonoBehaviour:
     m_NextRoom: 5
     m_PaintingTexture: {fileID: 2800000, guid: d4d0d4e018c47b940b92a622be1bf5a2, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: e791215636e2a6c42ae54840845de33e, type: 2}
-    m_IsComplete: 1
+    m_IsComplete: 0
   - m_Name: Bathroom
     m_SceneName: D-Bathroom
     m_NextSceneName: D-TransitionRoom
@@ -7259,7 +7259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81b4d5b080c1aa64c9ec063b7fc24417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneName: D-Bathroom
+  m_SceneName: D-GirlsRoom
 --- !u!4 &963865703
 Transform:
   m_ObjectHideFlags: 0
