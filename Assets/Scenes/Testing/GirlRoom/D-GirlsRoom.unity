@@ -438,9 +438,21 @@ MonoBehaviour:
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 25440676}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &25440669
@@ -454,7 +466,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.235
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -570,17 +582,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1941215195}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 25440676}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1402,9 +1403,21 @@ MonoBehaviour:
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 275865284}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &275865277
@@ -1418,7 +1431,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.235
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -1534,17 +1547,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1180596390}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 275865284}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2161,6 +2163,7 @@ MonoBehaviour:
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
       m_Calls: []
@@ -7495,8 +7498,8 @@ GameObject:
   - component: {fileID: 1340501463}
   - component: {fileID: 1340501462}
   - component: {fileID: 1340501467}
-  - component: {fileID: 1340501466}
   - component: {fileID: 1340501465}
+  - component: {fileID: 1340501466}
   - component: {fileID: 1340501469}
   - component: {fileID: 1340501468}
   m_Layer: 8
@@ -7620,17 +7623,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1340501469}
-        m_MethodName: FinishTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1340501466
@@ -7648,9 +7640,21 @@ MonoBehaviour:
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1340501469}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1340501467
@@ -7677,7 +7681,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.235
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -9436,17 +9440,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1738408208}
-        m_MethodName: FinishTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1738408201
@@ -9550,9 +9543,21 @@ MonoBehaviour:
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1738408208}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &1738408207
@@ -9566,7 +9571,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0
+  m_Volume: 0.235
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -10690,6 +10695,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 851bc4a005aa8bc4b93d45ae15452215, type: 3}
   m_DistortionSpherePrefab: {fileID: 0}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
       m_Calls:

@@ -748,17 +748,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 216461698}
-        m_MethodName: FinishTask
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &216461691
@@ -858,13 +847,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 0}
+  m_Clip: {fileID: 8300000, guid: 4f1607e4bff3b9b43a869f53e2f0db99, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 216461698}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &216461697
@@ -9906,8 +9907,8 @@ GameObject:
   - component: {fileID: 1223246220}
   - component: {fileID: 1223246219}
   - component: {fileID: 1223246227}
-  - component: {fileID: 1223246226}
   - component: {fileID: 1223246225}
+  - component: {fileID: 1223246226}
   m_Layer: 8
   m_Name: Poster4
   m_TagString: Untagged
@@ -9947,17 +9948,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1121693188}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1223246227}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10066,13 +10056,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 0}
+  m_Clip: {fileID: 8300000, guid: 4f1607e4bff3b9b43a869f53e2f0db99, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1223246227}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &1223246226
@@ -10084,7 +10086,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 4f1607e4bff3b9b43a869f53e2f0db99, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -10413,6 +10415,7 @@ MonoBehaviour:
   m_Clip: {fileID: 8300000, guid: 851bc4a005aa8bc4b93d45ae15452215, type: 3}
   m_DistortionSpherePrefab: {fileID: 0}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
       m_Calls:
@@ -11275,8 +11278,8 @@ GameObject:
   - component: {fileID: 1535268007}
   - component: {fileID: 1535268006}
   - component: {fileID: 1535268014}
-  - component: {fileID: 1535268013}
   - component: {fileID: 1535268012}
+  - component: {fileID: 1535268013}
   m_Layer: 8
   m_Name: Poster2
   m_TagString: Untagged
@@ -11316,17 +11319,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1439572630}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1535268014}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -11435,13 +11427,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 0}
+  m_Clip: {fileID: 8300000, guid: 8f71a1c63c9cc8b4ab9d9842b5a6c913, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1535268014}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &1535268013
@@ -11453,7 +11457,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8f71a1c63c9cc8b4ab9d9842b5a6c913, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -18006,8 +18010,8 @@ GameObject:
   - component: {fileID: 1913305615}
   - component: {fileID: 1913305614}
   - component: {fileID: 1913305622}
-  - component: {fileID: 1913305621}
   - component: {fileID: 1913305620}
+  - component: {fileID: 1913305621}
   m_Layer: 8
   m_Name: Poster1
   m_TagString: Untagged
@@ -18047,17 +18051,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1795894582}
         m_MethodName: Play
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1913305622}
-        m_MethodName: FinishTask
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -18166,13 +18159,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 0}
+  m_Clip: {fileID: 8300000, guid: 12f3d8b6edff3454da957110c7d6c5b3, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
+  m_DelayTime: 0
   m_OnAudioComplete:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1913305622}
+        m_MethodName: FinishTask
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!82 &1913305621
