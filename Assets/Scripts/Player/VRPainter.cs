@@ -15,6 +15,7 @@ public class VRPainter : MonoBehaviour {
     public Gradient m_Gradient;
     public float m_BrushSize = 1f;
     public float m_BrushPaintDistance = 1.0f; //max distance away from paintable where paintbrush will spawn
+    public float m_BrushRaycastOffset = 1.5f;
 
     [Space(5)] 
 
@@ -42,8 +43,8 @@ public class VRPainter : MonoBehaviour {
         int layerMask = 1 << LayerMask.NameToLayer("Drawable");
 
         RaycastHit hit;
-        Ray cursorRay = new Ray(brushTransform.position, brushTransform.forward);
-        if (Physics.Raycast(cursorRay, out hit, 0.2f, layerMask))
+        Ray cursorRay = new Ray(brushTransform.position - (brushTransform.forward * m_BrushRaycastOffset), brushTransform.forward);
+        if (Physics.Raycast(cursorRay, out hit, 1.0f, layerMask))
         {
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
             uvWorldPosition.x = pixelUV.x - m_CanvasCamera.orthographicSize;//To center the UV on X

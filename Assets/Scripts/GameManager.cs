@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 //persistent class that holds previous room locations and player's inventory
@@ -28,11 +29,21 @@ public class GameManager : MonoBehaviour {
 
     public RoomContainer[] m_AllRooms;
 
+    public AudioMixer m_AudioMixer;
+
     private RoomContainer m_CurrentRoomContainer;
     private RoomContainer m_NextRoomContainer;
 
+    private float m_NarrationVolume;
+    private float m_SoundFXVolume;
+    private float m_MusicVolume;
+
     private void Start()
     {
+        m_AudioMixer.SetFloat("SoundFXVolume", m_SoundFXVolume);
+        m_AudioMixer.SetFloat("NarrationVolume", m_NarrationVolume);
+        m_AudioMixer.SetFloat("MusicVolume", m_MusicVolume);
+
         Invoke("SetCurRoomContainer", 0.5f);
     }
 
@@ -135,7 +146,12 @@ public class GameManager : MonoBehaviour {
         Debug.Log("Testing Hit");
     }
 
-
+    public void SetAudioLevels(float fxVol, float narrVol, float musicVol)
+    {
+        m_SoundFXVolume = fxVol;
+        m_NarrationVolume = narrVol;
+        m_MusicVolume = musicVol;
+    }
 
     //Public Getters
 
