@@ -29,6 +29,8 @@ public class GameManager : MonoBehaviour {
 
     public RoomContainer[] m_AllRooms;
 
+    [Space]
+
     public AudioMixer m_AudioMixer;
 
     private RoomContainer m_CurrentRoomContainer;
