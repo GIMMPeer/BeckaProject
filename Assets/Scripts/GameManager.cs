@@ -40,9 +40,9 @@ public class GameManager : MonoBehaviour {
 
     private void Start()
     {
-        m_AudioMixer.SetFloat("SoundFXVolume", m_SoundFXVolume);
+        /*m_AudioMixer.SetFloat("SoundFXVolume", m_SoundFXVolume);
         m_AudioMixer.SetFloat("NarrationVolume", m_NarrationVolume);
-        m_AudioMixer.SetFloat("MusicVolume", m_MusicVolume);
+        m_AudioMixer.SetFloat("MusicVolume", m_MusicVolume);*/
 
         Invoke("SetCurRoomContainer", 0.5f);
     }
