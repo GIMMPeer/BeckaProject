@@ -19,6 +19,7 @@ public class BeckaRoomManager : MonoBehaviour
     public UnityEvent m_AllTasksCompleted;
 
     public bool m_AllowNonSequentialOrder = true;
+    public bool m_AutoCompletePaintTasks = true;
 
     //index that keeps track of which task player is on
     private int m_RoomTaskIndex = 0;
@@ -69,7 +70,7 @@ public class BeckaRoomManager : MonoBehaviour
             Debug.Log("All tasks done");
             //move to next scene
 
-            if (AreAllPaintingTasksCompleted())
+            if (AreAllPaintingTasksCompleted() || m_AutoCompletePaintTasks)
             {
                 //set that all paintings in room have been completed
                 //queue up next room in gamemanager
