@@ -223,7 +223,7 @@ Transform:
   - {fileID: 1941215194}
   - {fileID: 1180596389}
   m_Father: {fileID: 1624182145}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &18613831
 Prefab:
@@ -398,7 +398,7 @@ Transform:
   - {fileID: 1319241103}
   - {fileID: 254649855}
   m_Father: {fileID: 1624182145}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &25440667
 GameObject:
@@ -676,8 +676,9 @@ Transform:
   - {fileID: 742511704}
   - {fileID: 1677133906}
   - {fileID: 901425882}
+  - {fileID: 1738408205}
   m_Father: {fileID: 1624182145}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 90.00001, y: 0, z: 270}
 --- !u!114 &25440676
 MonoBehaviour:
@@ -1642,7 +1643,7 @@ Transform:
   - {fileID: 936986436}
   - {fileID: 386612196}
   m_Father: {fileID: 1624182145}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 180, y: -73.540985, z: 180}
 --- !u!114 &275865284
 MonoBehaviour:
@@ -3359,6 +3360,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   m_AllowNonSequentialOrder: 1
+  m_AutoCompletePaintTasks: 1
 --- !u!4 &650003599
 Transform:
   m_ObjectHideFlags: 0
@@ -5866,6 +5868,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4928884401775968, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
       propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1198577741550962, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1135268134168444, guid: b0047dd65ff208349bf3a5aaaeae24d0, type: 2}
+      propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
@@ -9129,7 +9139,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 390798001}
-  - {fileID: 1738408205}
   - {fileID: 25440675}
   - {fileID: 275865283}
   - {fileID: 22468583}
@@ -9519,16 +9528,16 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1738408199}
-  m_LocalRotation: {x: -0, y: -0.77944636, z: -0, w: 0.626469}
-  m_LocalPosition: {x: -1.208, y: 0.232, z: 3.135}
-  m_LocalScale: {x: 0.035759754, y: 0.046105657, z: 0.046105675}
+  m_LocalRotation: {x: -0.0764909, y: 0.70295745, z: -0.70295745, w: 0.0764909}
+  m_LocalPosition: {x: -31.586271, y: 42.0325, z: 6.5738955}
+  m_LocalScale: {x: 0.48198992, y: 0.57664, z: 0.57881314}
   m_Children:
   - {fileID: 1974348890}
   - {fileID: 1655672627}
   - {fileID: 627305654}
   - {fileID: 652707744}
-  m_Father: {fileID: 1624182145}
-  m_RootOrder: 1
+  m_Father: {fileID: 25440675}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 180, y: 77.579994, z: 180}
 --- !u!114 &1738408206
 MonoBehaviour:
