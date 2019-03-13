@@ -44,7 +44,7 @@ public class VRPainter : MonoBehaviour {
 
         RaycastHit hit;
         Ray cursorRay = new Ray(brushTransform.position - (brushTransform.forward * m_BrushRaycastOffset), brushTransform.forward);
-        if (Physics.Raycast(cursorRay, out hit, 1.0f, layerMask))
+        if (Physics.Raycast(cursorRay, out hit, 10.0f, layerMask))
         {
             Vector2 pixelUV = new Vector2(hit.textureCoord.x, hit.textureCoord.y);
             uvWorldPosition.x = pixelUV.x - m_CanvasCamera.orthographicSize;//To center the UV on X
@@ -54,6 +54,7 @@ public class VRPainter : MonoBehaviour {
 
             hitObject = hit.collider.gameObject;
             m_PaintingTarget = hitObject.GetComponent<VRPaintable>();
+
             return true;
         }
         else

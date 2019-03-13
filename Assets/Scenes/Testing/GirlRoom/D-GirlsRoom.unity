@@ -434,7 +434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: cadb84a577ea95b4ba665f544032a620, type: 3}
+  m_Clip: {fileID: 8300000, guid: 3441a9caca8592d41a1190a9a1348234, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
@@ -1399,7 +1399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: e458d4c128009f44ea165fb5b7f45257, type: 3}
+  m_Clip: {fileID: 8300000, guid: ec1004227ab2a944f9b9551048efd88f, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
@@ -1690,6 +1690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
   m_AllRooms: []
+  m_AudioMixer: {fileID: 0}
 --- !u!4 &287974738
 Transform:
   m_ObjectHideFlags: 0
@@ -3138,7 +3139,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 627305653}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.35, y: 2.96, z: -1.94}
+  m_LocalPosition: {x: 1.01, y: 2.96, z: 0.73}
   m_LocalScale: {x: 2.7721317, y: 6.8040915, z: 2.7721317}
   m_Children: []
   m_Father: {fileID: 1738408205}
@@ -3396,7 +3397,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 652707743}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.13, y: 2.96, z: 1.4}
+  m_LocalPosition: {x: 0, y: 2.96, z: 3.39}
   m_LocalScale: {x: 2.75393, y: 6.759415, z: 2.75393}
   m_Children: []
   m_Father: {fileID: 1738408205}
@@ -6081,6 +6082,7 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   m_BrushSize: 3
   m_BrushPaintDistance: 1
+  m_BrushRaycastOffset: 1.5
   m_BrushContainer: {fileID: 254649855}
   m_CanvasCamera: {fileID: 1045954561}
   m_BaseMaterial: {fileID: 2100000, guid: 9d82781d0d9f57d4d8a05e84f6bb8706, type: 2}
@@ -7636,7 +7638,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: 175a405009d809d4684215f80ed005fd, type: 3}
+  m_Clip: {fileID: 8300000, guid: c0a6ae5e0a931be41b38b063ddea2409, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
@@ -9160,7 +9162,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1655672626}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.9, y: 2.96, z: -1.62}
+  m_LocalPosition: {x: -3.29, y: 2.96, z: 3.1}
   m_LocalScale: {x: 3.0247526, y: 7.4241395, z: 3.0247526}
   m_Children: []
   m_Father: {fileID: 1738408205}
@@ -9539,7 +9541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: 4511a473c41c9a84083a658196088feb, type: 3}
+  m_Clip: {fileID: 8300000, guid: 979cb0b7c5bb8904ea7882ed63572709, type: 3}
   m_DistortionSpherePrefab: {fileID: 1292079031973958, guid: c7dc2d90a3f2db741b9aafe54aff9711,
     type: 2}
   m_UseDistortionSphere: 0
@@ -10404,7 +10406,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1974348889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.44, y: 2.96, z: 1.72}
+  m_LocalPosition: {x: 3, y: 2.96, z: 3.69}
   m_LocalScale: {x: 2.7269213, y: 6.693124, z: 2.7269213}
   m_Children: []
   m_Father: {fileID: 1738408205}

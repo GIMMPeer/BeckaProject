@@ -60,10 +60,10 @@ public class TransitionRoomManager : MonoBehaviour
             {
                 container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
 
-                DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
+                /*DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
                 button.SetupButton(container.m_NextSceneName, container.m_NextRoom); //feeds the scene name info and room enum to buttons
 
-                button.gameObject.SetActive(true);
+                button.gameObject.SetActive(true);*/
             }
         }
 

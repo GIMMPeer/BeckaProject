@@ -100,6 +100,8 @@ public class PaintbrushManager : MonoBehaviour {
         m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().EndInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
         m_RBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().EndInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
 
+        m_VRPainter.EndDrawing(); //always end drawing whenever player destroys paintbrush
+
         Destroy(m_InstantiatedPaintBrush);
         m_InstantiatedPaintBrush = null;
     }
