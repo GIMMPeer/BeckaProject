@@ -7,14 +7,6 @@ public class TransitionRoomManager : MonoBehaviour
 {
     public static TransitionRoomManager m_Singleton;
 
-    public DestinationRoomButton m_DocOfficeBtn;
-    public DestinationRoomButton m_GirlRoomBtn;
-    public DestinationRoomButton m_GroceryStoreBtn;
-    public DestinationRoomButton m_TeenRoomBtn;
-    public DestinationRoomButton m_DepressionRoomBtn;
-    public DestinationRoomButton m_DocOfficeRevisitBtn;
-    public DestinationRoomButton m_BathroomBtn;
-
     public bool m_AutoQueueNextRoom = false;
 
     private RoomContainer[] m_AllRooms;
@@ -60,10 +52,6 @@ public class TransitionRoomManager : MonoBehaviour
             {
                 container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
 
-                /*DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
-                button.SetupButton(container.m_NextSceneName, container.m_NextRoom); //feeds the scene name info and room enum to buttons
-
-                button.gameObject.SetActive(true);*/
             }
         }
 
@@ -75,40 +63,5 @@ public class TransitionRoomManager : MonoBehaviour
             Debug.Log("Current  Room Container: " + GameManager.m_Singleton.GetCurrentRoomContainer().m_Name);
             SceneTransfer.m_Singleton.m_SceneName = GameManager.m_Singleton.GetCurrentRoomContainer().m_SceneName;
         }
-    }
-
-    private DestinationRoomButton GetDestinationButton(GameManager.RoomNames room)
-    { 
-        DestinationRoomButton btn = null;
-        switch(room)
-        {
-            case GameManager.RoomNames.DoctorOffice:
-                btn = m_DocOfficeBtn;
-                break;
-            case GameManager.RoomNames.GirlsRoom:
-                btn = m_GirlRoomBtn;
-                break;
-            case GameManager.RoomNames.GroceryStore:
-                btn = m_GroceryStoreBtn;
-                break;
-            case GameManager.RoomNames.TeenRoom:
-                btn = m_TeenRoomBtn;
-                break;
-            case GameManager.RoomNames.DepressionRoom:
-                btn = m_DepressionRoomBtn;
-                break;
-            case GameManager.RoomNames.DoctorOfficeRevisit:
-                btn = m_DocOfficeRevisitBtn;
-                break;
-            case GameManager.RoomNames.Bathroom:
-                btn = m_BathroomBtn;
-                break;
-            default:
-                Debug.Log(room);
-                Debug.LogError("Enum sent into Get Destination Button doesn't have a case");
-                break;
-        }
-
-        return btn;
     }
 }

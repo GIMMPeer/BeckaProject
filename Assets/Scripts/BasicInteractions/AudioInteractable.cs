@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
+[RequireComponent(typeof(NewtonVR.NVRInteractableItem))]
+[RequireComponent(typeof(Rigidbody))]
+
 public class AudioInteractable : MonoBehaviour {
 
     public AudioClip m_Clip;
