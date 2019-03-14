@@ -11,6 +11,7 @@ public class PaintingTask : MonoBehaviour
     public UnityEvent m_OnFinishPainting;
 
     private bool m_IsComplete = false;
+    private bool m_IsStarted = false;
 
     private int m_StartingNodeCount = 0;
 
@@ -41,9 +42,10 @@ public class PaintingTask : MonoBehaviour
             m_IsComplete = true;
             m_OnFinishPainting.Invoke();
         }
-        else if (transform.childCount == m_StartingNodeCount - 1) //trigger when one painting node is gone (player has just started painting)
+        else if (transform.childCount <= m_StartingNodeCount - 1 && !m_IsStarted) //trigger when one painting node is gone (player has just started painting)
         {
             m_OnStartingPainting.Invoke();
+            m_IsStarted = true;
         }
     }
 }

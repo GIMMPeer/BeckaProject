@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4314074273377554}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Paintbrush Tip
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -39,7 +39,7 @@ GameObject:
   - component: {fileID: 54235948379596776}
   - component: {fileID: 65045907088164472}
   - component: {fileID: 114156409447716916}
-  m_Layer: 12
+  m_Layer: 0
   m_Name: Paintbrush
   m_TagString: PaintBrush
   m_Icon: {fileID: 0}
