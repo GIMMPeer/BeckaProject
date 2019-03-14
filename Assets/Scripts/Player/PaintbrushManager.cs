@@ -88,7 +88,8 @@ public class PaintbrushManager : MonoBehaviour {
         m_InstantiatedPaintBrush = Instantiate(m_PaintBrushPrefab);
         m_InstantiatedPaintBrush.transform.position = handTransform.position + handTransform.forward * 0.05f;
         m_InstantiatedPaintBrush.transform.rotation = handTransform.rotation * Quaternion.Euler(new Vector3(0, 180, 0));
-        handTransform.gameObject.GetComponent<NewtonVR.NVRHand>().BeginInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
+        m_InstantiatedPaintBrush.transform.parent = handTransform;
+
 
         m_PaintBrushState = state;
     }
@@ -96,9 +97,6 @@ public class PaintbrushManager : MonoBehaviour {
     private void DestroyPaintBrush()
     {
         if (!m_InstantiatedPaintBrush) return;
-
-        m_LBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().EndInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
-        m_RBrushTransform.gameObject.GetComponent<NewtonVR.NVRHand>().EndInteraction(m_InstantiatedPaintBrush.GetComponent<NewtonVR.NVRInteractable>());
 
         m_VRPainter.EndDrawing(); //always end drawing whenever player destroys paintbrush
 

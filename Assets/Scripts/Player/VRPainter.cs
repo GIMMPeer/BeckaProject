@@ -145,6 +145,8 @@ public class VRPainter : MonoBehaviour {
     //sets up scene objects with painting target
     public void EndDrawing()
     {
+        if (!m_PaintingTargetFound) return;
+
         m_PaintingTargetFound = false;
 
         m_PaintingTarget.SetObjectTexture(m_PaintingTarget.GetMainTexture());

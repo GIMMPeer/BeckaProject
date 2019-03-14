@@ -21,7 +21,7 @@ public class EditorRoomSelector : MonoBehaviour {
     [MenuItem("Rooms/Depression Room")]
     static void GotoDepressionRoom()
     {
-        EditorSceneManager.OpenScene("Assets/Scenes/Testing/Depression Room/M-DepressionRoom.unity");
+        EditorSceneManager.OpenScene("Assets/Scenes/Testing/Depression Room/M_DepressionRoom.unity");
     }
 
     [MenuItem("Rooms/Doctor's Office")]
