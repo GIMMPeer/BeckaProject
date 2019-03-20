@@ -155,6 +155,22 @@ public class GameManager : MonoBehaviour {
         m_MusicVolume = musicVol;
     }
 
+    public bool IsRoomComplete(RoomNames roomName)
+    {
+        //iterate through all rooms, check if roomname is same as parameter, return if its complete or not
+        for (int i = 0; i < m_AllRooms.Length; i++)
+        {
+            RoomContainer container = m_AllRooms[i];
+            RoomNames containerRoomName = container.m_Room;
+            
+            if (containerRoomName == roomName)
+            {
+                return container.m_IsComplete;
+            }
+        }
+        return false;
+    }
+
     //Public Getters
 
     public RoomContainer GetCurrentRoomContainer()
