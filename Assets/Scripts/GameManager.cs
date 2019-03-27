@@ -112,7 +112,7 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
-    RoomContainer GetMostRecentRoom()
+    public RoomContainer GetMostRecentRoom()
     {
         foreach (RoomContainer container in m_AllRooms)
         {
@@ -127,7 +127,7 @@ public class GameManager : MonoBehaviour {
         }
 
         //shouldn't ever get here
-        Debug.LogError("Get most recent room failed, all rooms complete");
+        Debug.Log("Get most recent room failed, all rooms complete");
         return null;
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //get persistent data to make painting for each room either on or off depending on completion
 public class TransitionRoomManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class TransitionRoomManager : MonoBehaviour
     public static TransitionRoomManager m_Singleton;
 
     public bool m_AutoQueueNextRoom = false;
+
+    public UnityEvent m_OnAllRoomsComplete;
 
     private RoomContainer[] m_AllRooms;
 
@@ -51,11 +54,15 @@ public class TransitionRoomManager : MonoBehaviour
             if (container.m_IsComplete)
             {
                 container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
-
             }
         }
 
-        if (m_AutoQueueNextRoom)
+        if (GameManager.m_Singleton.GetMostRecentRoom() == null)
+        {
+            //all rooms are complete
+            m_OnAllRoomsComplete.Invoke();
+        }
+        else if (m_AutoQueueNextRoom)
         {
             //confused about this a bit
             //when loading back into tranistion scene, the current roomcontainer is actually next room to be loaded
