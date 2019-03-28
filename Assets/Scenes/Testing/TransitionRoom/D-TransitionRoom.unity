@@ -143,6 +143,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_AutoQueueNextRoom: 1
+  m_MainMenuObject: {fileID: 681104082}
+  m_FirstPersonController: {fileID: 337657849}
   m_OnAllRoomsComplete:
     m_PersistentCalls:
       m_Calls:
@@ -274,7 +276,7 @@ MonoBehaviour:
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 3d590b9f2c0583046a41ccfe5c878057, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 93618070add995f458941052d1b4dd64, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
     m_NextSceneName: M_DepressionRoom
@@ -315,7 +317,6 @@ MonoBehaviour:
     m_PaintingTexture: {fileID: 2800000, guid: 830d2d20ace15f3428aed471aaaf86be, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: aec2a940ad0cc5142bc64803640aafc9, type: 2}
     m_IsComplete: 0
-  m_AudioMixer: {fileID: 0}
 --- !u!4 &52908387
 Transform:
   m_ObjectHideFlags: 0
@@ -21061,11 +21062,11 @@ MonoBehaviour:
     lineCount: 1
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
+  m_havePropertiesChanged: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
+  m_isInputParsingRequired: 1
   m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_subTextObjects:

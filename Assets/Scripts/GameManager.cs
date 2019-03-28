@@ -29,10 +29,6 @@ public class GameManager : MonoBehaviour {
 
     public RoomContainer[] m_AllRooms;
 
-    [Space]
-
-    public AudioMixer m_AudioMixer;
-
     private RoomContainer m_CurrentRoomContainer;
     private RoomContainer m_NextRoomContainer;
 
@@ -47,6 +43,8 @@ public class GameManager : MonoBehaviour {
         m_AudioMixer.SetFloat("MusicVolume", m_MusicVolume);*/
 
         Invoke("SetCurRoomContainer", 0.5f);
+
+        TransitionRoomManager.m_Singleton.CreateMenu();
     }
 
     private void SetCurRoomContainer()

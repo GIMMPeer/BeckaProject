@@ -9,6 +9,8 @@ public class TransitionRoomManager : MonoBehaviour
     public static TransitionRoomManager m_Singleton;
 
     public bool m_AutoQueueNextRoom = false;
+    public GameObject m_MainMenuObject;
+    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_FirstPersonController;
 
     public UnityEvent m_OnAllRoomsComplete;
 
@@ -28,6 +30,12 @@ public class TransitionRoomManager : MonoBehaviour
         ResetAllPaintings();
 
         LoadRoomInfo();
+    }
+
+    public void CreateMenu()
+    {
+        m_MainMenuObject.SetActive(true);
+        m_FirstPersonController.SetWalkSpeed(0);
     }
 
     public void ResetAllPaintings()
