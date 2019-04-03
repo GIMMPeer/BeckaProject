@@ -1717,7 +1717,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_IsPersistant: 0
   m_AllRooms: []
-  m_AudioMixer: {fileID: 0}
 --- !u!4 &287974738
 Transform:
   m_ObjectHideFlags: 0

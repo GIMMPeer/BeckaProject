@@ -1,0 +1,11 @@
+Overall Structure:
+The game goes through 7 rooms. Each room always goes back to the Transition Room. 
+The Game Manager is the main script that holds persistent data across the rooms. The data it holds is the individual room completeness status.
+
+Individual Rooms:
+Rooms are managed in the Room Manager. This script is split into two sections. 
+The first section is the list of Room Tasks. Room Tasks are components that can be added to any object, and can be completed with an event. All room tasks are used on the paintings in the rooms. When the painting is complete the "OnFinishPainting" event is called, this then calls the audio interactable. The "AudioInteractable" then finishes the "RoomTask". When all room tasks are complete the "AllTasksCompleted" event is called.
+The second is a list of Painting Tasks. The painting tasks are components that are added to paintings, and track whether or not a painting is complete. The check for when all painting tasks are completed is done when all "RoomTasks" are complete. If the painting tasks are not all complete, the room is marked as incomplete by the Game Manager.
+
+Additional Notes:
+The RoomTask system in the rooms is  bit redundant. 
