@@ -9234,8 +9234,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1395152985}
-        m_MethodName: PlayAudioSystem
+      - m_Target: {fileID: 1395152986}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -15093,7 +15093,6 @@ GameObject:
   m_Component:
   - component: {fileID: 394773909}
   - component: {fileID: 394773911}
-  - component: {fileID: 394773910}
   m_Layer: 0
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -15114,26 +15113,6 @@ Transform:
   m_Father: {fileID: 1168630483}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &394773910
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 394773908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: f4aa45345ba4ef148a3cfdf69bf73cec, type: 3}
-  m_DistortionSpherePrefab: {fileID: 0}
-  m_UseDistortionSphere: 0
-  m_DelayTime: 0
-  m_OnAudioComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!82 &394773911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15143,8 +15122,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: f4aa45345ba4ef148a3cfdf69bf73cec, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -37676,6 +37655,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1879233745}
   head: {fileID: 795376970}
+--- !u!1 &796277312
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 796277314}
+  - component: {fileID: 796277313}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &796277313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796277312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe94f5576f9336245afa3a54a4d7299c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &796277314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 796277312}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796281434
 GameObject:
   m_ObjectHideFlags: 0
@@ -61818,7 +61837,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1395152984}
   - component: {fileID: 1395152986}
-  - component: {fileID: 1395152985}
   m_Layer: 8
   m_Name: BackgroundMusic
   m_TagString: Untagged
@@ -61839,26 +61857,6 @@ Transform:
   m_Father: {fileID: 478278619}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1395152985
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1395152983}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 43ed22db43880d544b627b20e4a79cb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Clip: {fileID: 8300000, guid: db6e964114a165e4e93bcff87dffb61a, type: 3}
-  m_DistortionSpherePrefab: {fileID: 0}
-  m_UseDistortionSphere: 0
-  m_DelayTime: 0
-  m_OnAudioComplete:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
 --- !u!82 &1395152986
 AudioSource:
   m_ObjectHideFlags: 0
@@ -61868,8 +61866,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 1
+  m_audioClip: {fileID: 8300000, guid: db6e964114a165e4e93bcff87dffb61a, type: 3}
+  m_PlayOnAwake: 0
   m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
@@ -101605,8 +101603,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 394773910}
-        m_MethodName: PlayAudioSystem
+      - m_Target: {fileID: 394773911}
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

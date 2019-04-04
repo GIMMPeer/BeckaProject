@@ -34,9 +34,10 @@ public class PaintingTask : MonoBehaviour
     //called when child collider is hit
     public void UpdatePaintingStatus(GameObject colliderObj)
     {
+        colliderObj.transform.parent = null; //remove object from parent so child count will update
         Destroy(colliderObj);
 
-        if (transform.childCount <= 1) //destorying child doesn't update child count immedietely
+        if (transform.childCount <= 0) //destorying child doesn't update child count immedietely
         {
             Debug.Log("Painting Complete");
             m_IsComplete = true;

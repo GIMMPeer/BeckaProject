@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(AudioSource))]
-[RequireComponent(typeof(NewtonVR.NVRInteractableItem))]
 [RequireComponent(typeof(Rigidbody))]
 
+//generic class that has an attached audio clip that will play on the PlayAudioSystem function
+//also includes prebab with animation that can be played as well as OnAudioComplete event when audio is finished
 public class AudioInteractable : MonoBehaviour {
 
     public AudioClip m_Clip;
@@ -14,6 +15,8 @@ public class AudioInteractable : MonoBehaviour {
     public GameObject m_DistortionSpherePrefab;
 
     public bool m_UseDistortionSphere = true;
+
+    //how long before audio should start playing 
     public float m_DelayTime = 0.0f;
 
     public UnityEvent m_OnAudioComplete;
@@ -55,14 +58,15 @@ public class AudioInteractable : MonoBehaviour {
 
         if (Input.GetKeyDown(KeyCode.J))
         {
+            //cheat to make audio stop
             GetComponent<AudioSource>().Stop();
         }
 	}
 
+    //can be called from event system in scene
     public void PlayAudioSystem()
     {
         Invoke("DelayedPlay", m_DelayTime);
-        Debug.Log("Invoked Delayed Play");
     }
 
     private void DelayedPlay()
@@ -76,6 +80,8 @@ public class AudioInteractable : MonoBehaviour {
         {
             Debug.LogWarning("Audio Interactable doesn't have audio clip");
         }
+
+        SoundManager.m_Instance.SetAudioSource(GetComponent<AudioSource>());
 
         GetComponent<AudioSource>().Play();
         m_IsInteracted = true;

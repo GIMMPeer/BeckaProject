@@ -4,41 +4,26 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
+    public static SoundManager m_Instance;
 
-	public Sound[] sounds;
+    private AudioSource m_CurrentSource;
+    // Use this for initialization
 
-	// Use this for initialization
-	void Awake () {
-		foreach (Sound s in sounds)
-		{
-			s.source = gameObject.AddComponent<AudioSource>();
-			s.source.clip = s.clip;
-			s.source.volume = s.volume;
-			s.source.pitch = s.pitch;
-			s.source.loop = s.loop;
-		}
-	}
-	
-	public void Play (string name) {
-		Sound s = Array.Find(sounds, sound => sound.name == name);
-		if (s == null) {
-			Debug.LogWarning("Sound " + name + " not found");
-			return;
-		}
-		s.source.Play();
-	}
+    private void Awake()
+    {
+        m_Instance = this;
+    }
 
-	public void Stop (string name) {
-		Sound s = Array.Find(sounds, sound => sound.name == name);
-		if (s == null) {
-			Debug.LogWarning("Sound " + name + " not found");
-			return;
-		}
-		s.source.Stop();
-	}
+    public void SetAudioSource(AudioSource source)
+    {
+        if (m_CurrentSource != null)
+        {
+            if (m_CurrentSource.isPlaying)
+            {
+                m_CurrentSource.Stop();
+            }
+        }
 
-	// Update is called once per frame
-	void Update () {
-		
-	}
+        m_CurrentSource = source;
+    }
 }
