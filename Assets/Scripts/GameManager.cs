@@ -44,7 +44,10 @@ public class GameManager : MonoBehaviour {
 
         Invoke("SetCurRoomContainer", 0.5f);
 
-        TransitionRoomManager.m_Singleton.CreateMenu();
+        if (TransitionRoomManager.m_Singleton.m_ShowStartingMenu)
+        {
+            TransitionRoomManager.m_Singleton.CreateMenu();
+        }
     }
 
     private void SetCurRoomContainer()

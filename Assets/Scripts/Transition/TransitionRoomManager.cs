@@ -9,6 +9,7 @@ public class TransitionRoomManager : MonoBehaviour
     public static TransitionRoomManager m_Singleton;
 
     public bool m_AutoQueueNextRoom = false;
+    public bool m_ShowStartingMenu = true;
     public GameObject m_MainMenuObject;
     public UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_FirstPersonController;
 
