@@ -49309,7 +49309,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.0749998
+      value: 0.941
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalRotation.x
@@ -49331,17 +49331,9 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 360
-      objectReference: {fileID: 0}
     - target: {fileID: 1847056556886186, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_Name
       value: TeleportLocation (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.532
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
@@ -63449,17 +63441,13 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
-    - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 270
-      objectReference: {fileID: 0}
     - target: {fileID: 1847056556886186, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_Name
       value: TeleportLocation (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
-      propertyPath: m_LocalPosition.y
-      value: -0.532
+    - target: {fileID: 1847056556886186, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
@@ -92100,7 +92088,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0.838
+      value: -0.835
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalRotation.x

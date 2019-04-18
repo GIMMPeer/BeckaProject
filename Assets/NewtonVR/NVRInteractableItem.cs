@@ -20,6 +20,7 @@ namespace NewtonVR
         public UnityEvent OnUseButtonUp;
 
         public UnityEvent OnHovering;
+        public UnityEvent NotHovering;
 
         public UnityEvent OnBeginInteraction;
         public UnityEvent OnEndInteraction;
@@ -317,6 +318,10 @@ namespace NewtonVR
             if (OnHovering != null)
             {
                 OnHovering.Invoke();
+            }
+            else
+            {
+                NotHovering.Invoke();
             }
         }
 
