@@ -6,60 +6,98 @@ public class VRPlayerTeleport : MonoBehaviour {
 
     public Transform m_RHandTransform;
     public Transform m_LHandTransform;
-    // Use this for initialization
-    void Start ()
-    {
-		
-	}
-	
-	// Update is called once per frame
+    public Transform m_HeadTransform;
+    
+    private enum m_Handedness { head, left, right};
+
+    private ParticleSystem m_lastParticleSystem;
+    
+    
 	void Update ()
     {
-        /*
-        RaycastHit hit;
-        Vector3 origin = m_RHandTransform.position;
-        Vector3 direction = m_RHandTransform.forward;
-        Ray ray = new Ray(origin, direction);
-        int layerMask = 1 << LayerMask.NameToLayer("VRTeleportLoc"); //only look for layer that is "VRTeleportLoc"
-        if (Physics.Raycast(ray, out hit, 10, layerMask))
+        RaycastOut(m_Handedness.head);
+
+        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger))
         {
-            hit.collider.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>().Play();
+            RaycastOut(m_Handedness.right); //try teleport with right hand
         }
-        */
-
-
-
-        if (OVRInput.GetDown(OVRInput.Button.PrimaryIndexTrigger) || OVRInput.GetDown(OVRInput.Button.PrimaryHandTrigger))
+        else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger))
         {
-            TryTeleport(false); //try teleport with right hand
-        }
-        else if (OVRInput.GetDown(OVRInput.Button.SecondaryIndexTrigger) || OVRInput.GetDown(OVRInput.Button.SecondaryHandTrigger))
-        {
-            TryTeleport(true); //try teleport with left hand
+            RaycastOut(m_Handedness.left); //try teleport with left hand
         }
 
     }
 
-    private void TryTeleport(bool isRightHand)
+    private void RaycastOut(m_Handedness type)
     {
-        Vector3 origin = isRightHand ? m_RHandTransform.position : m_LHandTransform.position;
-        Vector3 direction = isRightHand ? m_RHandTransform.forward : m_LHandTransform.forward;
 
-        Ray ray = new Ray(origin, direction);
-        RaycastHit hit;
-
-        //only look for layer that is "VRTeleportLoc"
-        int layerMask = 1 << LayerMask.NameToLayer("VRTeleportLoc");
-
-        if (Physics.Raycast(ray, out hit, 10, layerMask))
+        /*
+        Vector3 origin = Vector3.zero;
+        Vector3 direction = Vector3.zero;
+        if (type == m_Handedness.head)
         {
-            //on hiting vrteleportlocation
+            origin = m_HeadTransform.position;
+            direction = m_HeadTransform.forward;
+        }else if (type == m_Handedness.left)
+        {
+            origin = m_LHandTransform.position;
+            direction = m_LHandTransform.forward;
+        }else if(type == m_Handedness.right)
+        {
+            origin = m_RHandTransform.position;
+            direction = m_RHandTransform.forward;
+        }
+        */
 
-            TeleportLocation tpl = hit.collider.gameObject.GetComponent<TeleportLocation>();
-            if (tpl)
+        Vector3 origin = m_HeadTransform.position;
+        Vector3 direction = m_HeadTransform.forward;
+
+        RaycastHit hit;
+        Ray ray = new Ray(origin, direction);
+        int layerMask = 1 << LayerMask.NameToLayer("VRTeleportLoc"); //only look for layer that is "VRTeleportLoc"
+        if (Physics.Raycast(ray, out hit, 100, layerMask))
+        {
+            if(type == m_Handedness.head)
             {
-                tpl.TeleportPlayer(transform);
+                if (hit.collider.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>() != null)
+                {
+                    ParticleSystem PS = hit.collider.gameObject.transform.GetChild(1).GetComponent<ParticleSystem>();
+
+                    if(m_lastParticleSystem == null)
+                    {
+                        m_lastParticleSystem = PS;
+                    }
+                    else if(m_lastParticleSystem == PS)
+                    {
+                        if (!PS.isPlaying)
+                        {
+                            PS.Play();
+                        }
+                    }
+                    else
+                    {
+                        m_lastParticleSystem.Stop();
+                        m_lastParticleSystem.Clear();
+                        m_lastParticleSystem = PS;
+                    }
+                }
+                else{
+                    Debug.Log("No particle system found, m_handedness.none");
+                }
             }
+            else
+            {
+                if(hit.collider.gameObject.GetComponent<TeleportLocation>() != null)
+                {
+                    TeleportLocation tpl = hit.collider.gameObject.GetComponent<TeleportLocation>();
+                    if (tpl){
+                        tpl.TeleportPlayer(transform);
+                    }
+                }
+                else{
+                    Debug.Log("No teleport location found, m_handedness.left or .right");
+                }
+            }   
         }
     }
 }

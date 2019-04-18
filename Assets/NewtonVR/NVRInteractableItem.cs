@@ -20,7 +20,6 @@ namespace NewtonVR
         public UnityEvent OnUseButtonUp;
 
         public UnityEvent OnHovering;
-        public UnityEvent NotHovering;
 
         public UnityEvent OnBeginInteraction;
         public UnityEvent OnEndInteraction;
@@ -29,7 +28,7 @@ namespace NewtonVR
 
         protected Vector3 ExternalVelocity;
         protected Vector3 ExternalAngularVelocity;
-
+        
         protected Vector3?[] VelocityHistory;
         protected Vector3?[] AngularVelocityHistory;
         protected int CurrentVelocityHistoryStep = 0;
@@ -318,10 +317,6 @@ namespace NewtonVR
             if (OnHovering != null)
             {
                 OnHovering.Invoke();
-            }
-            else
-            {
-                NotHovering.Invoke();
             }
         }
 
