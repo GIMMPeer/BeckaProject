@@ -409,6 +409,10 @@ Prefab:
       propertyPath: m_Center.z
       value: 0.13748418
       objectReference: {fileID: 0}
+    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.5242
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
   m_IsPrefabAsset: 0
@@ -1281,6 +1285,10 @@ Prefab:
       propertyPath: m_LocalEulerAnglesHint.y
       value: 450
       objectReference: {fileID: 0}
+    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.527
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
   m_IsPrefabAsset: 0
@@ -1848,6 +1856,10 @@ Prefab:
     - target: {fileID: 1847056556886186, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_Name
       value: TeleportLocation (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.52
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
@@ -3883,7 +3895,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &715209289
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -9397,6 +9409,10 @@ Prefab:
       propertyPath: m_Name
       value: TeleportLocation (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4157701574287654, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -0.523
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
   m_IsPrefabAsset: 0
@@ -13736,7 +13752,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!199 &1785626434
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -18455,6 +18471,48 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198477481502097238, guid: 86f599896784d94419d1e3747f922b88,
     type: 2}
   m_PrefabInternal: {fileID: 1795894580}
+--- !u!1 &1808548184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1808548186}
+  - component: {fileID: 1808548185}
+  m_Layer: 0
+  m_Name: WindZone
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!182 &1808548185
+WindZone:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808548184}
+  m_Enabled: 1
+  m_Mode: 1
+  m_Radius: 10
+  m_WindMain: 2
+  m_WindTurbulence: 0.11
+  m_WindPulseMagnitude: 1.5
+  m_WindPulseFrequency: 0.29
+--- !u!4 &1808548186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1808548184}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1824627124
 GameObject:
   m_ObjectHideFlags: 0
