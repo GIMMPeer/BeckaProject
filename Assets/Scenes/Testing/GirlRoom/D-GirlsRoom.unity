@@ -1256,7 +1256,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.173
+      value: 1.103
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3377,7 +3377,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.173
+      value: 1.103
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -3955,7 +3955,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.173
+      value: 1.103
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9486,7 +9486,7 @@ GameObject:
   - component: {fileID: 1472543070}
   m_Layer: 5
   m_Name: FPSCounterCanvas
-  m_TagString: Untagged
+  m_TagString: EditorOnly
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10106,7 +10106,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.159
+      value: 1.0890001
       objectReference: {fileID: 0}
     - target: {fileID: 4621101726348764, guid: 43eff163448b5db4c84c696097cfcf54, type: 2}
       propertyPath: m_LocalPosition.z

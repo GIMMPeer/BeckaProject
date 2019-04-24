@@ -28,8 +28,6 @@ public class DarkRoomTransition : MonoBehaviour {
         {
             if (distanceDot <= 0.1f) //if player has crossed threshold of door
             {
-                Debug.Log("Dot: " + playerViewDot);
-
                 if (playerViewDot <= -0.4f) //if player is not looking at door
                 {
                     if (m_PlayerInsideDarkBox)

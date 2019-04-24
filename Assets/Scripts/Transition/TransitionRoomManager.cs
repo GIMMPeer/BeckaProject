@@ -36,7 +36,7 @@ public class TransitionRoomManager : MonoBehaviour
     public void CreateMenu()
     {
         m_MainMenuObject.SetActive(true);
-        m_FirstPersonController.SetWalkSpeed(0);
+        //m_FirstPersonController.SetWalkSpeed(0);
     }
 
     public void ResetAllPaintings()

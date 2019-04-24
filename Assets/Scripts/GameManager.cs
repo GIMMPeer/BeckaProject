@@ -51,7 +51,14 @@ public class GameManager : MonoBehaviour {
                 TransitionRoomManager.m_Singleton.CreateMenu();
             }
         }
+    }
 
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void SetCurRoomContainer()
