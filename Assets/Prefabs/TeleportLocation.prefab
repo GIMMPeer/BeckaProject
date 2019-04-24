@@ -193,15 +193,15 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1847056556886186}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -2.603, y: 1.085, z: 0.783}
-  m_LocalScale: {x: 1, y: 2.0987, z: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.331, y: 1.103, z: -0.295}
+  m_LocalScale: {x: 1.0000005, y: 2.0987, z: 1.0000005}
   m_Children:
   - {fileID: 4157701574287654}
   - {fileID: 4082510104364116}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 360, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4666270126857146
 Transform:
   m_ObjectHideFlags: 1
@@ -322,8 +322,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.30889, y: 1, z: 0.9908112}
-  m_Center: {x: -0.1916306, y: 0, z: 0.26873654}
+  m_Size: {x: 1.058301, y: 1, z: 1.1008226}
+  m_Center: {x: 0.029150473, y: 0, z: -0.050411142}
 --- !u!114 &114299939746947810
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -14163,7 +14163,7 @@ ParticleSystemRenderer:
   m_ReflectionProbeUsage: 0
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 22d034311ec8f1e4eb895a66e9ad039a, type: 2}
+  - {fileID: 2100000, guid: 28c2094f0668e104e828f2fb13e7b8ef, type: 2}
   - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0

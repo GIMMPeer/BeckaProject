@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ControllerIcon
+  m_Name: PaintIcon
   m_Shader: {fileID: 211, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _ALPHABLEND_ON
   m_LightmapFlags: 0
@@ -41,7 +41,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 9f8d62435c365ba45b95593f7bb5d397, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3c5421b907e95b8469018a97fa689ab3, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
