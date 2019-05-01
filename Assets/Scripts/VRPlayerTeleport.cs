@@ -55,6 +55,9 @@ public class VRPlayerTeleport : MonoBehaviour {
         RaycastHit hit;
         Ray ray = new Ray(origin, direction);
         int layerMask = 1 << LayerMask.NameToLayer("VRTeleportLoc"); //only look for layer that is "VRTeleportLoc"
+
+        layerMask |= 1 << LayerMask.NameToLayer("UI"); //this is done to ensure player will also hit UI elements, so player won't teleport through UI
+
         if (Physics.Raycast(ray, out hit, 100, layerMask))
         {
             if(type == m_Handedness.head)

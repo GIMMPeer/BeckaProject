@@ -14,7 +14,7 @@ public class TeleportLocation : MonoBehaviour {
     {
         Vector3 newPlayerPos = new Vector3(transform.position.x, player.position.y, transform.position.z);
         player.position = newPlayerPos;
-        player.rotation = Quaternion.LookRotation(transform.forward);
+        //player.rotation = Quaternion.LookRotation(transform.forward);
 
         m_OnPlayerTeleported.Invoke();
     }
