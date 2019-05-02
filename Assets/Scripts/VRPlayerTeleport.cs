@@ -85,7 +85,6 @@ public class VRPlayerTeleport : MonoBehaviour {
                     }
                 }
                 else{
-                    Debug.Log("No particle system found, m_handedness.none");
                 }
             }
             else
