@@ -4919,7 +4919,7 @@ MonoBehaviour:
     m_NextRoom: 3
     m_PaintingTexture: {fileID: 2800000, guid: 3d590b9f2c0583046a41ccfe5c878057, type: 3}
     m_CanvasMaterial: {fileID: 2100000, guid: 93618070add995f458941052d1b4dd64, type: 2}
-    m_IsComplete: 0
+    m_IsComplete: 1
   - m_Name: Teen Room
     m_SceneName: D-TeenRoom
     m_NextSceneName: M_DepressionRoom
@@ -29561,7 +29561,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1670837835
 Transform:
   m_ObjectHideFlags: 0
