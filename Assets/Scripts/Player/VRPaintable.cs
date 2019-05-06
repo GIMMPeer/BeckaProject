@@ -102,7 +102,10 @@ public class VRPaintable : MonoBehaviour
 
     private void OnDestroy()
     {
-        m_RenderTexture.Release();
+        if (m_RenderTexture != null)
+        {
+            m_RenderTexture.Release();
+        }
     }
 
 }

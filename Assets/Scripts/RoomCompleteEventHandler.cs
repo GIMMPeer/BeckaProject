@@ -11,6 +11,17 @@ public class RoomCompleteEventHandler : MonoBehaviour {
 	// Use this for initialization
 	void Start ()
     {
+        RoomContainer[] containers = GameManager.m_Singleton.GetAllRoomContainers();
+
+        foreach (RoomContainer container in containers)
+        {
+            if (m_Room == container.m_Room)
+            {
+                GetComponent<Renderer>().material = container.m_CanvasMaterial;
+                Debug.Log("Materials: " + GetComponent<Renderer>().sharedMaterials.Length);
+            }
+        }
+
         bool roomIsComplete = GameManager.m_Singleton.IsRoomComplete(m_Room);
 
         if (roomIsComplete)

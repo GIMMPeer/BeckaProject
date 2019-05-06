@@ -43,7 +43,7 @@ public class TransitionRoomManager : MonoBehaviour
     {
         foreach (RoomContainer container in m_AllRooms)
         {
-            container.m_CanvasMaterial.mainTexture = null;
+            //container.m_CanvasMaterial.SetTexture("_MainTex", null);
         }
     }
 
@@ -62,7 +62,7 @@ public class TransitionRoomManager : MonoBehaviour
 
             if (container.m_IsComplete)
             {
-                container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
+                //container.m_CanvasMaterial.SetTexture("_MainTex", container.m_PaintingTexture);
             }
         }
 
