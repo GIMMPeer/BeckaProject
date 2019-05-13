@@ -1,21 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 //get persistent data to make painting for each room either on or off depending on completion
 public class TransitionRoomManager : MonoBehaviour
 {
     public static TransitionRoomManager m_Singleton;
 
-    public DestinationRoomButton m_DocOfficeBtn;
-    public DestinationRoomButton m_GirlRoomBtn;
-    public DestinationRoomButton m_GroceryStoreBtn;
-    public DestinationRoomButton m_TeenRoomBtn;
-    public DestinationRoomButton m_DepressionRoomBtn;
-    public DestinationRoomButton m_DocOfficeRevisitBtn;
-    public DestinationRoomButton m_BathroomBtn;
-
     public bool m_AutoQueueNextRoom = false;
+    public bool m_ShowStartingMenu = true;
+    public GameObject m_MainMenuObject;
+    public UnityStandardAssets.Characters.FirstPerson.FirstPersonController m_FirstPersonController;
+
+    public UnityEvent m_OnAllRoomsComplete;
 
     private RoomContainer[] m_AllRooms;
 
@@ -35,11 +33,17 @@ public class TransitionRoomManager : MonoBehaviour
         LoadRoomInfo();
     }
 
+    public void CreateMenu()
+    {
+        m_MainMenuObject.SetActive(true);
+        //m_FirstPersonController.SetWalkSpeed(0);
+    }
+
     public void ResetAllPaintings()
     {
         foreach (RoomContainer container in m_AllRooms)
         {
-            container.m_CanvasMaterial.mainTexture = null;
+            //container.m_CanvasMaterial.SetTexture("_MainTex", null);
         }
     }
 
@@ -58,16 +62,16 @@ public class TransitionRoomManager : MonoBehaviour
 
             if (container.m_IsComplete)
             {
-                container.m_CanvasMaterial.mainTexture = container.m_PaintingTexture;
-
-                DestinationRoomButton button = GetDestinationButton(container.m_NextRoom);
-                button.SetupButton(container.m_NextSceneName, container.m_NextRoom); //feeds the scene name info and room enum to buttons
-
-                button.gameObject.SetActive(true);
+                //container.m_CanvasMaterial.SetTexture("_MainTex", container.m_PaintingTexture);
             }
         }
 
-        if (m_AutoQueueNextRoom)
+        if (GameManager.m_Singleton.GetMostRecentRoom() == null)
+        {
+            //all rooms are complete
+            m_OnAllRoomsComplete.Invoke();
+        }
+        else if (m_AutoQueueNextRoom)
         {
             //confused about this a bit
             //when loading back into tranistion scene, the current roomcontainer is actually next room to be loaded
@@ -75,40 +79,5 @@ public class TransitionRoomManager : MonoBehaviour
             Debug.Log("Current  Room Container: " + GameManager.m_Singleton.GetCurrentRoomContainer().m_Name);
             SceneTransfer.m_Singleton.m_SceneName = GameManager.m_Singleton.GetCurrentRoomContainer().m_SceneName;
         }
-    }
-
-    private DestinationRoomButton GetDestinationButton(GameManager.RoomNames room)
-    { 
-        DestinationRoomButton btn = null;
-        switch(room)
-        {
-            case GameManager.RoomNames.DoctorOffice:
-                btn = m_DocOfficeBtn;
-                break;
-            case GameManager.RoomNames.GirlsRoom:
-                btn = m_GirlRoomBtn;
-                break;
-            case GameManager.RoomNames.GroceryStore:
-                btn = m_GroceryStoreBtn;
-                break;
-            case GameManager.RoomNames.TeenRoom:
-                btn = m_TeenRoomBtn;
-                break;
-            case GameManager.RoomNames.DepressionRoom:
-                btn = m_DepressionRoomBtn;
-                break;
-            case GameManager.RoomNames.DoctorOfficeRevisit:
-                btn = m_DocOfficeRevisitBtn;
-                break;
-            case GameManager.RoomNames.Bathroom:
-                btn = m_BathroomBtn;
-                break;
-            default:
-                Debug.Log(room);
-                Debug.LogError("Enum sent into Get Destination Button doesn't have a case");
-                break;
-        }
-
-        return btn;
     }
 }

@@ -1,0 +1,89 @@
+﻿Shader "Custom/SimpleWater" {
+	Properties {
+		_Color ("Color", Color) = (1,1,1,1)
+		_MainTex ("Albedo (RGB)", 2D) = "white" {}
+		_BumpMap("Bumpmap", 2D) = "bump" {}
+		_BumpMap2("Bumpmap 2", 2D) = "bump" {}
+
+		_FlowSpeed("Flow Speed", Range(0.0, 1.0)) = 0.25 //GG
+		_Wavelength("Wavelength", Float) = 10
+		_Amplitude("Amplitude", Float) = 1
+		_WaveSpeed("Wave Speed", Float) = 1
+
+		_Glossiness ("Smoothness", Range(0,1)) = 0.5
+		_Metallic ("Metallic", Range(0,1)) = 0.0
+	}
+	SubShader {
+		Tags {"Queue" = "Transparent" "RenderType" = "Transparent" }
+		LOD 200
+
+		ZWrite Off
+		Blend SrcAlpha OneMinusSrcAlpha
+
+		CGPROGRAM
+		// Physically based Standard lighting model, and enable shadows on all light types
+		#pragma surface surf Standard fullforwardshadows alpha vertex:vert
+
+		// Use shader model 3.0 target, to get nicer looking lighting
+		#pragma target 3.0
+
+		sampler2D _MainTex;
+
+		struct Input {
+			float2 uv_MainTex;
+			float2 uv_BumpMap;
+			float2 uv_BumpMap2;
+		};
+
+		half _Glossiness;
+		half _Metallic;
+
+		half _FlowSpeed;
+		float _Amplitude, _Wavelength, _WaveSpeed;
+
+		sampler2D _BumpMap;
+		sampler2D _BumpMap2;
+		fixed4 _Color;
+
+		// Add instancing support for this shader. You need to check 'Enable Instancing' on materials that use the shader.
+		// See https://docs.unity3d.com/Manual/GPUInstancing.html for more information about instancing.
+		// #pragma instancing_options assumeuniformscaling
+		UNITY_INSTANCING_BUFFER_START(Props)
+			// put more per-instance properties here
+		UNITY_INSTANCING_BUFFER_END(Props)
+
+		void vert(inout appdata_full v) 
+		{
+			float3 p = v.vertex.xyz;
+
+			float k = 2 * UNITY_PI / _Wavelength;
+			float f = k * (p.x - _WaveSpeed * _Time.y);
+			p.y = _Amplitude * sin(f);
+
+			float3 tangent = normalize(float3(1, k * _Amplitude * cos(f), 0));
+			float3 normal = float3(-tangent.y, tangent.x, 0);
+
+			v.vertex.xyz = p;
+			v.normal = normal;
+
+		}
+
+		void surf (Input IN, inout SurfaceOutputStandard o) 
+		{
+			IN.uv_BumpMap.x += _Time.y * _FlowSpeed;
+			IN.uv_BumpMap2.y += _Time.y * _FlowSpeed;
+
+			fixed4 bump = lerp(tex2D(_BumpMap, IN.uv_BumpMap), tex2D(_BumpMap2, IN.uv_BumpMap2), 0.5f);
+			// Albedo comes from a texture tinted by color
+			fixed4 c = tex2D (_MainTex, IN.uv_MainTex) * _Color;
+			o.Albedo = c.rgb;
+			o.Normal = UnpackNormal(bump);
+			// Metallic and smoothness come from slider variables
+			o.Metallic = _Metallic;
+			o.Smoothness = _Glossiness;
+			o.Alpha = c.a;
+		}
+		ENDCG
+	}
+	FallBack "Diffuse"
+}

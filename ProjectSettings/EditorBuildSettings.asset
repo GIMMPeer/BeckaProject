@@ -5,43 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor.unity
-    guid: 9cd631364cb621244a7991bbf9e2459c
   - enabled: 1
-    path: Assets/Scenes/Testing/GirlRoom/M_GirlsRoom.unity
-    guid: b57c8d654da2e3a4a804ff56abf86b88
-  - enabled: 1
-    path: Assets/Scenes/Testing/Doctor's Office/M-Doctor_Main.unity
-    guid: 817a47005fc47e243961a41675ed1fe7
-  - enabled: 1
-    path: Assets/Scenes/Testing/Maze/D-Maze.unity
-    guid: df5d56e18e051ac47916c3935fcb819c
-  - enabled: 1
-    path: Assets/Scenes/Testing/Grocery Store/D-GroceryStore.unity
-    guid: b8084a1fe0c8871449e45d4f9e70cf29
-  - enabled: 1
-    path: Assets/Scenes/Testing/Depression Room/D-DepressionRoom.unity
-    guid: 36cb6b64e329fbf469ed59ef3b6a46f9
-  - enabled: 1
-    path: Assets/Scenes/Testing/Doctor's Office/D-DoctorOfficeReturn.unity
-    guid: b6bad07366198f0459a972f82395502f
-  - enabled: 1
-    path: Assets/Scenes/Testing/Bathroom/D-Bathroom.unity
-    guid: 14b7bb4daef4980479007d3eb638a9ca
+    path: Assets/Scenes/Testing/TransitionRoom/D-TransitionRoom.unity
+    guid: bc53341c7f96a744a8eefc2ec50a959a
   - enabled: 1
     path: Assets/Scenes/Testing/GirlRoom/D-GirlsRoom.unity
     guid: ad7dbfab579b96d4a8a32d0244682061
   - enabled: 1
-    path: Assets/Scenes/Testing/Grocery Store/GroceryFinal.unity
-    guid: d000ecb5e93de7e4189127f45d0df5e7
-  - enabled: 1
     path: Assets/Scenes/Testing/Teen Room/D-TeenRoom.unity
     guid: 89324ba71a1671b4fae0bad8fd88e3a8
   - enabled: 1
-    path: Assets/Scenes/Testing/Teen Room/M_TeenRoom.unity
-    guid: f33335729559079429ef3c05bb08d4ac
+    path: Assets/Scenes/Testing/Grocery Store/GroceryStore_Rework.unity
+    guid: 62616967bc60b9848a1eaaf252541bf5
   - enabled: 1
-    path: Assets/Scenes/Testing/TransitionRoom/D-TransitionRoom.unity
-    guid: bc53341c7f96a744a8eefc2ec50a959a
+    path: Assets/Scenes/Testing/Bathroom/D-Bathroom.unity
+    guid: 14b7bb4daef4980479007d3eb638a9ca
+  - enabled: 1
+    path: Assets/Scenes/Testing/Depression Room/M_DepressionRoom.unity
+    guid: a3c6bd86503fe1c42a61855095c5917a
+  - enabled: 1
+    path: Assets/Scenes/Testing/Doctor's Office/DoctorsOffice.unity
+    guid: e57b6102b9bcbd943928e8201bbc4cd5
   m_configObjects: {}

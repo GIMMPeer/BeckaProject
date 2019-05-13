@@ -12,8 +12,10 @@ ModelImporter:
     2100000: No Name
     2300000: desk
     2300002: drawer_right_4
+    2300004: //RootNode
     3300000: desk
     3300002: drawer_right_4
+    3300004: //RootNode
     4300000: drawer_right_4
     4300002: desk
   externalObjects: {}

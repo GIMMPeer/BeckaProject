@@ -19,6 +19,8 @@ ModelImporter:
     100026: Frame
     100028: Mattress
     100030: Pillow
+    100032: Plane
+    100034: Throw
     400000: BezierCurve
     400002: BezierCurve.001
     400004: Cube
@@ -35,6 +37,8 @@ ModelImporter:
     400026: Frame
     400028: Mattress
     400030: Pillow
+    400032: Plane
+    400034: Throw
     2100000: No Name
     2100002: LOPO_Pillow
     2100004: Mattress
@@ -42,6 +46,7 @@ ModelImporter:
     2100008: MattressBox
     2100010: BedFrame
     2100012: Comforter
+    2100014: Throw
     2300000: BezierCurve
     2300002: BezierCurve.001
     2300004: Cube
@@ -57,6 +62,8 @@ ModelImporter:
     2300024: Frame
     2300026: Mattress
     2300028: Pillow
+    2300030: Plane
+    2300032: Throw
     3300000: BezierCurve
     3300002: BezierCurve.001
     3300004: Cube
@@ -72,6 +79,8 @@ ModelImporter:
     3300024: Frame
     3300026: Mattress
     3300028: Pillow
+    3300030: Plane
+    3300032: Throw
     4300000: Cube.002
     4300002: Cube.003
     4300004: Cube.001
@@ -87,6 +96,9 @@ ModelImporter:
     4300024: BoxSupport
     4300026: Mattress
     4300028: Frame
+    4300030: Plane
+    4300032: Throw
+    2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -166,9 +178,9 @@ ModelImporter:
     previousCalculatedGlobalScale: 1
     hasPreviousCalculatedGlobalScale: 0
   tangentSpace:
-    normalSmoothAngle: 60
+    normalSmoothAngle: 93
     normalImportMode: 0
-    tangentImportMode: 3
+    tangentImportMode: 0
     normalCalculationMode: 4
   importAnimation: 1
   copyAvatar: 0

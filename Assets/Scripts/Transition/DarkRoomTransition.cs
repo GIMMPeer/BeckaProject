@@ -20,10 +20,11 @@ public class DarkRoomTransition : MonoBehaviour {
 
         Vector3 playerDirection = m_Player.position - m_Door.position;
 
-        float distanceDot = Vector3.Dot(playerDirection, m_Door.right); //door's right vector is door's forwards facing side, check to make sure player is on the correct side of the door
-        float playerViewDot = Vector3.Dot(Camera.main.transform.forward, m_Door.right);
+        float distanceDot = Vector3.Dot(playerDirection.normalized, Vector3.right); //right vector is door's forwards facing side, check to make sure player is on the correct side of the door
+        float playerViewDot = Vector3.Dot(Camera.main.transform.forward, Vector3.right);
 
-        if (distance >= m_TriggerDistance)
+
+        if (distance <= m_TriggerDistance)
         {
             if (distanceDot <= 0.1f) //if player has crossed threshold of door
             {

@@ -28,7 +28,7 @@ namespace NewtonVR
 
         protected Vector3 ExternalVelocity;
         protected Vector3 ExternalAngularVelocity;
-
+        
         protected Vector3?[] VelocityHistory;
         protected Vector3?[] AngularVelocityHistory;
         protected int CurrentVelocityHistoryStep = 0;

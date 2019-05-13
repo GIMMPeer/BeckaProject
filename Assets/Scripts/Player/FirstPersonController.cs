@@ -280,5 +280,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             m_WalkScalar = walkScalar;
         }
+
+        public void SetWalkSpeed(float walkSpeed)
+        {
+            m_WalkSpeed = walkSpeed;
+        }
     }
 }

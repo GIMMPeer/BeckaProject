@@ -12,8 +12,10 @@ ModelImporter:
     2100000: GR_Desk
     2300000: BezierCurve.001
     2300002: BezierCurve.002
+    2300004: //RootNode
     3300000: BezierCurve.001
     3300002: BezierCurve.002
+    3300004: //RootNode
     4300000: BezierCurve.002
     4300002: BezierCurve.001
   externalObjects:

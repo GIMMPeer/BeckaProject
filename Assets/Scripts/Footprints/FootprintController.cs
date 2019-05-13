@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+//uses array of transforms and spawns footprints in order with delays
 public class FootprintController : MonoBehaviour {
 
     public GameObject m_FootprintPrefab;
@@ -64,6 +65,7 @@ public class FootprintController : MonoBehaviour {
         }
 	}
 
+    //spawns footstep object at footstep index transform
     private void PlaceNewFootstep(int locationIndex)
     {
         GameObject g = Instantiate(m_FootprintPrefab, m_FootprintLocations[locationIndex].position, Quaternion.identity, transform);

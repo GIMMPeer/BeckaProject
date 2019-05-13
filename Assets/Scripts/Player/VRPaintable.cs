@@ -30,6 +30,8 @@ public class VRPaintable : MonoBehaviour
         tex.Apply();
         RenderTexture.active = null;
         baseMaterial.mainTexture = tex; //Put the painted texture as the base
+
+        Debug.Log("Saving Texture");
     }
 
     public RenderTexture GetRenderTexture()
@@ -100,7 +102,10 @@ public class VRPaintable : MonoBehaviour
 
     private void OnDestroy()
     {
-        m_RenderTexture.Release();
+        if (m_RenderTexture != null)
+        {
+            m_RenderTexture.Release();
+        }
     }
 
 }

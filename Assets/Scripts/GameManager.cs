@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 using UnityEngine.SceneManagement;
 
 //persistent class that holds previous room locations and player's inventory
@@ -31,9 +32,33 @@ public class GameManager : MonoBehaviour {
     private RoomContainer m_CurrentRoomContainer;
     private RoomContainer m_NextRoomContainer;
 
+    private float m_NarrationVolume;
+    private float m_SoundFXVolume;
+    private float m_MusicVolume;
+
     private void Start()
     {
+        /*m_AudioMixer.SetFloat("SoundFXVolume", m_SoundFXVolume);
+        m_AudioMixer.SetFloat("NarrationVolume", m_NarrationVolume);
+        m_AudioMixer.SetFloat("MusicVolume", m_MusicVolume);*/
+
         Invoke("SetCurRoomContainer", 0.5f);
+
+        if (TransitionRoomManager.m_Singleton != null)
+        {
+            if (TransitionRoomManager.m_Singleton.m_ShowStartingMenu)
+            {
+                TransitionRoomManager.m_Singleton.CreateMenu();
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
     private void SetCurRoomContainer()
@@ -99,7 +124,7 @@ public class GameManager : MonoBehaviour {
         m_Singleton = this;
     }
 
-    RoomContainer GetMostRecentRoom()
+    public RoomContainer GetMostRecentRoom()
     {
         foreach (RoomContainer container in m_AllRooms)
         {
@@ -114,7 +139,7 @@ public class GameManager : MonoBehaviour {
         }
 
         //shouldn't ever get here
-        Debug.LogError("Get most recent room failed, all rooms complete");
+        Debug.Log("Get most recent room failed, all rooms complete");
         return null;
     }
 
@@ -130,7 +155,33 @@ public class GameManager : MonoBehaviour {
         }
     }
 
+    public void TestDebug()
+    {
+        Debug.Log("Testing Hit");
+    }
 
+    public void SetAudioLevels(float fxVol, float narrVol, float musicVol)
+    {
+        m_SoundFXVolume = fxVol;
+        m_NarrationVolume = narrVol;
+        m_MusicVolume = musicVol;
+    }
+
+    public bool IsRoomComplete(RoomNames roomName)
+    {
+        //iterate through all rooms, check if roomname is same as parameter, return if its complete or not
+        for (int i = 0; i < m_AllRooms.Length; i++)
+        {
+            RoomContainer container = m_AllRooms[i];
+            RoomNames containerRoomName = container.m_Room;
+            
+            if (containerRoomName == roomName)
+            {
+                return container.m_IsComplete;
+            }
+        }
+        return false;
+    }
 
     //Public Getters
 

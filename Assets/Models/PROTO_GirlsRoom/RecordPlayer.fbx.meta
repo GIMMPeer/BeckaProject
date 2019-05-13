@@ -3,64 +3,13 @@ guid: 4b2e8196505921842801607c51593cc3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: Cube
-    100002: Cube.001
-    100004: Cube.003
-    100006: Cylinder
-    100008: Cylinder.001
-    100010: //RootNode
-    400000: Cube
-    400002: Cube.001
-    400004: Cube.003
-    400006: Cylinder
-    400008: Cylinder.001
-    400010: //RootNode
+    100000: //RootNode
+    400000: //RootNode
     2100000: Record
-    2100002: Record_Metal
-    2100004: Record_Blue
-    2100006: Arm
-    2100008: Record_Teal
-    2300000: Cube
-    2300002: Cube.001
-    2300004: Cube.003
-    2300006: Cylinder
-    2300008: Cylinder.001
-    3300000: Cube
-    3300002: Cube.001
-    3300004: Cube.003
-    3300006: Cylinder
-    3300008: Cylinder.001
-    4300000: Cylinder.001
-    4300002: Cube.003
-    4300004: Cube
-    4300006: Cube.001
-    4300008: Cylinder
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Arm
-    second: {fileID: 2100000, guid: d420396e055f2714fae61868bd1c847c, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Record
-    second: {fileID: 2100000, guid: 95f680b128f343948b968a3269bcac84, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Record_Blue
-    second: {fileID: 2100000, guid: 583859ffdba8bab46a850e9bf09b1b51, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Record_Metal
-    second: {fileID: 2100000, guid: 7fb4c39ab0cf15b4d9b0e9032b5156d4, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Record_Teal
-    second: {fileID: 2100000, guid: 5b903508339bfa94ca4d5b181b14c24e, type: 2}
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Cube.003
+  externalObjects: {}
   materials:
     importMaterials: 1
     materialName: 0
